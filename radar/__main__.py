@@ -1,10 +1,15 @@
-"""Command line: python -m radar {run,digest,test-notify,telegram-chat-id} [--dry-run]"""
+"""Command line: python -m radar {setup,run,digest,test-notify,telegram-chat-id} [--dry-run]"""
 from __future__ import annotations
 
 import argparse
 import copy
+import getpass
 import os
+import re
+import shutil
+import subprocess
 import sys
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -109,11 +114,53 @@ def cmd_chat_id(args) -> int:
     return 0
 
 
+def cmd_setup(args) -> int:
+    """Connect Telegram: ask for the bot token (hidden), find your chat, store both as GitHub repo secrets."""
+    if not shutil.which("gh"):
+        sys.exit("This needs the GitHub CLI (gh), logged in.")
+    token = getpass.getpass("Paste the bot token from @BotFather (input is hidden): ").strip()
+    if not re.fullmatch(r"\d+:[\w-]{30,}", token):
+        sys.exit("That doesn't look like a bot token (it looks like 123456789:AAH...). Nothing was saved.")
+    bot = Telegram(token, "")
+    try:
+        me = bot._call("getMe", {})["result"]
+    except Exception as e:  # noqa: BLE001
+        sys.exit(f"Telegram rejected the token ({e}). Nothing was saved.")
+    print(f"\nBot found: @{me['username']}")
+    print(f"Now open https://t.me/{me['username']} in Telegram and press Start (or send it any message).")
+    print("Waiting for your message", end="", flush=True)
+    chat = None
+    for _ in range(90):  # up to ~3 minutes
+        for u in reversed(bot.updates()):
+            c = (u.get("message") or {}).get("chat") or {}
+            if c.get("type") == "private" and c.get("id"):
+                chat = c
+                break
+        if chat:
+            break
+        print(".", end="", flush=True)
+        time.sleep(2)
+    print()
+    if not chat:
+        sys.exit("No message arrived. Press Start in the bot chat, then run this again. Nothing was saved.")
+    print(f"Got it — chat with {chat.get('first_name') or chat.get('username') or 'you'}.")
+    for name, value in (("TELEGRAM_BOT_TOKEN", token), ("TELEGRAM_CHAT_ID", str(chat["id"]))):
+        r = subprocess.run(["gh", "secret", "set", name], input=value, text=True,
+                           capture_output=True, cwd=config.ROOT)
+        if r.returncode:
+            sys.exit(f"Couldn't save {name} as a repo secret: {r.stderr.strip()}")
+    print("Saved TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID as GitHub repo secrets.")
+    Telegram(token, str(chat["id"])).send("✅ <b>Event radar connected.</b> Alerts will arrive in this chat.")
+    print("Sent a confirmation message to your Telegram. Done!")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="radar", description="Bangalore tech-event radar")
     p.add_argument("--config", default=config.DEFAULT_CONFIG)
     p.add_argument("--state", default=config.DEFAULT_STATE, type=Path)
     sub = p.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("setup", help="connect Telegram and store the secrets in the GitHub repo")
     r = sub.add_parser("run", help="check every source; alert on new high-priority events")
     r.add_argument("--dry-run", action="store_true", help="print instead of sending; don't write state")
     r.add_argument("-v", "--verbose", action="store_true", help="with --dry-run, also list ignored events")
@@ -123,7 +170,7 @@ def main(argv=None) -> int:
     t.add_argument("--dry-run", action="store_true")
     sub.add_parser("telegram-chat-id", help="print the chat id of whoever messaged your bot")
     args = p.parse_args(argv)
-    return {"run": cmd_run, "digest": cmd_digest, "test-notify": cmd_test_notify,
+    return {"setup": cmd_setup, "run": cmd_run, "digest": cmd_digest, "test-notify": cmd_test_notify,
             "telegram-chat-id": cmd_chat_id}[args.cmd](args)
 
 

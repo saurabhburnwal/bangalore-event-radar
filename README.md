@@ -12,21 +12,24 @@ for Bangalore tech events, and tells you on Telegram:
 
 It runs free on GitHub Actions, so it keeps working while your laptop is off.
 
-## Setup (one time, ~5 minutes)
+## Setup (one time, ~3 minutes)
 
-1. **Create the bot.** In Telegram, open **@BotFather** → `/newbot` → pick a name. Copy the token it gives you.
-2. **Say hi to it.** Open your new bot and press **Start**.
-3. **Find your chat id:**
+1. **Create the bot.** In Telegram, open **@BotFather** → `/newbot` → pick a name and a username ending in `bot`.
+   It replies with a token like `123456789:AAH…`.
+2. **Connect it** (from this folder, in a real terminal):
    ```sh
-   TELEGRAM_BOT_TOKEN=<token> python -m radar telegram-chat-id
+   python -m venv .venv && .venv/bin/pip install -r requirements.txt   # first time only
+   .venv/bin/python -m radar setup
    ```
-4. **Store both as repo secrets** (`gh` prompts for the value, so it never lands in your shell history):
+   Paste the token when asked (it's hidden), then press **Start** in your bot's chat. The command finds your
+   chat id, saves both as GitHub repo secrets (needs `gh`, logged in), and sends you a confirmation message.
+   The token never touches your shell history.
+3. **Turn the checks on:**
    ```sh
-   gh secret set TELEGRAM_BOT_TOKEN
-   gh secret set TELEGRAM_CHAT_ID
+   gh workflow enable poll.yml && gh workflow enable digest.yml
+   gh workflow run poll.yml
    ```
-5. **Start it:** `gh workflow run poll.yml`. The first run sends one "what's open right now" summary; after
-   that you only hear about new things.
+   The first run sends one "what's open right now" summary; after that you only hear about new things.
 
 ## Tuning
 
