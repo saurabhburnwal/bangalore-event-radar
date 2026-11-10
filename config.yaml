@@ -1,0 +1,292 @@
+# Bangalore Event Radar — all the knobs live here.
+# Edit, commit and push; the next scheduled run uses the new values.
+#
+# Keyword lists are regular expressions, matched case-insensitively as whole words.
+# So "hacks?" matches "hack" and "hacks", and "ai" does not match "said".
+
+location:
+  # Where an event counts as "in Bangalore". Checked against the city, venue and title.
+  aliases:
+    - bangalore
+    - bengaluru
+    - blr
+    - whitefield
+    - koramangala
+    - hsr layout
+    - indiranagar
+    - electronic city
+    - marathahalli
+    - bellandur
+    - jayanagar
+    - jp nagar
+    - mg road
+    - manyata
+    - bagmane
+    - hebbal
+    - yelahanka
+    - sarjapur
+    - btm layout
+    - domlur
+    - embassy tech village
+    - ecospace
+    - outer ring road
+    - doopanahalli
+    - binnamangala
+
+scoring:
+  high_prize_inr: 100000        # a Bangalore hackathon with at least this much prize money → instant alert
+  min_online_prize_inr: 100000  # an online hackathon with no internship needs this much to reach the digest
+  online_ppi_instant: true      # online hackathons offering an internship/PPO → instant alert (false = digest only)
+  filling_spots: 25             # this many spots left or fewer → "filling fast"
+  closing_soon_hours: 72        # digest lists events whose registration closes within this window
+  usd_inr: 88                   # for prizes listed in dollars
+
+  # Companies whose venue or hosting makes an event worth an instant alert.
+  # Matched against the venue and the organiser — not the description, so "built on AWS" doesn't count.
+  big_tech:
+    - google
+    - microsoft
+    - amazon
+    - aws
+    - meta
+    - apple
+    - nvidia
+    - adobe
+    - atlassian
+    - salesforce
+    - intuit
+    - uber
+    - linkedin
+    - netflix
+    - flipkart
+    - razorpay
+    - zerodha
+    - phonepe
+    - cred
+    - swiggy
+    - zomato
+    - meesho
+    - paytm
+    - goldman sachs
+    - j\.? ?p\.? ?morgan
+    - jpmorgan chase
+    - morgan stanley
+    - walmart( global tech)?
+    - cisco
+    - ibm
+    - oracle
+    - intel
+    - qualcomm
+    - sap( labs)?
+    - hpe
+    - hewlett packard( enterprise)?
+    - red hat
+    - vmware
+    - databricks
+    - snowflake
+    - stripe
+    - openai
+    - anthropic
+    - thoughtworks
+
+  # Text that signals an internship, PPI or job offer (checked on hackathons only).
+  internship_keywords:
+    - internships?
+    - ppis?
+    - ppos?
+    - pre[- ]placement
+    - job offers?
+    - full[- ]time offers?
+    - interview opportunit(y|ies)
+    - fast[- ]track(ed)? interviews?
+    - hiring
+
+  office_visit_keywords:
+    - office visit
+    - office tour
+    - campus tour
+    - campus visit
+    - visit (the|our) office
+
+  # Titles that are always worth an instant alert in Bangalore.
+  high_title_keywords:
+    - devfest
+    - i/o extended
+    - google i/o
+    - aws community day
+    - kubernetes community day
+    - kcd bengaluru
+    - gemini
+
+  hackathon_keywords:
+    - hackathons?
+    - buildathons?
+    - ideathons?
+    - makeathons?
+    - datathons?
+    - codeathons?
+    - hacknights?
+    - hack ?days?
+    - hacks?
+
+  # Bangalore events also need one of these to make the digest (sources that only list tech events skip this check).
+  tech_keywords:
+    - ai
+    - ml
+    - genai
+    - llms?
+    - agents?
+    - agentic
+    - data
+    - cloud
+    - devops
+    - sre
+    - kubernetes
+    - docker
+    - python
+    - rust
+    - golang
+    - java(script)?
+    - typescript
+    - react
+    - flutter
+    - android
+    - ios
+    - web3
+    - blockchain
+    - crypto
+    - security
+    - cyber\w*
+    - privacy
+    - developers?
+    - devrel
+    - engineer(s|ing)?
+    - cod(e|ing)
+    - build(ers?|ing)?
+    - startups?
+    - founders?
+    - product
+    - api
+    - open source
+    - tech\w*
+    - software
+    - quantum
+    - qiskit
+    - robotics
+    - iot
+    - comput\w*
+    - saas
+    - fintech
+    - voice ai
+    - claude
+    - gpt
+    - hackathons?
+
+  swag_keywords:
+    - swag
+    - goodies
+    - t-?shirts?
+    - merch
+    - stickers
+
+  # Words that suggest networking with senior people (used to group the digest).
+  networking_keywords:
+    - summit
+    - conference
+    - conf
+    - mixer
+    - networking
+    - meetups?
+    - community day
+    - founders?
+    - leaders?
+    - cxo
+    - panel
+
+  # Titles with any of these are always ignored.
+  deny_keywords:
+    - quiz\w*
+    - walking
+    - walk
+    - yoga
+    - comedy
+    - stand-?up
+    - adopt
+    - theatre
+    - theater
+    - skating
+    - dance
+    - karaoke
+    - music
+    - wellness
+    - mental health
+    - lok sabha
+    - call for (proposals|submissions|talks|papers|data problems)
+    - cfp
+    - sponsor
+    - volunteer
+    - webinar
+
+  # Descriptions with any of these are ignored: events closed to outsiders.
+  restricted_keywords:
+    - (exclusively|only) (open )?(to|for) [\w\s.,&-]{0,60}(university|college|institute|campus) students
+    - (exclusively|only) (open )?(to|for) (the )?(students|employees|members) of
+    - internal (event|hackathon|round) for
+
+sources:
+  luma:
+    enabled: true
+    place_id: discplace-G0tGUVYwl7T17Sb   # Luma's Bengaluru city page
+    # Extra Luma community calendars to follow (their IDs start with "cal-").
+    calendars: []
+  meetup:
+    enabled: true
+    urls:
+      - https://www.meetup.com/find/?location=in--Bengaluru&source=EVENTS&categoryId=546
+      - https://www.meetup.com/find/?keywords=hackathon&location=in--Bengaluru&source=EVENTS
+  unstop:
+    enabled: true
+    max_pages: 10
+  devfolio:
+    enabled: true
+  gdg:
+    enabled: true
+    chapters:          # slugs from gdg.community.dev/<slug>/
+      - gdg-bangalore
+      - gdg-cloud-bengaluru
+  hasgeek:
+    enabled: true
+  hackbriven:
+    enabled: true
+
+alerts:
+  max_instant_per_run: 8   # more than this in one run are bundled into a single message
+  source_fail_runs: 6      # warn after this many failed runs in a row (~1 hour)
+
+# Yearly programs that are easy to miss. Dates are approximate — the digest reminds you
+# 14 and 3 days before. Update "opens" (MM-DD) once the official dates are announced.
+annual_programs:
+  - name: Google Summer of Code
+    opens: "02-20"
+    url: https://summerofcode.withgoogle.com
+    note: Organisations are announced in late February; contributor applications open in March. Start talking to orgs early.
+  - name: Amazon ML Summer School
+    opens: "06-01"
+    url: https://www.amazon.science/academic-engagements
+    note: Applications usually open in early summer.
+  - name: Flipkart GRiD
+    opens: "07-01"
+    url: https://unstop.com/hackathons?search=flipkart%20grid
+    note: Registrations usually open in July; it carries PPI/PPO offers.
+  - name: Smart India Hackathon
+    opens: "08-15"
+    url: https://sih.gov.in
+    note: College-level internal rounds start around September.
+  - name: Hacktoberfest
+    opens: "09-15"
+    url: https://hacktoberfest.com
+    note: Registration opens in late September; the swag goes to the earliest finishers.
+  - name: Microsoft Imagine Cup
+    opens: "10-01"
+    url: https://imaginecup.microsoft.com
+    note: Registration usually opens in the autumn with a deadline early next year.
