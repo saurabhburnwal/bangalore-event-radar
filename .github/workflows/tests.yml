@@ -2,8 +2,9 @@ name: tests
 
 on:
   push:
-    paths: ["radar/**", "tests/**", "config.yaml", "requirements.txt"]
+    paths: ["radar/**", "tests/**", "config.yaml", "requirements.txt", ".github/workflows/**"]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
