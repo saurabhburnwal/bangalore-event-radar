@@ -54,6 +54,7 @@ class Scorer:
         self.net = _words(s.get("networking_keywords"))
         self.deny = _words(s.get("deny_keywords"))
         self.restricted = _words(s.get("restricted_keywords"))
+        self.college = _words(s.get("my_college"))
 
     def is_filling(self, ev: Event) -> bool:
         if ev.sold_out:
@@ -71,9 +72,16 @@ class Scorer:
         if denied:
             return Verdict(IGNORE, [f"ignored word: {denied}"])
 
-        restricted = _find(self.restricted, ev.description)
-        if restricted:
-            return Verdict(IGNORE, [f"restricted: {restricted}"])
+        m = self.restricted.search(ev.description) if self.restricted and ev.description else None
+        mine_only = False
+        if m:
+            # Closed events are skipped unless they're closed to *your* college.
+            # Look at the matched phrase plus the rest of its sentence ("…only for students of X.").
+            tail = re.split(r"[.!?\n]", ev.description[m.end():m.end() + 80], maxsplit=1)[0]
+            if _find(self.college, m.group(0) + tail):
+                mine_only = True
+            else:
+                return Verdict(IGNORE, [f"restricted: {m.group(0)}"])
 
         in_blr = bool(_find(self.blr, " ".join([ev.city, ev.venue, ev.title])))
         hack = ev.kind == "hackathon" or bool(_find(self.hack, title))
@@ -123,6 +131,10 @@ class Scorer:
             if not reasons:
                 reasons.append("tech event in Bangalore")
 
+        if mine_only:
+            reasons.append("open to your college only")
+        elif _find(self.college, " ".join([ev.title, ev.venue, ev.host, ev.org])):
+            reasons.append("at your college")
         if _find(self.swag, blob):
             reasons.append("swag")
         if ev.sold_out:

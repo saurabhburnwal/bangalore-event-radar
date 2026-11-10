@@ -229,9 +229,16 @@ scoring:
 
   # Descriptions with any of these are ignored: events closed to outsiders.
   restricted_keywords:
-    - (exclusively|only) (open )?(to|for) [\w\s.,&-]{0,60}(university|college|institute|campus) students
+    - (exclusively|only) (open )?(to|for) [\w\s.,&()-]{0,60}(university|college|institute|campus)\)? students
     - (exclusively|only) (open )?(to|for) (the )?(students|employees|members) of
     - internal (event|hackathon|round) for
+
+  # Your college: its students-only events are kept, and events held there are tagged "at your college".
+  my_college:
+    - christ university
+    - christ \(deemed to be university\)
+    - christ deemed to be university
+    - christ \(deemed university\)
 
 sources:
   luma:

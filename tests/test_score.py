@@ -110,3 +110,27 @@ def test_call_for_proposals_is_ignored(score):
 
 def test_non_tech_bangalore_event_is_ignored(score):
     assert score(ev(title="Sunday Brunch Social", city="Bengaluru")).tier == IGNORE
+
+
+def test_event_closed_to_your_college_is_kept(score):
+    v = score(ev(source="meetup", title="CodeSprint", city="Bengaluru", tech_source=True,
+                 description="A coding contest. This event is exclusively open to CHRIST (Deemed to be University) students."))
+    assert v.tier != IGNORE and "open to your college only" in v.reasons
+
+
+def test_event_closed_to_another_college_is_still_ignored(score):
+    v = score(ev(source="meetup", title="CodeSprint", city="Bengaluru", tech_source=True,
+                 description="This event is exclusively open to RV University students. Judges from Christ University."))
+    assert v.tier == IGNORE
+
+
+def test_event_held_at_your_college_is_tagged(score):
+    v = score(ev(source="unstop", title="Hack Christ", city="Bangalore", kind="hackathon", tech_source=True,
+                 prize_data=True, venue="Christ University, Hosur Road"))
+    assert "at your college" in v.reasons
+
+
+def test_students_of_your_college_phrasing_is_kept(score):
+    v = score(ev(source="meetup", title="Cloud Jam", city="Bengaluru", tech_source=True,
+                 description="Only for students of Christ University, Bangalore. Bring your laptop."))
+    assert v.tier != IGNORE and "open to your college only" in v.reasons
