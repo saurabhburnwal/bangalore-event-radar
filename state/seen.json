@@ -1360,22 +1360,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:317378193",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "AI – “Made to Impact” | lululemon open house",
-   "url": "https://www.meetup.com/techinsider-bangalore/events/317378193/",
-   "when": "2026-11-21T11:00:00+05:30",
-   "when_label": "Sat 21 Nov · 11:00 IST",
-   "where": "lululemon office, Bangalore"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
