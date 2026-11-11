@@ -328,6 +328,19 @@
    "title": "CyberSwaraj: Digital Privacy for Beginners",
    "url": "https://luma.com/guz9u3ic"
   },
+  "luma:evt-DxgH5tHs2duJfZX": {
+   "alerted": true,
+   "end": "2026-11-12T13:30:00+00:00",
+   "filling_alerted": true,
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-11",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-12T11:30:00+00:00",
+   "title": "Climate Mixer: Meet the Founders & Investors working in Deep-Tech",
+   "url": "https://luma.com/05bi094k"
+  },
   "luma:evt-QXK2t1wlF8tDZEl": {
    "alerted": true,
    "end": "2026-11-22T11:30:00+00:00",
@@ -1269,6 +1282,7 @@
   "civo navigate india conference free tickets|2026-11-24": "meetup:317343432",
   "civo navigate india|2026-11-24": "meetup:314690444",
   "claude builder day maximizing margins|2026-11-17": "luma:evt-pGe0gJigKoqRCCX",
+  "climate mixer meet founders investors working deep tech|2026-11-12": "luma:evt-DxgH5tHs2duJfZX",
   "code to cart ai e commerce hackathon kartai codexcelerate|2026-11-29": "unstop:1803912",
   "codeastra india 2026 national hackathon|2026-12-14": "unstop:1791313",
   "codecrafters india 2026 national hackathon|2026-12-14": "unstop:1792826",
