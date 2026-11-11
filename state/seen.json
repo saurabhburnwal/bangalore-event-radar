@@ -43,6 +43,12 @@
     "location": "IEM Gurukul Building, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal, India",
     "prize_inr": 48400
    },
+   "eclipse": {
+    "city": "Patiala",
+    "desc": "> # **All that you need to know about Eclipse 7.0** **ECLIPSE 7.0** is the flagship event of the ACM Student Chapter, TIET, and a premier **24-hour hackathon** that draws participation from across the nation. As the chapter’s most distinguished and celebrated initiative, it serves as a dynamic platform for developers, designers, and innovators to collaborate and compete. With expert-led workshops, dedicated mentorship, and an intense build environment, **ECLIPSE 7.0** is designed to cultivate innovation, enhance technical excellence, and transform ambitious ideas into impactful, real-world solutions. > **Eligibility:** • The hackathon is open to students from all Colleges and Universities. • Students from all academic years are eligible to participate. Teams may include members from different colleges. • Participants from diverse specializations are welcome to form teams together. > **Team Format:** **Teams must consist of 2–5 members.** Participants are advised to form teams with complementary expertise, including design, frontend development, backend development, and database management. > **Problem Statements:** Each team must choose only ONE problem statement. The detailed prob",
+    "location": "Thapar Institute of Engineering & Technology, Bhadson Road, Patiala, Punjab, India",
+    "prize_inr": 0
+   },
    "founders-house-kolkata": {
     "city": "",
     "desc": "Build. Validate. Launch. Kolkata's most relentless national-level 72-hour startup sprint. 10 elite founder squads selected from universities across India live on site at AIC Techno (Offbeat CCU), crack raw mentor problems, build production MVPs, and pitch live to venture syndicates. Organized by Hult Prize at TIU and hosted at the state of the art incubation hub AIC Techno (Offbeat CCU), this is not a sleep deprived gimmick. It is an incubator grade gauntlet for founders who want to build companies that last. **NOTE: This is the selection for the first round. Shortlisted teams will come offline and build at OFFBEAT CCU Kolkata for 3 days (18th-20th December). Free of cost.**",
@@ -79,12 +85,6 @@
     "location": "K S R College of Engineering, KSR Kalvi Nagar, Tamil Nadu, India",
     "prize_inr": 0
    },
-   "hacknauts26": {
-    "city": "Ludhiana",
-    "desc": "# 🚀 Hacknauts 2.0 ### 🌌 Beyond the Known, Begins the Extraordinary **Hacknauts 2.0 (HKN-26)** is a 24-hour hackathon at **Guru Nanak Dev Engineering College, Ludhiana**, organized by the **Causmic Club**. 🚀 After a successful first mission, we're back in orbit. 🛰️ This year, everything revolves around one idea: **a black hole pulling streams of code into itself. 🕳️** The brightest builders, designers, and problem-solvers converge for one weekend - to ideate, build, and ship something that didn't exist before. 💻✨ **One mission. One singularity. Your code, pulled toward something bigger. 🌠** --- ### 🌌 What Awaits You * ⏱️ **24 hours** of building, mentorship, and midnight debugging * 🛰️ **Multiple mission tracks** — revealed soon * 🍕 **Free food, beverages, and high-speed internet** for all participants * 🎁 **Swag and goodies** in every participant kit * 🏅 **Certificates for every team + prizes** across tracks * 🏆 **Best Freshers Team** — a special award for the best-performing team consisting of first-year students * 👩‍🚀 **Best Girls Team** — a special award for the best-performing all-girls team * 🤝 **A crew of like-minded builders** — and recruiters watching the launch pad --- ###",
-    "location": "Guru Nanak Dev Engineering College, Gill Road, Gill Park, Ludhiana, Punjab, India",
-    "prize_inr": 265408
-   },
    "hacksprint-3": {
     "city": "",
     "desc": "Build Bold. Ride Beyond. 💬 **WHATSAPP COMMUNITY — JOIN NOW:** https://chat.whatsapp.com/C9gawXXKFtr76gk6YoUe3K # HackSprint 3.0 — Build Bold. Ride Beyond. # 🚀 About the Event **HackSprint 3.0** is a National-Level, 36-Hour Hackathon organized by the Department of Computer Science and Engineering, Karpagam Academy of Higher Education (KAHE), Coimbatore, in collaboration with the **Metaverse Association**. HackSprint 3.0 brings together passionate developers, designers, problem-solvers, and innovators from across India to transform creative ideas into impactful, technology-driven solutions. It provides a platform to experiment with emerging technologies, collaborate with like-minded innovators, and tackle real-world challenges. **Mode:** Online Preliminary Round + Offline Final Round **Final Venue:** Karpagam Academy of Higher Education (KAHE), Coimbatore, Tamil Nadu **Final Hackathon Duration:** 36 Hours **Application Deadline:** 28 December 2026 📢 **PPT Submission Template:** Will be announced soon! # 🛠️ How It Works ## Round 1: Online Idea Submission & Screening The first round will be conducted online. Interested teams must submit a **PowerPoint presentation (PPT)** outlining the",
@@ -102,6 +102,12 @@
     "desc": "Global Health Access Innovation Challenge VIT Bhopal University to Host Health Hackathon 3.0 in January 2027 Event invites new ideas to make healthcare better and cost less VIT Bhopal University will host Health Hackathon 3.0 on 28 and 29 January 2027. A pre-event workshop will take place on 27 January 2027. VIT Bhopal is collaborating with the Whiting School of Engineering at Johns Hopkins University for this event. Its full title is “Health Hackathon 3.0: Global Health Access Innovation Challenge – Next Generation.” New Ideas for Better Healthcare The event has a clear aim: it seeks innovative ideas that can improve healthcare accessibility for more people, reduce costs, and enhance overall efficiency. Participants are invited to propose actionable solutions to real-world healthcare challenges. Key focus areas for submissions include: • Low-cost tools and technologies for healthcare delivery. • New ways and platforms to support mental health. • Application of Artificial Intelligence (AI) in healthcare solutions. • Tools leveraging health data analytics to identify and predict health risks. A Chance to Share and Build Ideas Health Hackathon 3.0 invites innovators, students, and re",
     "location": "VIT Bhopal University, Indore - Bhopal Road, Kothri Kalan, Sehore, Madhya Pradesh, India",
     "prize_inr": 200000
+   },
+   "hft2026": {
+    "city": "",
+    "desc": "Innovate Today. Impact Tomorrow ## About Hack For Tomorrow Hack For Tomorrow is the flagship 24-hour intercollegiate hackathon of Excel, the annual techno-managerial fest of Govt. Model Engineering College (MEC), Kochi. Bringing together aspiring developers, innovators, and problem-solvers from across the country, it provides a collaborative platform to transform ideas into impactful technological solutions. This edition embraces the theme **Beyond Intelligence: Why Cognition Matters in an AI-First World**, encouraging participants to look beyond conventional artificial intelligence .In association with **YE Stack – The Cognition Company**, our Cognition Challenge Partner, the hackathon challenges participants to identify real-world problems and engineer meaningful solutions that push the boundaries of intelligent technology. Over 24 hours of innovation and collaboration, participants will work alongside fellow developers, explore challenging problem statements, and transform their ideas into functional prototypes Join us for an experience where ideas meet engineering, challenges inspire creativity, and innovation goes beyond the ordinary. **January 2–3, 2027**",
+    "location": "",
+    "prize_inr": 27544
    },
    "innerve-11": {
     "city": "Pune",
@@ -645,6 +651,19 @@
    "start": "2026-11-13T09:00:00+05:30",
    "title": "AWS Cloud Quest Hunt – Learn, Build & Compete!",
    "url": "https://www.meetup.com/aws-sbg-at-jss-academy-of-technical-education-bengaluru/events/317235816/"
+  },
+  "meetup:317281461": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-11",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-11-21T11:00:00+05:30",
+   "title": "IN PERSON! Apache Kafka® Meetup Bangalore- Nov 2026",
+   "url": "https://www.meetup.com/bangalore-kafka-data-ai/events/317281461/"
   },
   "meetup:317343432": {
    "alerted": false,
@@ -1233,7 +1252,7 @@
   },
   "unstop:1802400": {
    "alerted": false,
-   "end": "2026-11-16T00:00:00+05:30",
+   "end": "2026-11-18T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
@@ -1340,11 +1359,13 @@
   "open lakehouse ai|2026-11-28": "meetup:317087004",
   "open posibilities unlocked hpe|2026-11-21": "meetup:317107073",
   "orbix 48 hour global open innovation hackathon|2026-11-22": "unstop:1780048",
+  "person apache kafka meetup nov 2026|2026-11-21": "meetup:317281461",
   "person polyglot day inferring ai|2026-11-21": "meetup:317201934",
   "product mixer 4 product reactor|2026-12-05": "luma:evt-1J5sVzP9ZLKuQ0C",
   "prompt to product|2026-11-19": "unstop:1771961",
   "qff 2026 hands on quantum programming qiskit|2026-11-16": "luma:evt-iPAqBamDHLcZJUH",
   "rewired tech hackathon|2026-11-16": "unstop:1802400",
+  "rewired tech hackathon|2026-11-18": "unstop:1802400",
   "rootconf 2026 annual conference platforms ai ai platforms|2026-11-20": "hasgeek:rootconf/2026",
   "seed hackathon 2026|2026-12-22": "unstop:1798287",
   "starforge 24 hour national level hackathon|2026-12-13": "unstop:1773675",
@@ -1360,7 +1381,22 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Big-tech & networking",
+   "id": "meetup:317281461",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "meetup",
+   "title": "IN PERSON! Apache Kafka® Meetup Bangalore- Nov 2026",
+   "url": "https://www.meetup.com/bangalore-kafka-data-ai/events/317281461/",
+   "when": "2026-11-21T11:00:00+05:30",
+   "when_label": "Sat 21 Nov · 11:00 IST",
+   "where": "Giniminds Solutions Private Limited, Bangalore"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
