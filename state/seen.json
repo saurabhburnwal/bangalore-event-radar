@@ -79,6 +79,12 @@
     "location": "K S R College of Engineering, KSR Kalvi Nagar, Tamil Nadu, India",
     "prize_inr": 0
    },
+   "hacknauts26": {
+    "city": "Ludhiana",
+    "desc": "# 🚀 Hacknauts 2.0 ### 🌌 Beyond the Known, Begins the Extraordinary **Hacknauts 2.0 (HKN-26)** is a 24-hour hackathon at **Guru Nanak Dev Engineering College, Ludhiana**, organized by the **Causmic Club**. 🚀 After a successful first mission, we're back in orbit. 🛰️ This year, everything revolves around one idea: **a black hole pulling streams of code into itself. 🕳️** The brightest builders, designers, and problem-solvers converge for one weekend - to ideate, build, and ship something that didn't exist before. 💻✨ **One mission. One singularity. Your code, pulled toward something bigger. 🌠** --- ### 🌌 What Awaits You * ⏱️ **24 hours** of building, mentorship, and midnight debugging * 🛰️ **Multiple mission tracks** — revealed soon * 🍕 **Free food, beverages, and high-speed internet** for all participants * 🎁 **Swag and goodies** in every participant kit * 🏅 **Certificates for every team + prizes** across tracks * 🏆 **Best Freshers Team** — a special award for the best-performing team consisting of first-year students * 👩‍🚀 **Best Girls Team** — a special award for the best-performing all-girls team * 🤝 **A crew of like-minded builders** — and recruiters watching the launch pad --- ###",
+    "location": "Guru Nanak Dev Engineering College, Gill Road, Gill Park, Ludhiana, Punjab, India",
+    "prize_inr": 265408
+   },
    "hacksprint-3": {
     "city": "",
     "desc": "Build Bold. Ride Beyond. 💬 **WHATSAPP COMMUNITY — JOIN NOW:** https://chat.whatsapp.com/C9gawXXKFtr76gk6YoUe3K # HackSprint 3.0 — Build Bold. Ride Beyond. # 🚀 About the Event **HackSprint 3.0** is a National-Level, 36-Hour Hackathon organized by the Department of Computer Science and Engineering, Karpagam Academy of Higher Education (KAHE), Coimbatore, in collaboration with the **Metaverse Association**. HackSprint 3.0 brings together passionate developers, designers, problem-solvers, and innovators from across India to transform creative ideas into impactful, technology-driven solutions. It provides a platform to experiment with emerging technologies, collaborate with like-minded innovators, and tackle real-world challenges. **Mode:** Online Preliminary Round + Offline Final Round **Final Venue:** Karpagam Academy of Higher Education (KAHE), Coimbatore, Tamil Nadu **Final Hackathon Duration:** 36 Hours **Application Deadline:** 28 December 2026 📢 **PPT Submission Template:** Will be announced soon! # 🛠️ How It Works ## Round 1: Online Idea Submission & Screening The first round will be conducted online. Interested teams must submit a **PowerPoint presentation (PPT)** outlining the",
@@ -665,6 +671,19 @@
    "start": "2026-11-24T18:00:00+05:30",
    "title": "WeAreDevelopers Conference India PreDay Meetup",
    "url": "https://www.meetup.com/graphdb-bengaluru/events/317356886/"
+  },
+  "meetup:317378193": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-11",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-11-21T11:00:00+05:30",
+   "title": "AI – “Made to Impact” | lululemon open house",
+   "url": "https://www.meetup.com/techinsider-bangalore/events/317378193/"
   },
   "unstop:1759619": {
    "alerted": false,
@@ -1260,6 +1279,7 @@
   "agentic room|2026-11-22": "luma:evt-QXK2t1wlF8tDZEl",
   "agentware 72 hour hackathon|2026-11-27": "unstop:1800324",
   "ai builder hackathon|2026-11-21": "unstop:1799509",
+  "ai made to impact lululemon open house|2026-11-21": "meetup:317378193",
   "ai product buildathon|2026-11-21": "unstop:1799475",
   "ai tools that earn hackathon by apify|2026-11-22": "luma:evt-SpJuN6WqTPl4P2P",
   "ai vibeathon 2026 24 hour ai hackathon|2026-12-20": "unstop:1789431",
@@ -1340,7 +1360,22 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Big-tech & networking",
+   "id": "meetup:317378193",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "meetup",
+   "title": "AI – “Made to Impact” | lululemon open house",
+   "url": "https://www.meetup.com/techinsider-bangalore/events/317378193/",
+   "when": "2026-11-21T11:00:00+05:30",
+   "when_label": "Sat 21 Nov · 11:00 IST",
+   "where": "lululemon office, Bangalore"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
