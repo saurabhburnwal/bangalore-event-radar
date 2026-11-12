@@ -1398,36 +1398,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:317281461",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "IN PERSON! Apache Kafka® Meetup Bangalore- Nov 2026",
-   "url": "https://www.meetup.com/bangalore-kafka-data-ai/events/317281461/",
-   "when": "2026-11-21T11:00:00+05:30",
-   "when_label": "Sat 21 Nov · 11:00 IST",
-   "where": "Giniminds Solutions Private Limited, Bangalore"
-  },
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1769646",
-   "reasons": [
-    "₹1,54,000 prize pool"
-   ],
-   "score": 12.7,
-   "source": "unstop",
-   "title": "Datanova 2026 Global Data-Thon - 1.7 Lakh prize money",
-   "url": "https://unstop.com/hackathons/datanova-2026-global-data-thon-swiss-school-of-management-rome-italy-1769646",
-   "when": "2026-11-25T18:33:00+05:30",
-   "when_label": "apply by Thu 19 Nov",
-   "where": "Online"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
