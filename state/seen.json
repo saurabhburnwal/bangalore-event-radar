@@ -795,6 +795,19 @@
    "title": "Ooty Hacks",
    "url": "https://unstop.com/hackathons/ooty-hacks-hackhere-1768100"
   },
+  "unstop:1769646": {
+   "alerted": false,
+   "end": "2026-11-25T18:33:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-12",
+   "queued": true,
+   "reg_deadline": "2026-11-19T08:17:09+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Datanova 2026 Global Data-Thon - 1.7 Lakh prize money",
+   "url": "https://unstop.com/hackathons/datanova-2026-global-data-thon-swiss-school-of-management-rome-italy-1769646"
+  },
   "unstop:1771511": {
    "alerted": false,
    "end": "2027-01-29T17:00:21+05:30",
@@ -1122,12 +1135,12 @@
   },
   "unstop:1794884": {
    "alerted": true,
-   "end": "2026-11-17T11:50:48+05:30",
+   "end": "2026-11-15T11:50:48+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
    "queued": false,
-   "reg_deadline": "2026-11-17T11:50:48+05:30",
+   "reg_deadline": "2026-11-15T11:50:48+05:30",
    "source": "unstop",
    "start": null,
    "title": "BuildSprint",
@@ -1140,7 +1153,7 @@
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
    "queued": true,
-   "reg_deadline": "2026-12-22T23:59:40+05:30",
+   "reg_deadline": "2026-11-22T23:59:40+05:30",
    "source": "unstop",
    "start": null,
    "title": "Seed Hackathon 2026",
@@ -1314,6 +1327,7 @@
   "build 2 rise 2026|2026-11-18": "unstop:1775217",
   "build agora 2026 voice ai hackathon|2026-11-21": "luma:evt-otcsiN53fUACzUG",
   "build out loud wispr flow bolna hackathon|2026-11-15": "luma:evt-ZxZ77Oo38o5xJ4s",
+  "buildsprint|2026-11-15": "unstop:1794884",
   "buildsprint|2026-11-17": "unstop:1794884",
   "capture flag|2026-11-19": "unstop:1771958",
   "cashfree sarvam ai buildathon|2026-11-21": "luma:evt-WrdP7YutOwMDZH6",
@@ -1331,6 +1345,7 @@
   "competitive programming|2026-11-20": "unstop:1771951",
   "computer conversations buildathon|2026-12-01": "luma:evt-k8TvzmESezXiJbO",
   "cyberswaraj digital privacy beginners|2026-11-15": "luma:evt-Bb7RENTilnsCjJR",
+  "datanova 2026 global data thon 1 7 lakh prize money|2026-11-25": "unstop:1769646",
   "decodex 26 enter mission decode unknown|2026-11-28": "unstop:1794529",
   "design school s2 ai took my brief not my job|2026-11-14": "luma:evt-r5VyzmWQX201tDF",
   "devfest 2026|2026-11-21": "gdg:google-gdg-cloud-bengaluru-presents-devfest-2026",
@@ -1397,6 +1412,20 @@
    "when": "2026-11-21T11:00:00+05:30",
    "when_label": "Sat 21 Nov · 11:00 IST",
    "where": "Giniminds Solutions Private Limited, Bangalore"
+  },
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1769646",
+   "reasons": [
+    "₹1,54,000 prize pool"
+   ],
+   "score": 12.7,
+   "source": "unstop",
+   "title": "Datanova 2026 Global Data-Thon - 1.7 Lakh prize money",
+   "url": "https://unstop.com/hackathons/datanova-2026-global-data-thon-swiss-school-of-management-rome-italy-1769646",
+   "when": "2026-11-25T18:33:00+05:30",
+   "when_label": "apply by Thu 19 Nov",
+   "where": "Online"
   }
  ],
  "reminders": {},
