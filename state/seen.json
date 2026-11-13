@@ -1182,7 +1182,7 @@
    "reg_deadline": "2026-11-17T00:00:00+05:30",
    "source": "unstop",
    "start": null,
-   "title": "HACKRUSH 2026",
+   "title": "Hackrush 2026",
    "url": "https://unstop.com/hackathons/hackrush-2026-igdtuw-delhi-1799179"
   },
   "unstop:1799475": {
@@ -1314,6 +1314,19 @@
    "start": null,
    "title": "Code to Cart: AI x E-commerce Hackathon | KartAI X CodeXcelerate",
    "url": "https://unstop.com/hackathons/code-to-cart-ai-x-e-commerce-hackathon-kartai-x-codexcelerate-kartai-1803912"
+  },
+  "unstop:1806122": {
+   "alerted": false,
+   "end": "2026-12-15T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "queued": true,
+   "reg_deadline": "2026-12-14T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Defy'27",
+   "url": "https://unstop.com/hackathons/defy27-vellore-institute-of-technology-vit-chennai-1806122"
   }
  },
  "fps": {
@@ -1360,6 +1373,7 @@
   "cyberswaraj digital privacy beginners|2026-11-15": "luma:evt-Bb7RENTilnsCjJR",
   "datanova 2026 global data thon 1 7 lakh prize money|2026-11-25": "unstop:1769646",
   "decodex 26 enter mission decode unknown|2026-11-28": "unstop:1794529",
+  "defy 27|2026-12-15": "unstop:1806122",
   "design school s2 ai took my brief not my job|2026-11-14": "luma:evt-r5VyzmWQX201tDF",
   "devfest 2026|2026-11-21": "gdg:google-gdg-cloud-bengaluru-presents-devfest-2026",
   "devfest 2026|2026-12-05": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
@@ -1426,6 +1440,20 @@
    "when": "2026-11-25T03:30:00+00:00",
    "when_label": "Wed 25 Nov · 09:00 IST",
    "where": "Bangalore International Exhibition Centre, Madanayakanahalli"
+  },
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1806122",
+   "reasons": [
+    "₹1,00,000 prize pool"
+   ],
+   "score": 10.0,
+   "source": "unstop",
+   "title": "Defy'27",
+   "url": "https://unstop.com/hackathons/defy27-vellore-institute-of-technology-vit-chennai-1806122",
+   "when": "2026-12-15T23:59:00+05:30",
+   "when_label": "apply by Mon 14 Dec",
+   "where": "Vellore Institute of Technology, Chennai (hybrid)"
   }
  ],
  "reminders": {},
