@@ -1426,36 +1426,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Hackathons",
-   "id": "luma:evt-jsEZNTP7d8PrwUy",
-   "reasons": [
-    "hackathon"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Festive Hacks: Win a Trip to Berlin",
-   "url": "https://luma.com/festivehacks",
-   "when": "2026-11-25T03:30:00+00:00",
-   "when_label": "Wed 25 Nov · 09:00 IST",
-   "where": "Bangalore International Exhibition Centre, Madanayakanahalli"
-  },
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1806122",
-   "reasons": [
-    "₹1,00,000 prize pool"
-   ],
-   "score": 10.0,
-   "source": "unstop",
-   "title": "Defy'27",
-   "url": "https://unstop.com/hackathons/defy27-vellore-institute-of-technology-vit-chennai-1806122",
-   "when": "2026-12-15T23:59:00+05:30",
-   "when_label": "apply by Mon 14 Dec",
-   "where": "Vellore Institute of Technology, Chennai (hybrid)"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
