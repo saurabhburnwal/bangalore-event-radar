@@ -314,6 +314,19 @@
    "title": "Bangalore Product Mixer #4 | Product Reactor",
    "url": "https://luma.com/232qy3xn"
   },
+  "luma:evt-1nwoKQydC5Nbmv4": {
+   "alerted": false,
+   "end": "2026-11-14T08:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-14T05:30:00+00:00",
+   "title": "The Model Shift : Software Factory Edition",
+   "url": "https://luma.com/6tgm6d8u"
+  },
   "luma:evt-AuTOPSeCkgN8qGw": {
    "alerted": false,
    "end": "2026-11-20T13:30:00+00:00",
@@ -352,6 +365,19 @@
    "start": "2026-11-12T11:30:00+00:00",
    "title": "Climate Mixer: Meet the Founders & Investors working in Deep-Tech",
    "url": "https://luma.com/05bi094k"
+  },
+  "luma:evt-J3UzHnRZ16HT1ue": {
+   "alerted": false,
+   "end": "2026-11-14T07:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-14T05:30:00+00:00",
+   "title": "Builders and Backers : Panel Conversation and Startup Showcase",
+   "url": "https://luma.com/jf2sl1x7"
   },
   "luma:evt-QXK2t1wlF8tDZEl": {
    "alerted": true,
@@ -1353,6 +1379,7 @@
   "build 2 rise 2026|2026-11-18": "unstop:1775217",
   "build agora 2026 voice ai hackathon|2026-11-21": "luma:evt-otcsiN53fUACzUG",
   "build out loud wispr flow bolna hackathon|2026-11-15": "luma:evt-ZxZ77Oo38o5xJ4s",
+  "builders backers panel conversation startup showcase|2026-11-14": "luma:evt-J3UzHnRZ16HT1ue",
   "buildsprint|2026-11-15": "unstop:1794884",
   "buildsprint|2026-11-17": "unstop:1794884",
   "capture flag|2026-11-19": "unstop:1771958",
@@ -1396,6 +1423,7 @@
   "llmops production observability evals guardrails|2026-11-21": "meetup:317058082",
   "lossfunk bios by bio exploring future computational drug discovery|2026-11-13": "luma:evt-pyYg0lNHFPXvT8t",
   "madlab ultimate innovation hackathon|2026-11-18": "unstop:1785416",
+  "model shift software factory edition|2026-11-14": "luma:evt-1nwoKQydC5Nbmv4",
   "next horizon 2026|2026-11-12": "unstop:1773842",
   "nextgen ai hackathon|2026-11-21": "unstop:1800891",
   "notion workshop|2026-11-21": "hackbriven:notion-workshop-blr",
@@ -1426,7 +1454,36 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Big-tech & networking",
+   "id": "luma:evt-J3UzHnRZ16HT1ue",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "Builders and Backers : Panel Conversation and Startup Showcase",
+   "url": "https://luma.com/jf2sl1x7",
+   "when": "2026-11-14T05:30:00+00:00",
+   "when_label": "Sat 14 Nov · 11:00 IST",
+   "where": "Department of Design and Manufacturing (DM), Bengaluru"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-1nwoKQydC5Nbmv4",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "The Model Shift : Software Factory Edition",
+   "url": "https://luma.com/6tgm6d8u",
+   "when": "2026-11-14T05:30:00+00:00",
+   "when_label": "Sat 14 Nov · 11:00 IST",
+   "where": "We Work, Bengaluru"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
