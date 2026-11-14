@@ -1496,64 +1496,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Big-tech & networking",
-   "id": "luma:evt-J3UzHnRZ16HT1ue",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Builders and Backers : Panel Conversation and Startup Showcase",
-   "url": "https://luma.com/jf2sl1x7",
-   "when": "2026-11-14T05:30:00+00:00",
-   "when_label": "Sat 14 Nov · 11:00 IST",
-   "where": "Department of Design and Manufacturing (DM), Bengaluru"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-1nwoKQydC5Nbmv4",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "The Model Shift : Software Factory Edition",
-   "url": "https://luma.com/6tgm6d8u",
-   "when": "2026-11-14T05:30:00+00:00",
-   "when_label": "Sat 14 Nov · 11:00 IST",
-   "where": "We Work, Bengaluru"
-  },
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1776729",
-   "reasons": [
-    "₹1,83,000 prize pool"
-   ],
-   "score": 14.2,
-   "source": "unstop",
-   "title": "HackZ'26",
-   "url": "https://unstop.com/hackathons/hackz26-computer-science-and-engineering-association-csea-ceg-anna-university-1776729",
-   "when": "2027-01-30T12:00:00+05:30",
-   "when_label": "apply by Sat 5 Dec",
-   "where": "Online"
-  },
-  {
-   "category": "Other events",
-   "id": "meetup:317407265",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "Engineering AI at Conversation Speed",
-   "url": "https://www.meetup.com/indian-data-club/events/317407265/",
-   "when": "2026-11-22T10:00:00+05:30",
-   "when_label": "Sun 22 Nov · 10:00 IST",
-   "where": "Primeco The Hub, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
