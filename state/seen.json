@@ -541,6 +541,19 @@
    "title": "Bangpypers <> Pathfinder Community Meetup",
    "url": "https://www.meetup.com/bangpypers/events/312819340/"
   },
+  "meetup:313629005": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-12-12T10:45:00+05:30",
+   "title": "Quarterly Large Scale Production Engineering (LSPE) meet up",
+   "url": "https://www.meetup.com/lspe-in/events/313629005/"
+  },
   "meetup:314690444": {
    "alerted": false,
    "end": null,
@@ -650,7 +663,7 @@
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-14",
+   "last_seen": "2026-11-15",
    "queued": false,
    "reg_deadline": null,
    "source": "meetup",
@@ -1206,7 +1219,7 @@
   },
   "unstop:1794884": {
    "alerted": true,
-   "end": "2026-11-15T11:50:48+05:30",
+   "end": "2026-11-16T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-15",
@@ -1465,6 +1478,7 @@
   "build out loud wispr flow bolna hackathon|2026-11-15": "luma:evt-ZxZ77Oo38o5xJ4s",
   "builders backers panel conversation startup showcase|2026-11-14": "luma:evt-J3UzHnRZ16HT1ue",
   "buildsprint|2026-11-15": "unstop:1794884",
+  "buildsprint|2026-11-16": "unstop:1794884",
   "buildsprint|2026-11-17": "unstop:1794884",
   "capture flag|2026-11-19": "unstop:1771958",
   "cashfree sarvam ai buildathon|2026-11-21": "luma:evt-WrdP7YutOwMDZH6",
@@ -1527,6 +1541,7 @@
   "product mixer 4 product reactor|2026-12-05": "luma:evt-1J5sVzP9ZLKuQ0C",
   "prompt to product|2026-11-19": "unstop:1771961",
   "qff 2026 hands on quantum programming qiskit|2026-11-16": "luma:evt-iPAqBamDHLcZJUH",
+  "quarterly large scale production engineering lspe meet up|2026-12-12": "meetup:313629005",
   "rewired tech hackathon|2026-11-16": "unstop:1802400",
   "rewired tech hackathon|2026-11-18": "unstop:1802400",
   "rootconf 2026 annual conference platforms ai ai platforms|2026-11-20": "hasgeek:rootconf/2026",
@@ -1559,6 +1574,20 @@
    "when": "2026-11-26T00:00:00+05:30",
    "when_label": "apply by Thu 26 Nov",
    "where": "Online"
+  },
+  {
+   "category": "Big-tech & networking",
+   "id": "meetup:313629005",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "meetup",
+   "title": "Quarterly Large Scale Production Engineering (LSPE) meet up",
+   "url": "https://www.meetup.com/lspe-in/events/313629005/",
+   "when": "2026-12-12T10:45:00+05:30",
+   "when_label": "Sat 12 Dec · 10:45 IST",
+   "where": "Yahoo!, Bangalore"
   }
  ],
  "reminders": {},
