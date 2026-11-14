@@ -644,7 +644,7 @@
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-14",
    "queued": false,
    "reg_deadline": null,
    "source": "meetup",
@@ -670,7 +670,7 @@
    "end": null,
    "filling_alerted": true,
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "queued": false,
    "reg_deadline": null,
    "source": "meetup",
@@ -742,6 +742,19 @@
    "start": "2026-11-21T11:00:00+05:30",
    "title": "AI – “Made to Impact” | lululemon open house",
    "url": "https://www.meetup.com/techinsider-bangalore/events/317378193/"
+  },
+  "meetup:317407265": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-11-22T10:00:00+05:30",
+   "title": "Engineering AI at Conversation Speed",
+   "url": "https://www.meetup.com/indian-data-club/events/317407265/"
   },
   "unstop:1759619": {
    "alerted": false,
@@ -1047,9 +1060,9 @@
    "end": "2026-12-20T21:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "queued": false,
-   "reg_deadline": "2026-11-13T23:59:00+05:30",
+   "reg_deadline": "2026-11-22T23:59:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "AI Vibeathon 2026: 24-Hour AI Hackathon",
@@ -1431,6 +1444,7 @@
   "devfest 2026|2026-11-21": "gdg:google-gdg-cloud-bengaluru-presents-devfest-2026",
   "devfest 2026|2026-12-05": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
   "devforge hackathon|2026-11-27": "unstop:1765465",
+  "engineering ai conversation speed|2026-11-22": "meetup:317407265",
   "festive hacks win trip to berlin|2026-11-25": "luma:evt-jsEZNTP7d8PrwUy",
   "fifth elephant winter edition 2026 discover new ideas networks|2026-12-04": "hasgeek:fifthelephant/winter-2026",
   "flutter meetup|2026-11-19": "gdg:google-gdg-bangalore-presents-flutter-meetup",
@@ -1524,6 +1538,20 @@
    "when": "2027-01-30T12:00:00+05:30",
    "when_label": "apply by Sat 5 Dec",
    "where": "Online"
+  },
+  {
+   "category": "Other events",
+   "id": "meetup:317407265",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "meetup",
+   "title": "Engineering AI at Conversation Speed",
+   "url": "https://www.meetup.com/indian-data-club/events/317407265/",
+   "when": "2026-11-22T10:00:00+05:30",
+   "when_label": "Sun 22 Nov · 10:00 IST",
+   "where": "Primeco The Hub, Bengaluru"
   }
  ],
  "reminders": {},
