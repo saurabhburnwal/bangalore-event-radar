@@ -411,6 +411,19 @@
    "title": "AI Tools that Earn: a hackathon by Apify",
    "url": "https://luma.com/apify-yc12"
   },
+  "luma:evt-U7GTbfJZwAdOiQO": {
+   "alerted": false,
+   "end": "2026-11-28T11:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-28T08:30:00+00:00",
+   "title": "GTM Rewind 2026: What Worked. What Flopped. What’s Next.",
+   "url": "https://luma.com/aic-gtm-rewind"
+  },
   "luma:evt-WrdP7YutOwMDZH6": {
    "alerted": false,
    "end": "2026-11-21T13:30:00+00:00",
@@ -527,6 +540,19 @@
    "start": "2026-11-14T06:30:00+00:00",
    "title": "Design School S2: AI took my brief, not my job",
    "url": "https://luma.com/nl4uicnj"
+  },
+  "luma:evt-xY3je64znkOZxzS": {
+   "alerted": true,
+   "end": "2026-12-05T11:30:00+00:00",
+   "filling_alerted": true,
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-12-05T09:30:00+00:00",
+   "title": "Lakehouse build workshop, Sat 5 Dec",
+   "url": "https://luma.com/olake-s4bn"
   },
   "meetup:312819340": {
    "alerted": false,
@@ -764,16 +790,16 @@
   },
   "meetup:317407265": {
    "alerted": false,
-   "end": null,
+   "end": "2026-11-22T08:00:00+00:00",
    "filling_alerted": false,
    "first_seen": "2026-11-14",
    "last_seen": "2026-11-15",
    "queued": true,
    "reg_deadline": null,
-   "source": "meetup",
-   "start": "2026-11-22T10:00:00+05:30",
+   "source": "luma",
+   "start": "2026-11-22T04:30:00+00:00",
    "title": "Engineering AI at Conversation Speed",
-   "url": "https://www.meetup.com/indian-data-club/events/317407265/"
+   "url": "https://luma.com/k366iwyz"
   },
   "unstop:1759619": {
    "alerted": false,
@@ -1513,6 +1539,7 @@
   "galuxium nexus v3 global ai autonomous systems venture saas championship|2027-07-31": "unstop:1800395",
   "gen ai product hackathon|2026-11-21": "unstop:1799510",
   "grpconf india 2026|2026-11-18": "meetup:316908482",
+  "gtm rewind 2026 what worked what flopped what s next|2026-11-28": "luma:evt-U7GTbfJZwAdOiQO",
   "hackday 2 0|2026-12-20": "unstop:1773120",
   "hackrush 2026|2026-11-25": "unstop:1799179",
   "hackrush 2026|2026-12-30": "unstop:1799179",
@@ -1523,6 +1550,7 @@
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
   "k hacks 4 0|2026-12-18": "unstop:1772496",
   "ksug ai india 12 meetup hpe|2026-11-21": "meetup:316920742",
+  "lakehouse build workshop sat 5 dec|2026-12-05": "luma:evt-xY3je64znkOZxzS",
   "lighthouse hackathon|2027-01-10": "unstop:1809486",
   "llmops production observability evals guardrails|2026-11-21": "meetup:317058082",
   "lossfunk bios by bio exploring future computational drug discovery|2026-11-13": "luma:evt-pyYg0lNHFPXvT8t",
@@ -1588,6 +1616,20 @@
    "when": "2026-12-12T10:45:00+05:30",
    "when_label": "Sat 12 Dec · 10:45 IST",
    "where": "Yahoo!, Bangalore"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-U7GTbfJZwAdOiQO",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "GTM Rewind 2026: What Worked. What Flopped. What’s Next.",
+   "url": "https://luma.com/aic-gtm-rewind",
+   "when": "2026-11-28T08:30:00+00:00",
+   "when_label": "Sat 28 Nov · 14:00 IST",
+   "where": "Kaverppa Layout, Bengaluru"
   }
  ],
  "reminders": {},
