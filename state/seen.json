@@ -1583,50 +1583,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1811085",
-   "reasons": [
-    "₹3,00,000 prize pool"
-   ],
-   "score": 20.0,
-   "source": "unstop",
-   "title": "Configure 2026: A Mobility Hackathon",
-   "url": "https://unstop.com/hackathons/configure-2026-a-mobility-hackathon-zeliot-pvt-ltd-1811085",
-   "when": "2026-11-26T00:00:00+05:30",
-   "when_label": "apply by Thu 26 Nov",
-   "where": "Online"
-  },
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:313629005",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "Quarterly Large Scale Production Engineering (LSPE) meet up",
-   "url": "https://www.meetup.com/lspe-in/events/313629005/",
-   "when": "2026-12-12T10:45:00+05:30",
-   "when_label": "Sat 12 Dec · 10:45 IST",
-   "where": "Yahoo!, Bangalore"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-U7GTbfJZwAdOiQO",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "GTM Rewind 2026: What Worked. What Flopped. What’s Next.",
-   "url": "https://luma.com/aic-gtm-rewind",
-   "when": "2026-11-28T08:30:00+00:00",
-   "when_label": "Sat 28 Nov · 14:00 IST",
-   "where": "Kaverppa Layout, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
