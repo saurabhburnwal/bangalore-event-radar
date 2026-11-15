@@ -37,12 +37,6 @@
     "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
     "prize_inr": 0
    },
-   "diversion2k27": {
-    "city": "Bidhannagar",
-    "desc": "The City Is Yours. The Game Is Ours. # **Diversion 2K27: Grand Theft Kolkata** **Diversion 2K27**, the annual hackathon organized by the **IEM-ACM Student Chapter**, returns with a new mission, a bolder vision, and a city ready to be reimagined. Inspired by the high-octane universe of **GTA VI**, this edition transforms Kolkata into an alternate reality where ambition fuels the chaos, technology drives the action, and every idea has the power to change the game. From neon-lit streets to futuristic skylines, the City of Joy becomes an open world built for creators, innovators, and digital rebels. More than a hackathon, **Diversion 2K27 is an open-world experience** where imagination knows no boundaries. From Artificial Intelligence and Web Development to Web3, AR/VR, and Cloud Computing, participants will turn unconventional ideas into extraordinary creations. At Diversion 2K27, it's time to: - ***Explore*** – Discover new frontiers and push beyond the limits of technology. - ***Build*** – Transform bold ideas into groundbreaking solutions. - ***Collaborate*** – Assemble your crew and create something legendary. - ***Conquer*** – Take on challenges, outplay the competition, and make",
-    "location": "IEM Gurukul Building, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal, India",
-    "prize_inr": 48400
-   },
    "doubleslash5": {
     "city": "Bidhannagar",
     "desc": "Code. Commit. Push. IEEE Jadavpur University Student Branch Presents the 5th edition of our flagship hackathon - doubleSlash 5.0. Whether you are just a beginner, or a seasoned developer, // 5.0 provides you with one of the best hackathon environments, in one of the most premier institutes of the country. Register Now!",
@@ -503,9 +497,9 @@
    "url": "https://luma.com/2g5vcgrr"
   },
   "luma:evt-pGe0gJigKoqRCCX": {
-   "alerted": false,
+   "alerted": true,
    "end": "2026-11-17T13:00:00+00:00",
-   "filling_alerted": false,
+   "filling_alerted": true,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-15",
    "queued": true,
@@ -1375,12 +1369,12 @@
   },
   "unstop:1802400": {
    "alerted": false,
-   "end": "2026-11-18T23:59:00+05:30",
+   "end": "2026-11-17T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-15",
    "queued": true,
-   "reg_deadline": "2026-11-16T00:00:00+05:30",
+   "reg_deadline": "2026-11-17T23:59:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "Rewired (Tech Hackathon)",
@@ -1461,7 +1455,7 @@
    "reg_deadline": "2026-12-19T00:00:00+05:30",
    "source": "unstop",
    "start": null,
-   "title": "Codathon:  #1 Global Coding Contest",
+   "title": "Codathon | #1 Global Coding Contest",
    "url": "https://unstop.com/hackathons/codathon-1-global-coding-contest-iit-bombay-1811016"
   },
   "unstop:1811085": {
@@ -1571,6 +1565,7 @@
   "qff 2026 hands on quantum programming qiskit|2026-11-16": "luma:evt-iPAqBamDHLcZJUH",
   "quarterly large scale production engineering lspe meet up|2026-12-12": "meetup:313629005",
   "rewired tech hackathon|2026-11-16": "unstop:1802400",
+  "rewired tech hackathon|2026-11-17": "unstop:1802400",
   "rewired tech hackathon|2026-11-18": "unstop:1802400",
   "rootconf 2026 annual conference platforms ai ai platforms|2026-11-20": "hasgeek:rootconf/2026",
   "seed hackathon 2026|2026-12-22": "unstop:1798287",
