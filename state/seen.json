@@ -726,7 +726,7 @@
    "queued": true,
    "reg_deadline": null,
    "source": "meetup",
-   "start": "2026-11-21T09:00:00+05:30",
+   "start": "2026-11-20T01:00:00+05:30",
    "title": "AWS Cloud Quest Hunt – Learn, Build & Compete!",
    "url": "https://www.meetup.com/aws-sbg-at-jss-academy-of-technical-education-bengaluru/events/317235816/"
   },
@@ -1488,6 +1488,7 @@
   "anna ai os founding builder challenge 2026|2026-11-30": "unstop:1762519",
   "arcticathon|2027-01-31": "unstop:1759619",
   "aws cloud quest hunt learn build compete|2026-11-13": "meetup:317235816",
+  "aws cloud quest hunt learn build compete|2026-11-20": "meetup:317235816",
   "aws cloud quest hunt learn build compete|2026-11-21": "meetup:317235816",
   "bangpypers pathfinder community meetup|2026-11-21": "meetup:312819340",
   "bits2wave|2026-11-22": "unstop:1761893",
