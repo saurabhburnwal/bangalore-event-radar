@@ -1613,22 +1613,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Other events",
-   "id": "luma:evt-XozJ4jFTE0z8QzX",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Lovable Builders",
-   "url": "https://luma.com/1mjcegf0",
-   "when": "2026-12-12T05:30:00+00:00",
-   "when_label": "Sat 12 Dec · 11:00 IST",
-   "where": "WeWork, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
