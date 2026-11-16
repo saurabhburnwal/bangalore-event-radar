@@ -600,6 +600,19 @@
    "title": "Civo Navigate India",
    "url": "https://www.meetup.com/disruptive-tech-india/events/314690444/"
   },
+  "meetup:316324548": {
+   "alerted": true,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-16",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-11-21T09:00:00+05:30",
+   "title": "KSUG.AI India #12 Cloud Native & AI Unlocked @ HPE",
+   "url": "https://www.meetup.com/ksug-in/events/316324548/"
+  },
   "meetup:316794233": {
    "alerted": false,
    "end": null,
@@ -797,16 +810,16 @@
   },
   "meetup:317407265": {
    "alerted": false,
-   "end": "2026-11-22T08:00:00+00:00",
+   "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-14",
    "last_seen": "2026-11-16",
    "queued": true,
    "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-22T04:30:00+00:00",
+   "source": "meetup",
+   "start": "2026-11-29T10:00:00+05:30",
    "title": "Engineering AI at Conversation Speed",
-   "url": "https://luma.com/k366iwyz"
+   "url": "https://www.meetup.com/indian-data-club/events/317407265/"
   },
   "unstop:1759619": {
    "alerted": false,
@@ -1541,6 +1554,7 @@
   "devfest 2026|2026-12-05": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
   "devforge hackathon|2026-11-27": "unstop:1765465",
   "engineering ai conversation speed|2026-11-22": "meetup:317407265",
+  "engineering ai conversation speed|2026-11-29": "meetup:317407265",
   "festive hacks win trip to berlin|2026-11-25": "luma:evt-jsEZNTP7d8PrwUy",
   "fifth elephant winter edition 2026 discover new ideas networks|2026-12-04": "hasgeek:fifthelephant/winter-2026",
   "flutter meetup|2026-11-19": "gdg:google-gdg-bangalore-presents-flutter-meetup",
@@ -1557,6 +1571,7 @@
   "inceptrix 3 0|2027-02-20": "unstop:1794479",
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
   "k hacks 4 0|2026-12-18": "unstop:1772496",
+  "ksug ai india 12 cloud native ai unlocked hpe|2026-11-21": "meetup:316324548",
   "ksug ai india 12 meetup hpe|2026-11-21": "meetup:316920742",
   "lakehouse build workshop sat 5 dec|2026-12-05": "luma:evt-xY3je64znkOZxzS",
   "lighthouse hackathon|2027-01-10": "unstop:1809486",
