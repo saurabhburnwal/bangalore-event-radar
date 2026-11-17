@@ -1684,78 +1684,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Other events",
-   "id": "luma:evt-6AgD8sIZmDs3MEa",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Manus Fellow Event | Build with Manus AI @ Quad Bangalore",
-   "url": "https://luma.com/0d2dgzm6",
-   "when": "2026-11-28T08:30:00+00:00",
-   "when_label": "Sat 28 Nov · 14:00 IST",
-   "where": "Quad AI School of Technology and Business | Bengaluru"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-jgJ83EMIpIm5L2j",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "the unbundling: AI in enterprise financial services",
-   "url": "https://luma.com/yq5ckix6",
-   "when": "2026-11-30T04:30:00+00:00",
-   "when_label": "Mon 30 Nov · 10:00 IST",
-   "where": "Craig Park Layout, Bengaluru"
-  },
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1810370",
-   "reasons": [
-    "₹2,50,000 prize pool"
-   ],
-   "score": 17.5,
-   "source": "unstop",
-   "title": "Code Relay 5.0",
-   "url": "https://unstop.com/hackathons/code-relay-50-indian-institute-of-technology-iit-bhubaneswar-1810370",
-   "when": "2027-01-17T23:59:00+05:30",
-   "when_label": "apply by Sat 12 Dec",
-   "where": "Indian Institute of Technology, Bhubaneswar (hybrid)"
-  },
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:317316737",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "Architecting Resilient Agents: Workflows, MCP & AWS",
-   "url": "https://www.meetup.com/awsugblr/events/317316737/",
-   "when": "2026-11-21T09:00:00+05:30",
-   "when_label": "Sat 21 Nov · 09:00 IST",
-   "where": "ZopSmart, Bengaluru"
-  },
-  {
-   "category": "Big-tech & networking",
-   "id": "hasgeek:rustbangalore/december-2026-rustacean-meetup",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "hasgeek",
-   "title": "December 2026 Rustacean Meetup: December 2026 Rustacean Meetup",
-   "url": "https://hasgeek.com/rustbangalore/december-2026-rustacean-meetup/",
-   "when": "2026-12-12T00:00:00+05:30",
-   "when_label": "Sat 12 Dec",
-   "where": "Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
