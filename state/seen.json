@@ -37,12 +37,6 @@
     "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
     "prize_inr": 0
    },
-   "diversion2k27": {
-    "city": "Bidhannagar",
-    "desc": "The City Is Yours. The Game Is Ours. # **Diversion 2K27: Grand Theft Kolkata** **Diversion 2K27**, the annual hackathon organized by the **IEM-ACM Student Chapter**, returns with a new mission, a bolder vision, and a city ready to be reimagined. Inspired by the high-octane universe of **GTA VI**, this edition transforms Kolkata into an alternate reality where ambition fuels the chaos, technology drives the action, and every idea has the power to change the game. From neon-lit streets to futuristic skylines, the City of Joy becomes an open world built for creators, innovators, and digital rebels. More than a hackathon, **Diversion 2K27 is an open-world experience** where imagination knows no boundaries. From Artificial Intelligence and Web Development to Web3, AR/VR, and Cloud Computing, participants will turn unconventional ideas into extraordinary creations. At Diversion 2K27, it's time to: - ***Explore*** – Discover new frontiers and push beyond the limits of technology. - ***Build*** – Transform bold ideas into groundbreaking solutions. - ***Collaborate*** – Assemble your crew and create something legendary. - ***Conquer*** – Take on challenges, outplay the competition, and make",
-    "location": "IEM Gurukul Building, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal, India",
-    "prize_inr": 48400
-   },
    "doubleslash5": {
     "city": "Bidhannagar",
     "desc": "Code. Commit. Push. IEEE Jadavpur University Student Branch Presents the 5th edition of our flagship hackathon - doubleSlash 5.0. Whether you are just a beginner, or a seasoned developer, // 5.0 provides you with one of the best hackathon environments, in one of the most premier institutes of the country. Register Now!",
@@ -120,6 +114,12 @@
     "desc": "Lean In IGDTUW's Flagship Hackathon > Lean In Hacks is an **annual flagship hackathon of Lean In IGDTUW** - the first chapter of Lean In India. Lean In Hacks is a **beginner-friendly hackathon** and has a place for everyone wanting to learn, build, share, and grow in their lives through their unique ideas. Our hackathon journey started in 2020 when we conducted the first edition of Lean In Hacks to give grounds to new thoughts and tools to animate the imaginative and critical thinking side of developers. This time, **hackers from any college** can participate in our hackathon, which will be held in **hybrid mode**. The only requirement is to have **at least 1 female in your team**! Hackers will be given the **weekend to build their product online** and the **top teams will be given a chance to pitch in the offline mode**. **Themes**: 1. Open Innovation 2. Sustainable Development Goals 3. Emerging Technologies As a beginner-friendly hackathon, we offer a dedicated **Beginner’s Track** exclusively for first-time hackers. This track is designed as an **ideathon** for **first-year students**, aimed at fostering innovative thinking, creativity, and confidence in problem-solving.",
     "location": "",
     "prize_inr": 0
+   },
+   "makerspark": {
+    "city": "Thiruvananthapuram",
+    "desc": "**MakerSpark** is an 8-hour hardware-only hackathon organized by the **IEEE Sensors Council Kerala Chapter**, in collaboration with **Arduino, Maker Village, and Semicon Keralam**. Hosted at the **Indian Institute of Information Technology and Management–Kerala (IIITM-K), Technopark, Thiruvananthapuram**, the event brings together aspiring innovators, engineers, and technology enthusiasts to transform creative ideas into impactful hardware solutions. Designed to encourage hands-on innovation and practical problem-solving, MakerSpark provides participants with an opportunity to explore the possibilities of embedded systems, sensing technologies, and physical computing. Shortlisted teams will be provided with **Arduino UNO Q boards** to develop and demonstrate their prototypes, fostering an environment of experimentation, collaboration, and technological excellence.",
+    "location": "IIITMK Building, Technopark Road, Technopark Campus, Karyavattom, Kazhakkoottam, Thiruvananthapuram, Keralam, India",
+    "prize_inr": 18832
    },
    "techacks05": {
     "city": "Rajpura",
@@ -287,6 +287,19 @@
    "start": "2026-11-22T00:00:00+05:30",
    "title": "Break a model, then fix it: A hands-on workshop on shrinking open models to fit the hardware you have, and proving they still work",
    "url": "https://hasgeek.com/rootconf/quantization-workshop/"
+  },
+  "hasgeek:rustbangalore/december-2026-rustacean-meetup": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "hasgeek",
+   "start": "2026-12-12T00:00:00+05:30",
+   "title": "December 2026 Rustacean Meetup: December 2026 Rustacean Meetup",
+   "url": "https://hasgeek.com/rustbangalore/december-2026-rustacean-meetup/"
   },
   "hasgeek:rustbangalore/november-2026-rustacean-meetup": {
    "alerted": false,
@@ -482,6 +495,19 @@
    "start": "2026-11-16T04:30:00+00:00",
    "title": "QFF 2026: Hands-On Quantum Programming with Qiskit",
    "url": "https://luma.com/79i0vamg"
+  },
+  "luma:evt-jgJ83EMIpIm5L2j": {
+   "alerted": false,
+   "end": "2026-11-30T11:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-30T04:30:00+00:00",
+   "title": "the unbundling: AI in enterprise financial services",
+   "url": "https://luma.com/yq5ckix6"
   },
   "luma:evt-jsEZNTP7d8PrwUy": {
    "alerted": false,
@@ -782,6 +808,19 @@
    "title": "IN PERSON! Apache Kafka® Meetup Bangalore- Nov 2026",
    "url": "https://www.meetup.com/bangalore-kafka-data-ai/events/317281461/"
   },
+  "meetup:317316737": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "meetup",
+   "start": "2026-11-21T09:00:00+05:30",
+   "title": "Architecting Resilient Agents: Workflows, MCP & AWS",
+   "url": "https://www.meetup.com/awsugblr/events/317316737/"
+  },
   "meetup:317343432": {
    "alerted": false,
    "end": null,
@@ -849,12 +888,12 @@
   },
   "unstop:1760462": {
    "alerted": true,
-   "end": "2026-11-23T00:00:00+05:30",
+   "end": "2026-12-02T00:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-17",
    "queued": false,
-   "reg_deadline": "2026-11-23T00:00:00+05:30",
+   "reg_deadline": "2026-12-02T00:00:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "Trivora",
@@ -1075,7 +1114,7 @@
    "first_seen": "2026-11-14",
    "last_seen": "2026-11-17",
    "queued": true,
-   "reg_deadline": "2026-12-05T10:00:00+05:30",
+   "reg_deadline": "2026-12-15T10:00:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "HackZ'26",
@@ -1484,6 +1523,19 @@
    "title": "CODERED'26",
    "url": "https://unstop.com/hackathons/codered26-bms-insitute-of-technology-and-management-1810268"
   },
+  "unstop:1810370": {
+   "alerted": false,
+   "end": "2027-01-17T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "queued": true,
+   "reg_deadline": "2026-12-12T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Code Relay 5.0",
+   "url": "https://unstop.com/hackathons/code-relay-50-indian-institute-of-technology-iit-bhubaneswar-1810370"
+  },
   "unstop:1811016": {
    "alerted": true,
    "end": "2027-01-09T11:01:00+05:30",
@@ -1525,6 +1577,7 @@
   "ai vibeathon 2026 24 hour ai hackathon|2026-12-20": "unstop:1789431",
   "algosstrike|2026-11-28": "unstop:1765493",
   "anna ai os founding builder challenge 2026|2026-11-30": "unstop:1762519",
+  "architecting resilient agents workflows mcp aws|2026-11-21": "meetup:317316737",
   "arcticathon|2027-01-31": "unstop:1759619",
   "aws cloud quest hunt learn build compete|2026-11-13": "meetup:317235816",
   "aws cloud quest hunt learn build compete|2026-11-20": "meetup:317235816",
@@ -1549,6 +1602,7 @@
   "claude builder day maximizing margins|2026-11-17": "luma:evt-pGe0gJigKoqRCCX",
   "climate mixer meet founders investors working deep tech|2026-11-12": "luma:evt-DxgH5tHs2duJfZX",
   "codathon 1 global coding contest|2027-01-09": "unstop:1811016",
+  "code relay 5 0|2027-01-17": "unstop:1810370",
   "code to cart ai e commerce hackathon kartai codexcelerate|2026-11-29": "unstop:1803912",
   "codeastra india 2026 national hackathon|2026-12-14": "unstop:1791313",
   "codecrafters india 2026 national hackathon|2026-12-14": "unstop:1792826",
@@ -1560,6 +1614,7 @@
   "configure 2026 mobility hackathon|2026-11-26": "unstop:1811085",
   "cyberswaraj digital privacy beginners|2026-11-15": "luma:evt-Bb7RENTilnsCjJR",
   "datanova 2026 global data thon 1 7 lakh prize money|2026-11-25": "unstop:1769646",
+  "december 2026 rustacean meetup december 2026 rustacean meetup|2026-12-12": "hasgeek:rustbangalore/december-2026-rustacean-meetup",
   "decodex 26 enter mission decode unknown|2026-11-28": "unstop:1794529",
   "defy 27|2026-12-15": "unstop:1806122",
   "design school s2 ai took my brief not my job|2026-11-14": "luma:evt-r5VyzmWQX201tDF",
@@ -1618,6 +1673,8 @@
   "symphony india s flagship voice ai summit|2026-11-20": "luma:evt-AuTOPSeCkgN8qGw",
   "tech expo 2027|2027-01-29": "unstop:1771511",
   "trivora|2026-11-23": "unstop:1760462",
+  "trivora|2026-12-02": "unstop:1760462",
+  "unbundling ai enterprise financial services|2026-11-30": "luma:evt-jgJ83EMIpIm5L2j",
   "vidyutspanda hardware hackathon|2026-11-20": "unstop:1780955",
   "vidyutspanda hardware hackathon|2026-11-21": "unstop:1780955",
   "vytron 26 hackathon|2026-11-25": "unstop:1786652",
@@ -1641,6 +1698,62 @@
    "when": "2026-11-28T08:30:00+00:00",
    "when_label": "Sat 28 Nov · 14:00 IST",
    "where": "Quad AI School of Technology and Business | Bengaluru"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-jgJ83EMIpIm5L2j",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "the unbundling: AI in enterprise financial services",
+   "url": "https://luma.com/yq5ckix6",
+   "when": "2026-11-30T04:30:00+00:00",
+   "when_label": "Mon 30 Nov · 10:00 IST",
+   "where": "Craig Park Layout, Bengaluru"
+  },
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1810370",
+   "reasons": [
+    "₹2,50,000 prize pool"
+   ],
+   "score": 17.5,
+   "source": "unstop",
+   "title": "Code Relay 5.0",
+   "url": "https://unstop.com/hackathons/code-relay-50-indian-institute-of-technology-iit-bhubaneswar-1810370",
+   "when": "2027-01-17T23:59:00+05:30",
+   "when_label": "apply by Sat 12 Dec",
+   "where": "Indian Institute of Technology, Bhubaneswar (hybrid)"
+  },
+  {
+   "category": "Big-tech & networking",
+   "id": "meetup:317316737",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "meetup",
+   "title": "Architecting Resilient Agents: Workflows, MCP & AWS",
+   "url": "https://www.meetup.com/awsugblr/events/317316737/",
+   "when": "2026-11-21T09:00:00+05:30",
+   "when_label": "Sat 21 Nov · 09:00 IST",
+   "where": "ZopSmart, Bengaluru"
+  },
+  {
+   "category": "Big-tech & networking",
+   "id": "hasgeek:rustbangalore/december-2026-rustacean-meetup",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "hasgeek",
+   "title": "December 2026 Rustacean Meetup: December 2026 Rustacean Meetup",
+   "url": "https://hasgeek.com/rustbangalore/december-2026-rustacean-meetup/",
+   "when": "2026-12-12T00:00:00+05:30",
+   "when_label": "Sat 12 Dec",
+   "where": "Bengaluru"
   }
  ],
  "reminders": {},
