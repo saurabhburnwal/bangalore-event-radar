@@ -600,6 +600,19 @@
    "title": "Design School S2: AI took my brief, not my job",
    "url": "https://luma.com/nl4uicnj"
   },
+  "luma:evt-uNz78DPtI4jBBe8": {
+   "alerted": false,
+   "end": "2026-12-19T12:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-12-19T08:30:00+00:00",
+   "title": "Founders Day",
+   "url": "https://luma.com/f1ru037d"
+  },
   "luma:evt-xY3je64znkOZxzS": {
    "alerted": true,
    "end": "2026-12-05T11:30:00+00:00",
@@ -612,6 +625,19 @@
    "start": "2026-12-05T09:30:00+00:00",
    "title": "Lakehouse build workshop, Sat 5 Dec",
    "url": "https://luma.com/olake-s4bn"
+  },
+  "luma:evt-zlHaYsMS7AsvDKJ": {
+   "alerted": true,
+   "end": "2026-11-21T13:00:00+00:00",
+   "filling_alerted": true,
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-21T05:30:00+00:00",
+   "title": "Fix My Itch Buildathon: Razorpay Rize x AILC",
+   "url": "https://luma.com/iydarfi9"
   },
   "meetup:312819340": {
    "alerted": false,
@@ -761,7 +787,7 @@
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-18",
    "queued": false,
    "reg_deadline": null,
    "source": "meetup",
@@ -1590,7 +1616,7 @@
   },
   "unstop:1814263": {
    "alerted": false,
-   "end": "2026-12-28T17:00:00+05:30",
+   "end": "2026-11-28T17:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-18",
    "last_seen": "2026-11-18",
@@ -1600,6 +1626,19 @@
    "start": null,
    "title": "Silicon Sprint 2026",
    "url": "https://unstop.com/hackathons/silicon-sprint-2026-nitk-surathkal-1814263"
+  },
+  "unstop:1817389": {
+   "alerted": false,
+   "end": "2026-12-04T12:30:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "queued": true,
+   "reg_deadline": "2026-12-04T12:30:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "PromptWars x Quad Bengaluru",
+   "url": "https://unstop.com/hackathons/promptwars-x-quad-bengaluru-quad-ai-school-of-technology-management-1817389"
   }
  },
  "fps": {
@@ -1664,7 +1703,9 @@
   "engineering ai conversation speed|2026-11-29": "meetup:317407265",
   "festive hacks win trip to berlin|2026-11-25": "luma:evt-jsEZNTP7d8PrwUy",
   "fifth elephant winter edition 2026 discover new ideas networks|2026-12-04": "hasgeek:fifthelephant/winter-2026",
+  "fix my itch buildathon razorpay rize ailc|2026-11-21": "luma:evt-zlHaYsMS7AsvDKJ",
   "flutter meetup|2026-11-19": "gdg:google-gdg-bangalore-presents-flutter-meetup",
+  "founders day|2026-12-19": "luma:evt-uNz78DPtI4jBBe8",
   "galuxium nexus v3 global ai autonomous systems venture saas championship|2027-07-31": "unstop:1800395",
   "gen ai product hackathon|2026-11-21": "unstop:1799510",
   "grpconf india 2026|2026-11-18": "meetup:316908482",
@@ -1701,6 +1742,7 @@
   "person polyglot day inferring ai|2026-11-21": "meetup:317201934",
   "product mixer 4 product reactor|2026-12-05": "luma:evt-1J5sVzP9ZLKuQ0C",
   "prompt to product|2026-11-19": "unstop:1771961",
+  "promptwars quad|2026-12-04": "unstop:1817389",
   "qff 2026 hands on quantum programming qiskit|2026-11-16": "luma:evt-iPAqBamDHLcZJUH",
   "quarterly large scale production engineering lspe meet up|2026-12-12": "meetup:313629005",
   "rewired tech hackathon|2026-11-16": "unstop:1802400",
@@ -1708,6 +1750,7 @@
   "rewired tech hackathon|2026-11-18": "unstop:1802400",
   "rootconf 2026 annual conference platforms ai ai platforms|2026-11-20": "hasgeek:rootconf/2026",
   "seed hackathon 2026|2026-12-22": "unstop:1798287",
+  "silicon sprint 2026|2026-11-28": "unstop:1814263",
   "silicon sprint 2026|2026-12-28": "unstop:1814263",
   "starforge 24 hour national level hackathon|2026-12-13": "unstop:1773675",
   "superr selector season 2 help shape rajasthan royals ipl 2027 auction strategy|2026-12-07": "unstop:1792758",
@@ -1755,6 +1798,35 @@
    "when": "2026-12-02T12:00:00+00:00",
    "when_label": "Wed 2 Dec · 17:30 IST",
    "where": "THE HUMMING TREE, Bengaluru"
+  },
+  {
+   "category": "Big-tech & networking",
+   "id": "luma:evt-uNz78DPtI4jBBe8",
+   "reasons": [
+    "tech event in Bangalore",
+    "full — waitlist only"
+   ],
+   "score": 10.0,
+   "source": "luma",
+   "title": "Founders Day",
+   "url": "https://luma.com/f1ru037d",
+   "when": "2026-12-19T08:30:00+00:00",
+   "when_label": "Sat 19 Dec · 14:00 IST",
+   "where": "Awfis Prestige DotCom, Bengaluru"
+  },
+  {
+   "category": "Hackathons",
+   "id": "unstop:1817389",
+   "reasons": [
+    "hackathon, ₹20,000 prizes"
+   ],
+   "score": 6.0,
+   "source": "unstop",
+   "title": "PromptWars x Quad Bengaluru",
+   "url": "https://unstop.com/hackathons/promptwars-x-quad-bengaluru-quad-ai-school-of-technology-management-1817389",
+   "when": "2026-12-04T12:30:00+05:30",
+   "when_label": "apply by Fri 4 Dec",
+   "where": "Quad AI School of Technology and Business, Bangalore"
   }
  ],
  "reminders": {},
