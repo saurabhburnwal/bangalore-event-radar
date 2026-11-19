@@ -1797,37 +1797,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1817798",
-   "reasons": [
-    "internship mentioned",
-    "swag"
-   ],
-   "score": 35.0,
-   "source": "unstop",
-   "title": "AI Kaushal Hackathon 2026",
-   "url": "https://unstop.com/hackathons/ai-kaushal-hackathon-2026-indian-institute-of-information-technology-iiit-lucknow-1817798",
-   "when": "2026-12-09T19:00:00+05:30",
-   "when_label": "apply by Fri 20 Nov",
-   "where": "Indian Institute of Information Technology (IIIT) Lucknow (hybrid)"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-5L5Oul6Hej5cuBY",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Demo Nights: AI, SaaS & Deeptech Only",
-   "url": "https://luma.com/92nnn8kb",
-   "when": "2026-11-21T12:30:00+00:00",
-   "when_label": "Sat 21 Nov · 18:00 IST",
-   "where": "Enzyme HSR 17 - Coworking Office Space near me - Bangalore, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
