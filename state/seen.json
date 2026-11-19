@@ -37,6 +37,12 @@
     "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
     "prize_inr": 0
    },
+   "diversion2k27": {
+    "city": "Bidhannagar",
+    "desc": "The City Is Yours. The Game Is Ours. # **Diversion 2K27: Grand Theft Kolkata** **Diversion 2K27**, the annual hackathon organized by the **IEM-ACM Student Chapter**, returns with a new mission, a bolder vision, and a city ready to be reimagined. Inspired by the high-octane universe of **GTA VI**, this edition transforms Kolkata into an alternate reality where ambition fuels the chaos, technology drives the action, and every idea has the power to change the game. From neon-lit streets to futuristic skylines, the City of Joy becomes an open world built for creators, innovators, and digital rebels. More than a hackathon, **Diversion 2K27 is an open-world experience** where imagination knows no boundaries. From Artificial Intelligence and Web Development to Web3, AR/VR, and Cloud Computing, participants will turn unconventional ideas into extraordinary creations. At Diversion 2K27, it's time to: - ***Explore*** – Discover new frontiers and push beyond the limits of technology. - ***Build*** – Transform bold ideas into groundbreaking solutions. - ***Collaborate*** – Assemble your crew and create something legendary. - ***Conquer*** – Take on challenges, outplay the competition, and make",
+    "location": "IEM Gurukul Building, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal, India",
+    "prize_inr": 48400
+   },
    "doubleslash5": {
     "city": "Bidhannagar",
     "desc": "Code. Commit. Push. IEEE Jadavpur University Student Branch Presents the 5th edition of our flagship hackathon - doubleSlash 5.0. Whether you are just a beginner, or a seasoned developer, // 5.0 provides you with one of the best hackathon environments, in one of the most premier institutes of the country. Register Now!",
@@ -108,12 +114,6 @@
     "desc": "Nerve to Innovate **Innerve 11** stands as **India’s Largest Student-Driven Hackathon**, proudly organized by the AIT Open Source Software Club at the prestigious **Army Institute of Technology (AIT), Pune**. This flagship innovation festival is dedicated to fueling creativity, empowering problem-solving, and fostering collaboration among the brightest student innovators across the country — all with **zero registration fees** to ensure open participation. > **Event Stages** **24-Hour Grand Finale Hackathon** January 29–30, 2027 Participants will pitch their ideas, refine them with mentor support, and battle it out in the intense 24-hour finale to build impactful, real-world solutions. > **Prize Pool** Innerve 11 boasts an extraordinary **₹12,00,000+ prize pool**, offering: - Cash prizes for the top-performing teams - Premium merchandise and exclusive Innerve goodies - Special sponsor-provided benefits, credits, and services - Additional cash rewards for solving **Custom Sponsor Problem Statements**, worth up to **₹15,000 each** > **Themes & Challenges** This edition features **nine exciting themes**, including two newly introduced domains, empowering participants to innovate acros",
     "location": "Army Institute of Technology, Alandi Road, Dighi, Pune, Maharashtra, India",
     "prize_inr": 263646
-   },
-   "lean-in-hacks-8": {
-    "city": "",
-    "desc": "Lean In IGDTUW's Flagship Hackathon > Lean In Hacks is an **annual flagship hackathon of Lean In IGDTUW** - the first chapter of Lean In India. Lean In Hacks is a **beginner-friendly hackathon** and has a place for everyone wanting to learn, build, share, and grow in their lives through their unique ideas. Our hackathon journey started in 2020 when we conducted the first edition of Lean In Hacks to give grounds to new thoughts and tools to animate the imaginative and critical thinking side of developers. This time, **hackers from any college** can participate in our hackathon, which will be held in **hybrid mode**. The only requirement is to have **at least 1 female in your team**! Hackers will be given the **weekend to build their product online** and the **top teams will be given a chance to pitch in the offline mode**. **Themes**: 1. Open Innovation 2. Sustainable Development Goals 3. Emerging Technologies As a beginner-friendly hackathon, we offer a dedicated **Beginner’s Track** exclusively for first-time hackers. This track is designed as an **ideathon** for **first-year students**, aimed at fostering innovative thinking, creativity, and confidence in problem-solving.",
-    "location": "",
-    "prize_inr": 0
    },
    "makerspark": {
     "city": "Thiruvananthapuram",
@@ -248,6 +248,19 @@
    "start": "2026-12-04T00:00:00+05:30",
    "title": "The Fifth Elephant Winter Edition 2026: Discover new ideas and networks",
    "url": "https://hasgeek.com/fifthelephant/winter-2026/"
+  },
+  "hasgeek:fifthelephant/winter-2027": {
+   "alerted": false,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "hasgeek",
+   "start": "2027-01-22T00:00:00+05:30",
+   "title": "The Fifth Elephant Winter Edition 2026: Discover new ideas and networks",
+   "url": "https://hasgeek.com/fifthelephant/winter-2027/"
   },
   "hasgeek:rootconf/2026": {
    "alerted": false,
@@ -404,19 +417,6 @@
    "start": "2026-11-15T06:30:00+00:00",
    "title": "CyberSwaraj: Digital Privacy for Beginners",
    "url": "https://luma.com/guz9u3ic"
-  },
-  "luma:evt-DxgH5tHs2duJfZX": {
-   "alerted": true,
-   "end": "2026-11-12T13:30:00+00:00",
-   "filling_alerted": true,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-12",
-   "queued": false,
-   "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-12T11:30:00+00:00",
-   "title": "Climate Mixer: Meet the Founders & Investors working in Deep-Tech",
-   "url": "https://luma.com/05bi094k"
   },
   "luma:evt-J3UzHnRZ16HT1ue": {
    "alerted": false,
@@ -876,7 +876,7 @@
   "meetup:317316737": {
    "alerted": true,
    "end": "2026-11-21T08:00:00+00:00",
-   "filling_alerted": false,
+   "filling_alerted": true,
    "first_seen": "2026-11-17",
    "last_seen": "2026-11-19",
    "queued": true,
@@ -1536,6 +1536,19 @@
    "title": "Code to Cart: AI x E-commerce Hackathon | KartAI X CodeXcelerate",
    "url": "https://unstop.com/hackathons/code-to-cart-ai-x-e-commerce-hackathon-kartai-x-codexcelerate-kartai-1803912"
   },
+  "unstop:1806016": {
+   "alerted": false,
+   "end": "2027-01-31T09:00:04+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": true,
+   "reg_deadline": "2026-12-05T22:00:36+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Incursion 2027 24-Hour National Level Hackathon",
+   "url": "https://unstop.com/hackathons/incursion-2027-24-hour-national-level-hackathon-dr-dy-patil-institute-of-technology-1806016"
+  },
   "unstop:1806122": {
    "alerted": false,
    "end": "2026-12-15T23:59:00+05:30",
@@ -1640,6 +1653,19 @@
    "title": "PromptWars x Quad Bengaluru",
    "url": "https://unstop.com/hackathons/promptwars-x-quad-bengaluru-quad-ai-school-of-technology-management-1817389"
   },
+  "unstop:1817737": {
+   "alerted": true,
+   "end": "2026-12-13T09:50:44+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": false,
+   "reg_deadline": "2026-12-03T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "CodeWarriors India 2026 - National Hackathon",
+   "url": "https://unstop.com/hackathons/codewarriors-india-2026-national-hackathon-buildx-1817737"
+  },
   "unstop:1817749": {
    "alerted": true,
    "end": "2026-12-13T10:00:00+05:30",
@@ -1665,6 +1691,32 @@
    "start": null,
    "title": "AI Kaushal Hackathon 2026",
    "url": "https://unstop.com/hackathons/ai-kaushal-hackathon-2026-indian-institute-of-information-technology-iiit-lucknow-1817798"
+  },
+  "unstop:1818968": {
+   "alerted": false,
+   "end": "2026-11-30T00:00:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": true,
+   "reg_deadline": "2026-11-30T00:00:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Campus to Cloud Hackathon",
+   "url": "https://unstop.com/hackathons/campus-to-cloud-hackathon-iit-bombay-1818968"
+  },
+  "unstop:1819296": {
+   "alerted": true,
+   "end": "2026-12-18T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": false,
+   "reg_deadline": "2026-11-19T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "TrueFoundry Forge-a-thon | Techfest, IIT Bombay 2026-27",
+   "url": "https://unstop.com/hackathons/truefoundry-forge-a-thon-techfest-iit-bombay-2026-27-techfest-iit-bombay-1819296"
   }
  },
  "fps": {
@@ -1698,6 +1750,7 @@
   "buildsprint|2026-11-15": "unstop:1794884",
   "buildsprint|2026-11-16": "unstop:1794884",
   "buildsprint|2026-11-17": "unstop:1794884",
+  "campus to cloud hackathon|2026-11-30": "unstop:1818968",
   "capture flag|2026-11-19": "unstop:1771958",
   "cashfree sarvam ai buildathon|2026-11-21": "luma:evt-WrdP7YutOwMDZH6",
   "catalyst solo ai hackathon|2026-11-15": "unstop:1771798",
@@ -1705,7 +1758,6 @@
   "civo navigate india conference free tickets|2026-11-24": "meetup:317343432",
   "civo navigate india|2026-11-24": "meetup:314690444",
   "claude builder day maximizing margins|2026-11-17": "luma:evt-pGe0gJigKoqRCCX",
-  "climate mixer meet founders investors working deep tech|2026-11-12": "luma:evt-DxgH5tHs2duJfZX",
   "codathon 1 global coding contest|2027-01-09": "unstop:1811016",
   "code relay 5 0|2027-01-17": "unstop:1810370",
   "code to cart ai e commerce hackathon kartai codexcelerate|2026-11-29": "unstop:1803912",
@@ -1714,6 +1766,7 @@
   "codeelitepune hack pune|2026-12-17": "unstop:1794522",
   "codered 26|2026-12-29": "unstop:1810268",
   "codeunited india national hackathon|2026-12-13": "unstop:1817749",
+  "codewarriors india 2026 national hackathon|2026-12-13": "unstop:1817737",
   "competitive programming|2026-11-20": "unstop:1771951",
   "computer conversations buildathon|2026-12-01": "luma:evt-k8TvzmESezXiJbO",
   "configure 2026 mobility hackathon|2026-11-26": "unstop:1811085",
@@ -1732,6 +1785,7 @@
   "engineering ai conversation speed|2026-11-29": "meetup:317407265",
   "festive hacks win trip to berlin|2026-11-25": "luma:evt-jsEZNTP7d8PrwUy",
   "fifth elephant winter edition 2026 discover new ideas networks|2026-12-04": "hasgeek:fifthelephant/winter-2026",
+  "fifth elephant winter edition 2026 discover new ideas networks|2027-01-22": "hasgeek:fifthelephant/winter-2027",
   "fix my itch buildathon razorpay rize ailc|2026-11-21": "luma:evt-zlHaYsMS7AsvDKJ",
   "flutter meetup|2026-11-19": "gdg:google-gdg-bangalore-presents-flutter-meetup",
   "founders day|2026-12-19": "luma:evt-uNz78DPtI4jBBe8",
@@ -1747,6 +1801,7 @@
   "housing fintech challenge|2026-11-23": "unstop:1802169",
   "ideathon futurex innovating global challenges|2026-12-19": "unstop:1803074",
   "inceptrix 3 0|2027-02-20": "unstop:1794479",
+  "incursion 2027 24 hour national level hackathon|2027-01-31": "unstop:1806016",
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
   "k hacks 4 0|2026-12-18": "unstop:1772496",
   "ksug ai india 12 cloud native ai unlocked hpe|2026-11-21": "meetup:316324548",
@@ -1786,6 +1841,7 @@
   "tech expo 2027|2027-01-29": "unstop:1771511",
   "trivora|2026-11-23": "unstop:1760462",
   "trivora|2026-12-02": "unstop:1760462",
+  "truefoundry forge thon techfest iit bombay 2026 27|2026-12-18": "unstop:1819296",
   "turing india ai frontier|2026-12-02": "luma:evt-9zW743D6VNcSYrQ",
   "unbundling ai enterprise financial services|2026-11-30": "luma:evt-jgJ83EMIpIm5L2j",
   "vidyutspanda hardware hackathon|2026-11-20": "unstop:1780955",
@@ -1797,7 +1853,50 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1818968",
+   "reasons": [
+    "₹1,50,000 prize pool"
+   ],
+   "score": 12.5,
+   "source": "unstop",
+   "title": "Campus to Cloud Hackathon",
+   "url": "https://unstop.com/hackathons/campus-to-cloud-hackathon-iit-bombay-1818968",
+   "when": "2026-11-30T00:00:00+05:30",
+   "when_label": "apply by Mon 30 Nov",
+   "where": "Online"
+  },
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1806016",
+   "reasons": [
+    "₹2,00,000 prize pool"
+   ],
+   "score": 15.0,
+   "source": "unstop",
+   "title": "Incursion 2027 24-Hour National Level Hackathon",
+   "url": "https://unstop.com/hackathons/incursion-2027-24-hour-national-level-hackathon-dr-dy-patil-institute-of-technology-1806016",
+   "when": "2027-01-31T09:00:04+05:30",
+   "when_label": "apply by Sat 5 Dec",
+   "where": "Dr. D. Y. Patil Institute of Technology, Pune (hybrid)"
+  },
+  {
+   "category": "Other events",
+   "id": "hasgeek:fifthelephant/winter-2027",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "hasgeek",
+   "title": "The Fifth Elephant Winter Edition 2026: Discover new ideas and networks",
+   "url": "https://hasgeek.com/fifthelephant/winter-2027/",
+   "when": "2027-01-22T00:00:00+05:30",
+   "when_label": "Fri 22 Jan",
+   "where": "The Energy Resources Institute (TERI), Bangalore & hybrid (hybrid)"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
