@@ -340,6 +340,19 @@
    "title": "The Model Shift : Software Factory Edition",
    "url": "https://luma.com/6tgm6d8u"
   },
+  "luma:evt-5L5Oul6Hej5cuBY": {
+   "alerted": false,
+   "end": "2026-11-21T14:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-21T12:30:00+00:00",
+   "title": "Demo Nights: AI, SaaS & Deeptech Only",
+   "url": "https://luma.com/92nnn8kb"
+  },
   "luma:evt-6AgD8sIZmDs3MEa": {
    "alerted": false,
    "end": "2026-11-28T13:30:00+00:00",
@@ -508,6 +521,19 @@
    "start": "2026-11-16T04:30:00+00:00",
    "title": "QFF 2026: Hands-On Quantum Programming with Qiskit",
    "url": "https://luma.com/79i0vamg"
+  },
+  "luma:evt-jDWwvEe0lr7H3q4": {
+   "alerted": true,
+   "end": "2026-11-20T14:00:00+00:00",
+   "filling_alerted": true,
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-20T13:00:00+00:00",
+   "title": "Deep-Tech Fridays by Java Capital",
+   "url": "https://luma.com/0az9iddk"
   },
   "luma:evt-jgJ83EMIpIm5L2j": {
    "alerted": false,
@@ -1695,7 +1721,9 @@
   "datanova 2026 global data thon 1 7 lakh prize money|2026-11-25": "unstop:1769646",
   "december 2026 rustacean meetup december 2026 rustacean meetup|2026-12-12": "hasgeek:rustbangalore/december-2026-rustacean-meetup",
   "decodex 26 enter mission decode unknown|2026-11-28": "unstop:1794529",
+  "deep tech fridays by java capital|2026-11-20": "luma:evt-jDWwvEe0lr7H3q4",
   "defy 27|2026-12-15": "unstop:1806122",
+  "demo nights ai saas deeptech only|2026-11-21": "luma:evt-5L5Oul6Hej5cuBY",
   "design school s2 ai took my brief not my job|2026-11-14": "luma:evt-r5VyzmWQX201tDF",
   "devfest 2026|2026-11-21": "gdg:google-gdg-cloud-bengaluru-presents-devfest-2026",
   "devfest 2026|2026-12-05": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
@@ -1784,6 +1812,20 @@
    "when": "2026-12-09T19:00:00+05:30",
    "when_label": "apply by Fri 20 Nov",
    "where": "Indian Institute of Information Technology (IIIT) Lucknow (hybrid)"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-5L5Oul6Hej5cuBY",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "Demo Nights: AI, SaaS & Deeptech Only",
+   "url": "https://luma.com/92nnn8kb",
+   "when": "2026-11-21T12:30:00+00:00",
+   "when_label": "Sat 21 Nov · 18:00 IST",
+   "where": "Enzyme HSR 17 - Coworking Office Space near me - Bangalore, Bengaluru"
   }
  ],
  "reminders": {},
