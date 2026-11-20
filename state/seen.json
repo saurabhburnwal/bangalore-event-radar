@@ -722,7 +722,7 @@
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "queued": false,
    "reg_deadline": null,
    "source": "meetup",
@@ -874,9 +874,9 @@
    "url": "https://www.meetup.com/aws-sbg-at-jss-academy-of-technical-education-bengaluru/events/317235816/"
   },
   "meetup:317281461": {
-   "alerted": false,
+   "alerted": true,
    "end": null,
-   "filling_alerted": false,
+   "filling_alerted": true,
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-20",
    "queued": true,
@@ -1738,7 +1738,7 @@
    "first_seen": "2026-11-19",
    "last_seen": "2026-11-20",
    "queued": true,
-   "reg_deadline": "2026-11-20T23:59:44+05:30",
+   "reg_deadline": "2026-11-27T23:59:44+05:30",
    "source": "unstop",
    "start": null,
    "title": "AI Kaushal Hackathon 2026",
@@ -1762,13 +1762,26 @@
    "end": "2026-12-18T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "queued": false,
-   "reg_deadline": "2026-11-19T23:59:00+05:30",
+   "reg_deadline": "2026-11-20T23:59:41+05:30",
    "source": "unstop",
    "start": null,
    "title": "TrueFoundry Forge-a-thon | Techfest, IIT Bombay 2026-27",
    "url": "https://unstop.com/hackathons/truefoundry-forge-a-thon-techfest-iit-bombay-2026-27-techfest-iit-bombay-1819296"
+  },
+  "unstop:1820028": {
+   "alerted": false,
+   "end": "2026-12-12T00:00:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-20",
+   "queued": true,
+   "reg_deadline": "2026-12-12T00:00:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Merry Shipmas Bengaluru: Christmas AI Hackathon",
+   "url": "https://unstop.com/hackathons/merry-shipmas-bengaluru-christmas-ai-hackathon-nerdconf-1820028"
   }
  },
  "fps": {
@@ -1866,6 +1879,7 @@
   "lovable builders|2026-12-12": "luma:evt-XozJ4jFTE0z8QzX",
   "madlab ultimate innovation hackathon|2026-11-18": "unstop:1785416",
   "manus fellow event build manus ai quad|2026-11-28": "luma:evt-6AgD8sIZmDs3MEa",
+  "merry shipmas christmas ai hackathon|2026-12-12": "unstop:1820028",
   "model shift software factory edition|2026-11-14": "luma:evt-1nwoKQydC5Nbmv4",
   "myonne national bug bounty challenge 2026|2026-11-28": "unstop:1817686",
   "nextgen ai hackathon|2026-11-21": "unstop:1800891",
@@ -1909,7 +1923,22 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Hackathons",
+   "id": "unstop:1820028",
+   "reasons": [
+    "hackathon"
+   ],
+   "score": 5.0,
+   "source": "unstop",
+   "title": "Merry Shipmas Bengaluru: Christmas AI Hackathon",
+   "url": "https://unstop.com/hackathons/merry-shipmas-bengaluru-christmas-ai-hackathon-nerdconf-1820028",
+   "when": "2026-12-12T00:00:00+05:30",
+   "when_label": "apply by Sat 12 Dec",
+   "where": "Bengaluru, Bangalore (hybrid)"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
