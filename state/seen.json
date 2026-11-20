@@ -140,6 +140,11 @@
     "desc": "Welcome to DevFest Bengaluru 2026 Organised by GDG Bengaluru , where code meets creativity, architectures evolve into possibilities, AI moves from experimentation to implementation, and developers come together to solve problems that matter. DevFest brings together developers, designers, creators, founders, and tech enthusiasts for a day of learning, collaboration, and inspiration. Whether you are exploring the latest in AI, diving into hands-on workshops, exchanging ideas with fellow builders, or discovering new ways to create, there's a space for you here. Whether you are a student taking your first steps into tech, a developer sharpening your skills, a founder exploring your next big idea, or a creator finding new ways to experiment, you don't have to build alone. Three ideas, One community, Endless possibilities. BUILD: Explore emerging technologies, learn from industry experts, and turn what you learn into something real. CONNECT: Meet the people who share your curiosity. Exchange ideas, find collaborators, grow your network, and become part of Bengaluru's vibrant tech community. CREATE: Experiment, express your ideas, discover new perspectives, and create things that make an ",
     "venue": "Google Ananta, Rio Business Park, Mahadevapura Village, Krishnarajapuram Hobli"
    },
+   "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints/": {
+    "city": "Bengaluru",
+    "desc": "In this high-impact Sprint Series presented by Google DeepMind and Google Cloud, you will have dedicated time, mentorship, and cloud resources to build, iterate, and submit your prototypes live.",
+    "venue": "Google Bangalore - Kyoto Campus, Circle"
+   },
    "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-devfest-2026/": {
     "city": "Bengaluru",
     "desc": "DevFest Bengaluru 2026 is back! Connect with cloud practitioners, AI builders, and community leaders to explore cutting-edge developments in Google Cloud, AI, Agent Platform, and scalable architectures. Whether you’re scaling production apps or exploring new frontiers in tech, this is your place to learn and network. 📅 Save the date, spread the word, and stay tuned for more exciting updates! 🔗 Grab your tickets before they are sold out: konfhub.com/devfest-blr-2026",
@@ -178,6 +183,19 @@
    "start": "2026-11-19T13:00:00+00:00",
    "title": "Flutter Meetup",
    "url": "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-flutter-meetup/"
+  },
+  "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints": {
+   "alerted": true,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-20",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "gdg",
+   "start": "2026-11-27T03:30:00+00:00",
+   "title": "Welcome to the Gemini 4 Sprints!",
+   "url": "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints/"
   },
   "gdg:google-gdg-cloud-bengaluru-presents-devfest-2026": {
    "alerted": true,
@@ -1886,6 +1904,7 @@
   "vytron 26 hackathon|2026-11-25": "unstop:1786652",
   "wazuh meetup|2026-11-16": "meetup:316794233",
   "wearedevelopers conference india preday meetup|2026-11-24": "meetup:317356886",
+  "welcome to gemini 4 sprints|2026-11-27": "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints",
   "women systems minds behind machinery|2026-11-28": "hasgeek:bengalurusystemsmeetup/women-in-systems2",
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
