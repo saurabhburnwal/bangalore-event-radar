@@ -31,12 +31,6 @@
     "location": "V V NATU COMPUTER CENTER, SATI Campus, Vidisha, Madhya Pradesh, India",
     "prize_inr": 44000
    },
-   "devnexus2": {
-    "city": "Kolkata",
-    "desc": "Code Through the Night. Build Beyond the Fear. **DEV NEXUS 2.0** is a **36-hour hackathon** where developers, innovators, and problem-solvers come together to build, create, collaborate, and turn ideas into impactful solutions. 📅 **28th–29th November 2026** 📍 **Government College of Engineering and Leather Technology (GCELT), Salt Lake, Kolkata** 🎃 **Organized by the Event Management Group of GCELT** With a Halloween-inspired theme, get ready for **36 hours of coding, creativity, collaboration, and innovation.** 🚀 **How to Participate?** - Register your team through **Devfolio**. - Complete the **PPT submission round** after registration. - Selected teams will be invited to participate in the **offline hackathon round** at GCELT. 💡 **No prototype or working model is required for the PPT submission round!** Just explain your idea thoroughly through a well-structured PPT, highlighting the problem, proposed solution, innovation, and potential impact. 📤 **Submit your PPT here:** https://forms.rynne.live/devnexus2-ppt-submission/c9qjah The night falls. The code awakens. 👻💻 **DEV NEXUS 2.0 — Where ideas become builds.** #DevNexus2 #Hackathon #GCELT #Kolkata #Devfolio #BuildBeyondTheFear",
-    "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
-    "prize_inr": 0
-   },
    "diversion2k27": {
     "city": "Bidhannagar",
     "desc": "The City Is Yours. The Game Is Ours. # **Diversion 2K27: Grand Theft Kolkata** **Diversion 2K27**, the annual hackathon organized by the **IEM-ACM Student Chapter**, returns with a new mission, a bolder vision, and a city ready to be reimagined. Inspired by the high-octane universe of **GTA VI**, this edition transforms Kolkata into an alternate reality where ambition fuels the chaos, technology drives the action, and every idea has the power to change the game. From neon-lit streets to futuristic skylines, the City of Joy becomes an open world built for creators, innovators, and digital rebels. More than a hackathon, **Diversion 2K27 is an open-world experience** where imagination knows no boundaries. From Artificial Intelligence and Web Development to Web3, AR/VR, and Cloud Computing, participants will turn unconventional ideas into extraordinary creations. At Diversion 2K27, it's time to: - ***Explore*** – Discover new frontiers and push beyond the limits of technology. - ***Build*** – Transform bold ideas into groundbreaking solutions. - ***Collaborate*** – Assemble your crew and create something legendary. - ***Conquer*** – Take on challenges, outplay the competition, and make",
@@ -144,11 +138,6 @@
     "city": "Bengaluru",
     "desc": "In this high-impact Sprint Series presented by Google DeepMind and Google Cloud, you will have dedicated time, mentorship, and cloud resources to build, iterate, and submit your prototypes live.",
     "venue": "Google Bangalore - Kyoto Campus, Circle"
-   },
-   "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-devfest-2026/": {
-    "city": "Bengaluru",
-    "desc": "DevFest Bengaluru 2026 is back! Connect with cloud practitioners, AI builders, and community leaders to explore cutting-edge developments in Google Cloud, AI, Agent Platform, and scalable architectures. Whether you’re scaling production apps or exploring new frontiers in tech, this is your place to learn and network. 📅 Save the date, spread the word, and stay tuned for more exciting updates! 🔗 Grab your tickets before they are sold out: konfhub.com/devfest-blr-2026",
-    "venue": "Google Ananta, Rio Business Park, Mahadevapura Village, Krishnarajapuram, Hobli, Bengaluru East, Bengaluru, Karnataka"
    }
   },
   "hackbriven": {},
@@ -1744,6 +1733,19 @@
    "title": "AI Kaushal Hackathon 2026",
    "url": "https://unstop.com/hackathons/ai-kaushal-hackathon-2026-indian-institute-of-information-technology-iiit-lucknow-1817798"
   },
+  "unstop:1818820": {
+   "alerted": false,
+   "end": "2026-12-01T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-21",
+   "last_seen": "2026-11-21",
+   "queued": true,
+   "reg_deadline": "2026-12-01T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Operation Blackout",
+   "url": "https://unstop.com/hackathons/operation-blackout-react-2026-rv-college-of-engineering-rvce-bangalore-1818820"
+  },
   "unstop:1818968": {
    "alerted": false,
    "end": "2026-11-30T00:00:00+05:30",
@@ -1769,6 +1771,19 @@
    "start": null,
    "title": "TrueFoundry Forge-a-thon | Techfest, IIT Bombay 2026-27",
    "url": "https://unstop.com/hackathons/truefoundry-forge-a-thon-techfest-iit-bombay-2026-27-techfest-iit-bombay-1819296"
+  },
+  "unstop:1819682": {
+   "alerted": false,
+   "end": "2026-12-30T09:00:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-21",
+   "last_seen": "2026-11-21",
+   "queued": true,
+   "reg_deadline": "2026-11-23T00:01:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
+   "url": "https://unstop.com/hackathons/bioforge-2026-interdisciplinary-healthcare-innovation-hackathon-dayananda-sagar-college-of-engineering-dsce-b-1819682"
   },
   "unstop:1820028": {
    "alerted": false,
@@ -1832,6 +1847,7 @@
   "aws cloud quest hunt learn build compete|2026-11-21": "meetup:317235816",
   "azure sql user group meeting dec 2026|2026-12-19": "meetup:317510607",
   "bangpypers pathfinder community meetup|2026-11-21": "meetup:312819340",
+  "bioforge 2026 interdisciplinary healthcare innovation hackathon|2026-12-30": "unstop:1819682",
   "bits2wave|2026-11-22": "unstop:1761893",
   "break model then fix it hands on workshop on shrinking open models to fit hardware you have proving they still work|2026-11-22": "hasgeek:rootconf/quantization-workshop",
   "build 2 0|2026-11-21": "hackbriven:build-bengaluru-20",
@@ -1911,6 +1927,7 @@
   "ooty hacks|2026-12-17": "unstop:1768100",
   "open lakehouse ai|2026-11-28": "meetup:317087004",
   "open posibilities unlocked hpe|2026-11-21": "meetup:317107073",
+  "operation blackout|2026-12-01": "unstop:1818820",
   "orbix 48 hour global open innovation hackathon|2026-11-22": "unstop:1780048",
   "person apache kafka meetup nov 2026|2026-11-21": "meetup:317281461",
   "person polyglot day inferring ai|2026-11-21": "meetup:317201934",
@@ -1951,7 +1968,36 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Hackathons",
+   "id": "unstop:1818820",
+   "reasons": [
+    "hackathon, ₹35,000 prizes"
+   ],
+   "score": 6.8,
+   "source": "unstop",
+   "title": "Operation Blackout",
+   "url": "https://unstop.com/hackathons/operation-blackout-react-2026-rv-college-of-engineering-rvce-bangalore-1818820",
+   "when": "2026-12-01T23:59:00+05:30",
+   "when_label": "apply by Tue 1 Dec",
+   "where": "RV College of Engineering, Bangalore Urban (hybrid)"
+  },
+  {
+   "category": "Hackathons",
+   "id": "unstop:1819682",
+   "reasons": [
+    "hackathon"
+   ],
+   "score": 5.0,
+   "source": "unstop",
+   "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
+   "url": "https://unstop.com/hackathons/bioforge-2026-interdisciplinary-healthcare-innovation-hackathon-dayananda-sagar-college-of-engineering-dsce-b-1819682",
+   "when": "2026-12-30T09:00:00+05:30",
+   "when_label": "apply by Mon 23 Nov",
+   "where": "CD SAGAR BUILDING IN DAYANANDA SAGAR COLLEGE OF ENGINEERING, Bangalore Urban (hybrid)"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
