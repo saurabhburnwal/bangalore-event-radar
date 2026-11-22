@@ -407,6 +407,19 @@
    "title": "CyberSwaraj: Digital Privacy for Beginners",
    "url": "https://luma.com/guz9u3ic"
   },
+  "luma:evt-DEB1FjGa1n82xig": {
+   "alerted": false,
+   "end": "2026-11-25T14:00:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-22",
+   "last_seen": "2026-11-22",
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-11-25T13:00:00+00:00",
+   "title": "Steam & Silicon: What the first machine age can teach the AI age",
+   "url": "https://luma.com/0gz2qjfs"
+  },
   "luma:evt-QXK2t1wlF8tDZEl": {
    "alerted": true,
    "end": "2026-11-22T11:30:00+00:00",
@@ -1947,6 +1960,7 @@
   "silicon sprint 2026|2026-12-28": "unstop:1814263",
   "software architects meetup person on 19 december 2026|2026-12-19": "meetup:317478246",
   "starforge 24 hour national level hackathon|2026-12-13": "unstop:1773675",
+  "steam silicon what first machine age can teach ai age|2026-11-25": "luma:evt-DEB1FjGa1n82xig",
   "superr selector season 2 help shape rajasthan royals ipl 2027 auction strategy|2026-12-07": "unstop:1792758",
   "symphony india s flagship voice ai summit|2026-11-20": "luma:evt-AuTOPSeCkgN8qGw",
   "tauras by revat crypto trading hackathon prove your edge then trade it live|2027-03-09": "unstop:1820715",
@@ -1996,6 +2010,20 @@
    "when": "2026-12-30T09:00:00+05:30",
    "when_label": "apply by Mon 23 Nov",
    "where": "CD SAGAR BUILDING IN DAYANANDA SAGAR COLLEGE OF ENGINEERING, Bangalore Urban (hybrid)"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-DEB1FjGa1n82xig",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "score": 5.0,
+   "source": "luma",
+   "title": "Steam & Silicon: What the first machine age can teach the AI age",
+   "url": "https://luma.com/0gz2qjfs",
+   "when": "2026-11-25T13:00:00+00:00",
+   "when_label": "Wed 25 Nov · 18:30 IST",
+   "where": "Binnamangala, Bengaluru"
   }
  ],
  "reminders": {},
