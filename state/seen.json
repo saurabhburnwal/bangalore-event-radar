@@ -1968,50 +1968,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Hackathons",
-   "id": "unstop:1818820",
-   "reasons": [
-    "hackathon, ₹35,000 prizes"
-   ],
-   "score": 6.8,
-   "source": "unstop",
-   "title": "Operation Blackout",
-   "url": "https://unstop.com/hackathons/operation-blackout-react-2026-rv-college-of-engineering-rvce-bangalore-1818820",
-   "when": "2026-12-01T23:59:00+05:30",
-   "when_label": "apply by Tue 1 Dec",
-   "where": "RV College of Engineering, Bangalore Urban (hybrid)"
-  },
-  {
-   "category": "Hackathons",
-   "id": "unstop:1819682",
-   "reasons": [
-    "hackathon"
-   ],
-   "score": 5.0,
-   "source": "unstop",
-   "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
-   "url": "https://unstop.com/hackathons/bioforge-2026-interdisciplinary-healthcare-innovation-hackathon-dayananda-sagar-college-of-engineering-dsce-b-1819682",
-   "when": "2026-12-30T09:00:00+05:30",
-   "when_label": "apply by Mon 23 Nov",
-   "where": "CD SAGAR BUILDING IN DAYANANDA SAGAR COLLEGE OF ENGINEERING, Bangalore Urban (hybrid)"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-DEB1FjGa1n82xig",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "luma",
-   "title": "Steam & Silicon: What the first machine age can teach the AI age",
-   "url": "https://luma.com/0gz2qjfs",
-   "when": "2026-11-25T13:00:00+00:00",
-   "when_label": "Wed 25 Nov · 18:30 IST",
-   "where": "Binnamangala, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
