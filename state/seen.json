@@ -394,19 +394,6 @@
    "title": "Symphony: India's Flagship Voice AI Summit",
    "url": "https://luma.com/670rdx1k"
   },
-  "luma:evt-Bb7RENTilnsCjJR": {
-   "alerted": false,
-   "end": "2026-11-15T09:30:00+00:00",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-15",
-   "queued": true,
-   "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-15T06:30:00+00:00",
-   "title": "CyberSwaraj: Digital Privacy for Beginners",
-   "url": "https://luma.com/guz9u3ic"
-  },
   "luma:evt-DEB1FjGa1n82xig": {
    "alerted": false,
    "end": "2026-11-25T14:00:00+00:00",
@@ -1831,7 +1818,7 @@
    "first_seen": "2026-11-21",
    "last_seen": "2026-11-22",
    "queued": true,
-   "reg_deadline": "2026-11-27T00:01:00+05:30",
+   "reg_deadline": "2026-11-28T00:00:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "ThinCovation 2026",
@@ -1892,7 +1879,6 @@
   "competitive programming|2026-11-20": "unstop:1771951",
   "computer conversations buildathon|2026-12-01": "luma:evt-k8TvzmESezXiJbO",
   "configure 2026 mobility hackathon|2026-11-26": "unstop:1811085",
-  "cyberswaraj digital privacy beginners|2026-11-15": "luma:evt-Bb7RENTilnsCjJR",
   "datanova 2026 global data thon 1 7 lakh prize money|2026-11-25": "unstop:1769646",
   "december 2026 rustacean meetup december 2026 rustacean meetup|2026-12-12": "hasgeek:rustbangalore/december-2026-rustacean-meetup",
   "decodex 26 enter mission decode unknown|2026-11-28": "unstop:1794529",
