@@ -79,6 +79,12 @@
     "location": "K S R College of Engineering, KSR Kalvi Nagar, Tamil Nadu, India",
     "prize_inr": 0
    },
+   "hack2027": {
+    "city": "Chennai",
+    "desc": "Innovate. Build. Disrupt. 24 Hours at SIMATS. **HACK.2027** is the flagship **National-Level 24-Hour Hybrid Hackathon** hosted by **SIMATS Engineering (Saveetha School of Engineering), Chennai**. Designed to bring together 1,000+ student innovators, developers, and problem-solvers from across India, HACK.2027 challenges builders to turn bold ideas into working, real-world prototypes. Whether you are passionate about software engineering, artificial intelligence, hardware & smart systems, or interdisciplinary engineering, HACK.2027 offers a high-energy environment to collaborate, build under pressure, and showcase your technical creativity in front of industry leaders and academic experts. ### Event Dates & Venue * **Finale Dates:** February 18–19, 2027 (24-Hour Offline Hackathon) * **Venue:** SIMATS Engineering (Saveetha School of Engineering), Chennai, Tamil Nadu ### Hackathon Format * **Round 1: Online Idea & PPT Screening (Late January 2027)** Teams register on Devfolio and submit their project proposal / presentation (PPT) outlining the problem statement, proposed architecture, innovation, and feasibility. Submissions are evaluated on originality, technical depth, and real-worl",
+    "location": "Saveetha University, Kanchipuram - Chennai Road, Chennai, Tamil Nadu, India",
+    "prize_inr": 0
+   },
    "hacksprint-3": {
     "city": "",
     "desc": "Build Bold. Ride Beyond. 💬 **WHATSAPP COMMUNITY — JOIN NOW:** https://chat.whatsapp.com/C9gawXXKFtr76gk6YoUe3K # HackSprint 3.0 — Build Bold. Ride Beyond. # 🚀 About the Event **HackSprint 3.0** is a National-Level, 36-Hour Hackathon organized by the Department of Computer Science and Engineering, Karpagam Academy of Higher Education (KAHE), Coimbatore, in collaboration with the **Metaverse Association**. HackSprint 3.0 brings together passionate developers, designers, problem-solvers, and innovators from across India to transform creative ideas into impactful, technology-driven solutions. It provides a platform to experiment with emerging technologies, collaborate with like-minded innovators, and tackle real-world challenges. **Mode:** Online Preliminary Round + Offline Final Round **Final Venue:** Karpagam Academy of Higher Education (KAHE), Coimbatore, Tamil Nadu **Final Hackathon Duration:** 36 Hours **Application Deadline:** 28 December 2026 📢 **PPT Submission Template:** Will be announced soon! # 🛠️ How It Works ## Round 1: Online Idea Submission & Screening The first round will be conducted online. Interested teams must submit a **PowerPoint presentation (PPT)** outlining the",
@@ -121,10 +127,10 @@
     "location": "Chitkara University, Rajpura, Punjab, India",
     "prize_inr": 0
    },
-   "woc6": {
-    "city": "",
-    "desc": "Make every commit, every contribution count this winter! **Winter of Code 6.0** is a three-month-long open-source initiative organised by **Google Developer Groups on Campus IIIT Kalyani**, bringing together developers, designers, and tech enthusiasts. Building on the success of its previous edition, which witnessed **5,000+ participants**, WOC 6.0 offers an opportunity to explore open source through real-world projects, mentorship, and collaboration. Inspired by the contribution-driven model of **Google Summer of Code (GSoC)**, participants get to engage with open-source organisations, connect with experienced mentors, and contribute to projects that make a difference. Whether you're a first-time contributor or an experienced developer, this is your chance to go beyond tutorials, collaborate with the open-source community, and build something that matters. **Find your project, make your first contribution, and turn this winter into a milestone in your developer journey. The world of open source is waiting. Are you ready to contribute?**",
-    "location": "",
+   "touch-some-grass": {
+    "city": "Chennai",
+    "desc": "Touch grass. Touch hardware. Ship it. # TOUCH SOME GRASS ### Touch Grass. Touch Hardware. Ship it. We're taking innovation out of the usual coding environment. **TOUCH SOME GRASS** is a Hardware and AI Embedded Systems Hackathon, challenging builders, engineers, designers and innovators to step beyond conventional software development and create solutions that interact with the real world. From intelligent machines and connected devices to AI-powered systems and unconventional hardware innovations, this is where ideas move beyond screens and become something tangible. Forget building just another application. Think about the problems around you. Experiment with technology. Combine hardware, software and intelligence to create something that actually makes a difference. ### WHAT'S THE CHALLENGE? Explore the intersection of hardware, artificial intelligence and real-world problem-solving. Push boundaries, experiment with emerging technologies, and turn ambitious ideas into functional prototypes. Whether you're passionate about robotics, AI/ML, embedded systems, IoT or unconventional engineering, there's room to experiment, innovate and build. ### WHAT TO EXPECT - **Build from Scratch",
+    "location": "Chennai, Tamil Nadu, India",
     "prize_inr": 0
    }
   },
@@ -471,19 +477,6 @@
    "start": "2026-12-12T05:30:00+00:00",
    "title": "Lovable Builders",
    "url": "https://luma.com/1mjcegf0"
-  },
-  "luma:evt-ZxZ77Oo38o5xJ4s": {
-   "alerted": false,
-   "end": "2026-11-15T11:30:00+00:00",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-15",
-   "queued": true,
-   "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-15T06:30:00+00:00",
-   "title": "Build Out Loud: A Wispr Flow × Bolna Hackathon",
-   "url": "https://luma.com/1a2rjj9r"
   },
   "luma:evt-iPAqBamDHLcZJUH": {
    "alerted": false,
@@ -1069,19 +1062,6 @@
    "start": null,
    "title": "Tech Expo 2027",
    "url": "https://unstop.com/hackathons/tech-expo-2027-parul-university-pu-vadodara-1771511"
-  },
-  "unstop:1771798": {
-   "alerted": true,
-   "end": "2026-11-15T19:30:00+05:30",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-13",
-   "queued": false,
-   "reg_deadline": "2026-11-14T00:00:00+05:30",
-   "source": "unstop",
-   "start": null,
-   "title": "Catalyst - Solo AI Hackathon",
-   "url": "https://unstop.com/hackathons/catalyst-solo-ai-hackathon-makers-need-more-mnm-1771798"
   },
   "unstop:1771951": {
    "alerted": false,
@@ -1779,7 +1759,7 @@
    "first_seen": "2026-11-21",
    "last_seen": "2026-11-22",
    "queued": true,
-   "reg_deadline": "2026-11-23T12:01:00+05:30",
+   "reg_deadline": "2026-11-24T12:01:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
@@ -1823,6 +1803,19 @@
    "start": null,
    "title": "ThinCovation 2026",
    "url": "https://unstop.com/hackathons/thincovation-2026-thincovation-2026-mdi-1821962"
+  },
+  "unstop:1822209": {
+   "alerted": false,
+   "end": "2026-11-26T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-22",
+   "last_seen": "2026-11-22",
+   "queued": true,
+   "reg_deadline": "2026-11-26T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "IIT Bombay Physical AI Hackathon",
+   "url": "https://unstop.com/hackathons/iit-bombay-physical-ai-hackathon-iit-bombay-1822209"
   }
  },
  "fps": {
@@ -1853,7 +1846,6 @@
   "build 2 0|2026-11-21": "hackbriven:build-bengaluru-20",
   "build 2 rise 2026|2026-11-18": "unstop:1775217",
   "build agora 2026 voice ai hackathon|2026-11-21": "luma:evt-otcsiN53fUACzUG",
-  "build out loud wispr flow bolna hackathon|2026-11-15": "luma:evt-ZxZ77Oo38o5xJ4s",
   "building ai agents on production ready data|2026-12-05": "meetup:317450486",
   "buildsprint|2026-11-15": "unstop:1794884",
   "buildsprint|2026-11-16": "unstop:1794884",
@@ -1861,7 +1853,6 @@
   "campus to cloud hackathon|2026-11-30": "unstop:1818968",
   "capture flag|2026-11-19": "unstop:1771958",
   "cashfree sarvam ai buildathon|2026-11-21": "luma:evt-WrdP7YutOwMDZH6",
-  "catalyst solo ai hackathon|2026-11-15": "unstop:1771798",
   "chaos engineering stateful applications on kubernetes hands on workshop on testing failover recovery data durability postgresql on kubernetes|2026-11-28": "hasgeek:rootconf/chaos-engineering-workshop",
   "circuitx|2026-12-20": "unstop:1811526",
   "civo navigate india conference free tickets|2026-11-24": "meetup:317343432",
@@ -1907,6 +1898,7 @@
   "hackz 26|2027-01-30": "unstop:1776729",
   "housing fintech challenge|2026-11-23": "unstop:1802169",
   "ideathon futurex innovating global challenges|2026-12-19": "unstop:1803074",
+  "iit bombay physical ai hackathon|2026-11-26": "unstop:1822209",
   "inceptrix 3 0|2027-02-20": "unstop:1794479",
   "incursion 2027 24 hour national level hackathon|2027-01-31": "unstop:1806016",
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
@@ -1968,7 +1960,22 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1822209",
+   "reasons": [
+    "₹1,50,000 prize pool"
+   ],
+   "score": 12.5,
+   "source": "unstop",
+   "title": "IIT Bombay Physical AI Hackathon",
+   "url": "https://unstop.com/hackathons/iit-bombay-physical-ai-hackathon-iit-bombay-1822209",
+   "when": "2026-11-26T23:59:00+05:30",
+   "when_label": "apply by Thu 26 Nov",
+   "where": "IIT Bombay, Mumbai (hybrid)"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
