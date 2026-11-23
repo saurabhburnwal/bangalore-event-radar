@@ -1960,22 +1960,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1822209",
-   "reasons": [
-    "₹1,50,000 prize pool"
-   ],
-   "score": 12.5,
-   "source": "unstop",
-   "title": "IIT Bombay Physical AI Hackathon",
-   "url": "https://unstop.com/hackathons/iit-bombay-physical-ai-hackathon-iit-bombay-1822209",
-   "when": "2026-11-26T23:59:00+05:30",
-   "when_label": "apply by Thu 26 Nov",
-   "where": "IIT Bombay, Mumbai (hybrid)"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
