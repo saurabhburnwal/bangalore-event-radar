@@ -109,6 +109,12 @@
     "location": "Army Institute of Technology, Alandi Road, Dighi, Pune, Maharashtra, India",
     "prize_inr": 263646
    },
+   "makeathon-9": {
+    "city": "Patiala",
+    "desc": "One of North-India's largest hackathon Now in its ninth edition, **MAKEATHON 9.0** is the flagship hackathon of the Microsoft Learn Student Chapter. It brings together developers, designers, and problem solvers from across the country to turn ideas into working solutions. Through workshops, mentorship, and a focused 24-hour building experience, participants will explore real-world challenges and demonstrate what they can create together. **Who can participate?** Undergraduate and postgraduate students from all colleges, academic years, and disciplines are welcome. Teams can include students from different colleges and disciplines. A mix of skills in development, design, AI/ML, and databases is encouraged. Each team must choose one problem statement from the officially released list and build a solution that directly addresses it. **Round 1 — Online Screening** Teams must submit: - A project proposal explaining the problem, proposed solution, technical approach, and expected impact. - An implementation plan outlining how the solution will be developed. Submissions will be evaluated on innovation, relevance, feasibility, and clarity. Shortlisted teams will advance to the on-campus ha",
+    "location": "Thapar Institute of Engineering & Technology, Bhadson Road, Patiala, Punjab, India",
+    "prize_inr": 1100000
+   },
    "makerspark": {
     "city": "Thiruvananthapuram",
     "desc": "**MakerSpark** is an 8-hour hardware-only hackathon organized by the **IEEE Sensors Council Kerala Chapter**, in collaboration with **Arduino, Maker Village, and Semicon Keralam**. Hosted at the **Indian Institute of Information Technology and Management–Kerala (IIITM-K), Technopark, Thiruvananthapuram**, the event brings together aspiring innovators, engineers, and technology enthusiasts to transform creative ideas into impactful hardware solutions. Designed to encourage hands-on innovation and practical problem-solving, MakerSpark provides participants with an opportunity to explore the possibilities of embedded systems, sensing technologies, and physical computing. Shortlisted teams will be provided with **Arduino UNO Q boards** to develop and demonstrate their prototypes, fostering an environment of experimentation, collaboration, and technological excellence.",
@@ -119,12 +125,6 @@
     "city": "Rajpura",
     "desc": "24 hours, in person Hackathon. From Bharat to World 🇮🇳→🌍 ## 🚀 Season 5 is cleared for launch. **TecHacks 5.0** is Season 05 of TecHacks: one **24-hour hackathon, fully in person**, on one stage at Chitkara University, Punjab. Form a crew, pick a track and turn an idea into a working solution in one night, in one room. Learn from mentors, meet like-minded builders and pitch to the judges. TecHacks is a hacker community committed to inclusive tech literacy, open-source engagement and industry preparedness. Since 2019 we've helped thousands of builders learn, ship and grow. Season 5 is our first international-standard season, with international institution partner **Deakin University**. It's **free to register**, and first-timers are welcome. ### 🎪 Launch window - 📅 **15–16 January 2027** · 24 hours · fully in person · no online round - 📍 Chitkara University, Chandigarh–Patiala National Highway, Rajpura, Punjab - 👥 Crews of 2–4 (solo? find a crew on our Discord) - ✅ Open to anyone aged 18+, students and working professionals alike - 📝 Registrations close **10 January 2027** ### 🛰️ 7 tracks 🏛️ GovTech · 🤖 Robotics & IoT · 🧠 AI Agents · 🩺 Healthcare · 🌾 Agriculture & Sustainability · 🔐 ",
     "location": "Chitkara University, Rajpura, Punjab, India",
-    "prize_inr": 0
-   },
-   "touch-some-grass": {
-    "city": "Chennai",
-    "desc": "Touch grass. Touch hardware. Ship it. # TOUCH SOME GRASS ### Touch Grass. Touch Hardware. Ship it. We're taking innovation out of the usual coding environment. **TOUCH SOME GRASS** is a Hardware and AI Embedded Systems Hackathon, challenging builders, engineers, designers and innovators to step beyond conventional software development and create solutions that interact with the real world. From intelligent machines and connected devices to AI-powered systems and unconventional hardware innovations, this is where ideas move beyond screens and become something tangible. Forget building just another application. Think about the problems around you. Experiment with technology. Combine hardware, software and intelligence to create something that actually makes a difference. ### WHAT'S THE CHALLENGE? Explore the intersection of hardware, artificial intelligence and real-world problem-solving. Push boundaries, experiment with emerging technologies, and turn ambitious ideas into functional prototypes. Whether you're passionate about robotics, AI/ML, embedded systems, IoT or unconventional engineering, there's room to experiment, innovate and build. ### WHAT TO EXPECT - **Build from Scratch",
-    "location": "Chennai, Tamil Nadu, India",
     "prize_inr": 0
    },
    "woc6": {
@@ -144,6 +144,11 @@
     "city": "Bengaluru",
     "desc": "In this high-impact Sprint Series presented by Google DeepMind and Google Cloud, you will have dedicated time, mentorship, and cloud resources to build, iterate, and submit your prototypes live.",
     "venue": "Google Bangalore - Kyoto Campus, Circle"
+   },
+   "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud/": {
+    "city": "",
+    "desc": "Great ideas belong in production, not just on a slide deck. 🚀 Join Gemini 4 Sprints on November 27, 2026—a full-day hybrid build sprint presented by Google DeepMind and Google Cloud. Build and deploy live AI agents or applications using Google AI Studio or Antigravity. How to apply (Curated spots): 1️⃣ Pick a theme: Finance, Health, Gaming, Education, or Open Innovation / AI for India. 2️⃣ Submit your build idea + a concise 3-slide pitch. Google experts will evaluate all verified submissions over the coming days. Shortlisted teams will receive cool goodies, Google Cloud Credits and Google AI Pro Subscription for 3 months to continue their building journey! 🗓️ Registration Deadline: Nov 24, 2026 (11:59 PM IST) — Shortlisted builders will receive venue details via email. Apply now: https://rsvp.withgoogle.com/events/gemini-sprints?pli=1",
+    "venue": ""
    }
   },
   "hackbriven": {},
@@ -204,6 +209,19 @@
    "start": "2026-11-21T03:00:00+00:00",
    "title": "Devfest 2026",
    "url": "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-devfest-2026/"
+  },
+  "gdg:google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud": {
+   "alerted": true,
+   "end": null,
+   "filling_alerted": false,
+   "first_seen": "2026-11-23",
+   "last_seen": "2026-11-23",
+   "queued": false,
+   "reg_deadline": null,
+   "source": "gdg",
+   "start": "2026-11-27T03:30:00+00:00",
+   "title": "Gemini 4 Sprints by Google DeepMind and Google Cloud",
+   "url": "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud/"
   },
   "hackbriven:build-bengaluru-20": {
    "alerted": false,
@@ -478,19 +496,6 @@
    "title": "Lovable Builders",
    "url": "https://luma.com/1mjcegf0"
   },
-  "luma:evt-iPAqBamDHLcZJUH": {
-   "alerted": false,
-   "end": "2026-11-16T08:30:00+00:00",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-16",
-   "queued": true,
-   "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-16T04:30:00+00:00",
-   "title": "QFF 2026: Hands-On Quantum Programming with Qiskit",
-   "url": "https://luma.com/79i0vamg"
-  },
   "luma:evt-jDWwvEe0lr7H3q4": {
    "alerted": true,
    "end": "2026-11-20T14:00:00+00:00",
@@ -672,19 +677,6 @@
    "start": "2026-11-21T09:00:00+05:30",
    "title": "KSUG.AI India #12 Cloud Native & AI Unlocked @ HPE",
    "url": "https://www.meetup.com/ksug-in/events/316324548/"
-  },
-  "meetup:316794233": {
-   "alerted": false,
-   "end": null,
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-16",
-   "queued": true,
-   "reg_deadline": null,
-   "source": "meetup",
-   "start": "2026-11-16T13:30:00+05:30",
-   "title": "Wazuh MeetUp Bangalore",
-   "url": "https://www.meetup.com/wazuh-meetup-bangalore/events/316794233/"
   },
   "meetup:316908482": {
    "alerted": true,
@@ -1216,7 +1208,7 @@
    "reg_deadline": "2026-11-25T00:00:00+05:30",
    "source": "unstop",
    "start": null,
-   "title": "VYTRON'26 (Hackathon)",
+   "title": "VYTRON'26 Hackathon",
    "url": "https://unstop.com/hackathons/vytron26-droidecks-1786652"
   },
   "unstop:1789431": {
@@ -1759,7 +1751,7 @@
    "first_seen": "2026-11-21",
    "last_seen": "2026-11-23",
    "queued": true,
-   "reg_deadline": "2026-11-24T12:01:00+05:30",
+   "reg_deadline": "2026-11-23T21:00:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
@@ -1791,6 +1783,19 @@
    "title": "Tauras by Revat: Crypto Trading Hackathon | Prove Your Edge, Then Trade It Live",
    "url": "https://unstop.com/hackathons/tauras-by-revat-crypto-trading-hackathon-prove-your-edge-then-trade-it-live-revat-crypto-fund-1820715"
   },
+  "unstop:1820854": {
+   "alerted": false,
+   "end": "2026-12-20T11:00:04+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-23",
+   "last_seen": "2026-11-23",
+   "queued": true,
+   "reg_deadline": "2026-12-08T00:00:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Apex CTF",
+   "url": "https://unstop.com/hackathons/apex-ctf-st-vincent-pallotti-college-of-engineering-and-technology-svpcet-nagpur-1820854"
+  },
   "unstop:1821962": {
    "alerted": false,
    "end": "2026-12-15T23:59:00+05:30",
@@ -1816,6 +1821,19 @@
    "start": null,
    "title": "IIT Bombay Physical AI Hackathon",
    "url": "https://unstop.com/hackathons/iit-bombay-physical-ai-hackathon-iit-bombay-1822209"
+  },
+  "unstop:1823739": {
+   "alerted": true,
+   "end": "2026-12-09T22:00:31+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-23",
+   "last_seen": "2026-11-23",
+   "queued": false,
+   "reg_deadline": "2026-12-07T18:31:47+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "CodeEncoders India 2026 — National Hackathon",
+   "url": "https://unstop.com/hackathons/codeencoders-india-2026-national-hackathon-wecodecoders-1823739"
   }
  },
  "fps": {
@@ -1833,6 +1851,7 @@
   "ai vibeathon 2026 24 hour ai hackathon|2026-12-20": "unstop:1789431",
   "algosstrike|2026-11-28": "unstop:1765493",
   "anna ai os founding builder challenge 2026|2026-11-30": "unstop:1762519",
+  "apex ctf|2026-12-20": "unstop:1820854",
   "architecting resilient agents workflows mcp aws|2026-11-21": "meetup:317316737",
   "arcticathon|2027-01-31": "unstop:1759619",
   "aws cloud quest hunt learn build compete|2026-11-13": "meetup:317235816",
@@ -1864,6 +1883,7 @@
   "codeastra india 2026 national hackathon|2026-12-14": "unstop:1791313",
   "codecrafters india 2026 national hackathon|2026-12-14": "unstop:1792826",
   "codeelitepune hack pune|2026-12-17": "unstop:1794522",
+  "codeencoders india 2026 national hackathon|2026-12-09": "unstop:1823739",
   "codered 26|2026-12-29": "unstop:1810268",
   "codeunited india national hackathon|2026-12-13": "unstop:1817749",
   "codewarriors india 2026 national hackathon|2026-12-13": "unstop:1817737",
@@ -1888,6 +1908,7 @@
   "flutter meetup|2026-11-19": "gdg:google-gdg-bangalore-presents-flutter-meetup",
   "founders day|2026-12-19": "luma:evt-uNz78DPtI4jBBe8",
   "galuxium nexus v3 global ai autonomous systems venture saas championship|2027-07-31": "unstop:1800395",
+  "gemini 4 sprints by google deepmind google cloud|2026-11-27": "gdg:google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud",
   "gen ai product hackathon|2026-11-21": "unstop:1799510",
   "grpconf india 2026|2026-11-18": "meetup:316908482",
   "gtm rewind 2026 what worked what flopped what s next|2026-11-28": "luma:evt-U7GTbfJZwAdOiQO",
@@ -1927,7 +1948,6 @@
   "prompt to product|2026-11-19": "unstop:1771961",
   "promptwars quad|2026-12-04": "unstop:1817389",
   "python meetup|2026-12-19": "meetup:312819341",
-  "qff 2026 hands on quantum programming qiskit|2026-11-16": "luma:evt-iPAqBamDHLcZJUH",
   "quarterly large scale production engineering lspe meet up|2026-12-12": "meetup:313629005",
   "rewired tech hackathon|2026-11-16": "unstop:1802400",
   "rewired tech hackathon|2026-11-17": "unstop:1802400",
@@ -1952,7 +1972,6 @@
   "vidyutspanda hardware hackathon|2026-11-20": "unstop:1780955",
   "vidyutspanda hardware hackathon|2026-11-21": "unstop:1780955",
   "vytron 26 hackathon|2026-11-25": "unstop:1786652",
-  "wazuh meetup|2026-11-16": "meetup:316794233",
   "wearedevelopers conference india preday meetup|2026-11-24": "meetup:317356886",
   "welcome to gemini 4 sprints|2026-11-27": "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints",
   "women automation meet learn delegate lead|2026-12-05": "meetup:317407525",
@@ -1960,7 +1979,23 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [],
+ "queue": [
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1820854",
+   "reasons": [
+    "₹5,00,000 prize pool",
+    "swag"
+   ],
+   "score": 35.0,
+   "source": "unstop",
+   "title": "Apex CTF",
+   "url": "https://unstop.com/hackathons/apex-ctf-st-vincent-pallotti-college-of-engineering-and-technology-svpcet-nagpur-1820854",
+   "when": "2026-12-20T11:00:04+05:30",
+   "when_label": "apply by Tue 8 Dec",
+   "where": "Online"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
