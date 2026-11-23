@@ -13,12 +13,6 @@
     "location": "VIT Chennai, Kelambakkam - Vandalur Road, Chennai, Tamil Nadu, India",
     "prize_inr": 100000
    },
-   "codenmod": {
-    "city": "Tumakur",
-    "desc": "Learn the craft. Build the game. Play your creation. ## About the Event Organized by **32BIT — Game Development Club of Siddaganga Institute of Technology (SIT), Tumakuru**, this one-day, offline event brings together students interested in gaming, programming, game design, and interactive experiences. The event will begin with an engaging morning session featuring guest speakers, discussions, Q&A, and a practical game-development workshop. Participants will get an opportunity to learn from experienced individuals and explore the process of creating games. In the afternoon, participants will take part in an open-format game-development hackathon. There is no fixed theme, so participants can build any type of game using their preferred game engine, programming language, and tools. Participants can compete individually or form teams of up to six members. Games will be evaluated by judges, with prizes awarded to the top three entries. Whether you are an experienced developer, an aspiring game designer, or someone curious about how games are made, this event is an opportunity to learn, experiment, collaborate, and turn ideas into playable experiences. ### Event Highlights - Guest talks",
-    "location": "Siddaganga Institute Of Technology, Chandana Complex, Tumakur, Karnataka, India",
-    "prize_inr": 0
-   },
    "coderave-2": {
     "city": "",
     "desc": "CODE • COLLABORATE • INNOVATE - The SLIET Annual Hackathon. # CODERAVE 2.0 ## National-Level Hybrid Hackathon **Organized by Internwell SLIET Club** **Venue:** Sant Longowal Institute of Engineering and Technology (SLIET), Longowal, Punjab **Mode:** Hybrid — Online (All India) + Offline (SLIET Campus) ### About the Hackathon Coderave 2.0 is a national-level hybrid hackathon designed to bring together innovative minds, passionate developers, designers, and problem-solvers to transform ideas into impactful technology solutions. Organized by Internwell SLIET Club, this edition offers students an opportunity to demonstrate their creativity, technical expertise, teamwork, and problem-solving abilities through a competitive, time-bound development experience. The hackathon welcomes teams from colleges and universities across India through its online participation track, while SLIET students can participate in the offline campus track. Shortlisted teams will present their ideas through PPT pitches, followed by an intensive 24-hour open-source development challenge in which participants will build, test, and demonstrate their solutions. Whether you are interested in web development, app de",
@@ -36,6 +30,12 @@
     "desc": "Code Through the Night. Build Beyond the Fear. **DEV NEXUS 2.0** is a **36-hour hackathon** where developers, innovators, and problem-solvers come together to build, create, collaborate, and turn ideas into impactful solutions. 📅 **28th–29th November 2026** 📍 **Government College of Engineering and Leather Technology (GCELT), Salt Lake, Kolkata** 🎃 **Organized by the Event Management Group of GCELT** With a Halloween-inspired theme, get ready for **36 hours of coding, creativity, collaboration, and innovation.** 🚀 **How to Participate?** - Register your team through **Devfolio**. - Complete the **PPT submission round** after registration. - Selected teams will be invited to participate in the **offline hackathon round** at GCELT. 💡 **No prototype or working model is required for the PPT submission round!** Just explain your idea thoroughly through a well-structured PPT, highlighting the problem, proposed solution, innovation, and potential impact. 📤 **Submit your PPT here:** https://forms.rynne.live/devnexus2-ppt-submission/c9qjah The night falls. The code awakens. 👻💻 **DEV NEXUS 2.0 — Where ideas become builds.** #DevNexus2 #Hackathon #GCELT #Kolkata #Devfolio #BuildBeyondTheFear",
     "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
     "prize_inr": 0
+   },
+   "doubleslash5": {
+    "city": "Bidhannagar",
+    "desc": "Code. Commit. Push. IEEE Jadavpur University Student Branch Presents the 5th edition of our flagship hackathon - doubleSlash 5.0. Whether you are just a beginner, or a seasoned developer, // 5.0 provides you with one of the best hackathon environments, in one of the most premier institutes of the country. Register Now!",
+    "location": "School of Mobile Computing & Communication, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
+    "prize_inr": 48400
    },
    "eclipse": {
     "city": "Patiala",
