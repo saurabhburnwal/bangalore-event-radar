@@ -2019,67 +2019,7 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "initialized": true,
- "queue": [
-  {
-   "category": "Online hackathons",
-   "id": "unstop:1820854",
-   "reasons": [
-    "₹5,00,000 prize pool",
-    "swag"
-   ],
-   "score": 35.0,
-   "source": "unstop",
-   "title": "Apex CTF",
-   "url": "https://unstop.com/hackathons/apex-ctf-st-vincent-pallotti-college-of-engineering-and-technology-svpcet-nagpur-1820854",
-   "when": "2026-12-20T11:00:04+05:30",
-   "when_label": "apply by Tue 8 Dec",
-   "where": "Online"
-  },
-  {
-   "category": "Other events",
-   "id": "meetup:317553352",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "🚀wHACKiest 2026 × CodeRIT × AWS SBG RIT",
-   "url": "https://www.meetup.com/aws-sbg-at-ramaiah-institute-of-technology/events/317553352/",
-   "when": "2026-12-01T09:00:00+05:30",
-   "when_label": "Tue 1 Dec · 09:00 IST",
-   "where": "Ramaiah Institute of Technology, Bengaluru"
-  },
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:317408161",
-   "reasons": [
-    "tech event in Bangalore",
-    "swag",
-    "full — waitlist only"
-   ],
-   "score": 15.0,
-   "source": "meetup",
-   "title": "AI Security: Strategy and Implementation",
-   "url": "https://www.meetup.com/deeptechstars/events/317408161/",
-   "when": "2026-12-05T10:00:00+05:30",
-   "when_label": "Sat 5 Dec · 10:00 IST",
-   "where": "Nokia, Bengaluru"
-  },
-  {
-   "category": "Big-tech & networking",
-   "id": "meetup:317510480",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "score": 5.0,
-   "source": "meetup",
-   "title": "Beyond Vibe Checks: A Hands On Workshop on Evaluating LLM Apps, RAG and Agents",
-   "url": "https://www.meetup.com/devday_bangalore/events/317510480/",
-   "when": "2026-12-12T09:30:00+05:30",
-   "when_label": "Sat 12 Dec · 09:30 IST",
-   "where": "Sahaj Software, Bengaluru"
-  }
- ],
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
