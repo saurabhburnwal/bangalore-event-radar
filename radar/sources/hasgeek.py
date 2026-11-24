@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 
@@ -16,17 +16,25 @@ _DATE = re.compile(r"(\d{1,2})(?:\s+([A-Z][a-z]{2}))?(?:\s+(\d{4}))?")
 
 def parse_date_label(label: str) -> datetime | None:
     """Parse the start date from labels like '20–21 Nov 2026' or '28 Sep 2025–31 Dec 2026'."""
+    return _date_span(label)[0]
+
+
+def _date_span(label: str) -> tuple[datetime | None, datetime | None]:
     parts = re.split(r"\s*[–-]\s*", label)
     end = _DATE.match(parts[-1].strip())
     start = _DATE.match(parts[0].strip())
     if not end or not start or not end.group(2) or not end.group(3):
-        return None
-    month = start.group(2) or end.group(2)
-    year = start.group(3) or end.group(3)
+        return None, None
     try:
-        return datetime(int(year), MONTHS[month], int(start.group(1)), tzinfo=IST)
-    except (KeyError, ValueError):
-        return None
+        last_month = MONTHS[end.group(2)]
+        last_year = int(end.group(3))
+        month = MONTHS[start.group(2)] if start.group(2) else last_month
+        year = int(start.group(3)) if start.group(3) else last_year - (month > last_month)
+        first = datetime(year, month, int(start.group(1)), tzinfo=IST)
+        last = datetime(last_year, last_month, int(end.group(1)), tzinfo=IST)
+        return (first, last + timedelta(days=1)) if first <= last else (None, None)
+    except (KeyError, ValueError, OverflowError):
+        return None, None
 
 
 def parse(page: str) -> list[Event]:
@@ -42,8 +50,9 @@ def parse(page: str) -> list[Event]:
         if not href or not label_el or not title_el or href in seen:
             continue  # cards without a date are calls for proposals, not events
         seen.add(href)
-        label = label_el.get("aria-label", "")
-        place = label.split(",", 1)[1].strip() if "," in label else ""
+        label, _, place = label_el.get("aria-label", "").partition(",")
+        place = place.strip()
+        start, end = _date_span(label)
         loc_el = card.select_one(".card__body__location")
         venue = loc_el.get_text(" ", strip=True) if loc_el else place
         host_el = card.select_one(".profile-avatar-title")
@@ -54,7 +63,8 @@ def parse(page: str) -> list[Event]:
             native_id=href.strip("/"),
             title=title_el.get_text(" ", strip=True),
             url="https://hasgeek.com" + href,
-            start=parse_date_label(label),
+            start=start,
+            end=end,
             city=place,
             venue=venue,
             mode=mode,

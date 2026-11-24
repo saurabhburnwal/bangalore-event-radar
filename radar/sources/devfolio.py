@@ -4,6 +4,7 @@ from __future__ import annotations
 from ..eligibility import round_sentences
 from ..models import Event
 from ..util import html_to_text, next_data, parse_dt
+from .details import cached_detail
 
 LISTING = "https://devfolio.co/hackathons"
 DETAIL = "https://{slug}.devfolio.co/"
@@ -23,12 +24,12 @@ def parse_listing(page: str) -> list[dict]:
     return list(found.values())
 
 
-CACHE_VERSION = 2  # bump when parse_detail starts returning new fields, so cached pages are read again
+CACHE_VERSION = 2
 
 
 def parse_detail(page: str, usd_inr: float = 88) -> dict:
     pp = next_data(page)["props"]["pageProps"]
-    h = pp.get("hackathon") or {}
+    h = pp["hackathon"]
     value = pp.get("aggregatePrizeValue") or 0
     if str(pp.get("aggregatePrizeCurrency") or "").upper() == "USD":
         value *= usd_inr
@@ -82,10 +83,6 @@ def fetch(http, cfg: dict, cache: dict) -> list[Event]:
     events = []
     for h in listing:
         slug = h["slug"]
-        if (cache.get(slug) or {}).get("v") != CACHE_VERSION:
-            try:
-                cache[slug] = parse_detail(http.text(DETAIL.format(slug=slug)), usd)
-            except Exception:
-                cache[slug] = {"v": CACHE_VERSION}  # fetch once; don't hammer a broken page every run
-        events.append(build(h, cache.get(slug) or {}))
+        detail = cached_detail(cache, slug, CACHE_VERSION, lambda: parse_detail(http.text(DETAIL.format(slug=slug)), usd))
+        events.append(build(h, detail))
     return events

@@ -256,11 +256,17 @@ def test_students_of_your_college_phrasing_is_kept(score):
     ("Submit your PPT by 5 Dec; shortlisted teams come to campus.", True),
     ("Applications are reviewed and shortlisted teams will be notified.", False),  # profile review only
     ("Round 1 starts at 10 AM at the venue, Round 2 after lunch.", False),
+    ("Round 1: On-campus qualifier. Round 2: Online pitch.", False),
 ])
 def test_screening_round_phrasings_in_descriptions(score, plan, screened):
     e = ev(source="devfolio", title="Campus Hack", city="Pune", mode="offline", kind="hackathon", tech_source=True,
            prize_inr=200000, team_min=2, team_max=4, description=plan)
     assert (score(e).tier != IGNORE) is screened
+
+
+def test_known_city_takes_precedence_over_the_title(score):
+    e = ev(title="Bangalore Builders Meetup", source="meetup", city="Pune", tech_source=True)
+    assert score(e).tier == IGNORE
 
 
 def test_unstop_round_plan_past_the_description_cut_still_counts(score):

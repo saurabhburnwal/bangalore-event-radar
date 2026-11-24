@@ -5,7 +5,7 @@ import re
 
 from ..eligibility import Round, has_screening, summary
 from ..models import Event
-from ..util import html_to_text, parse_dt
+from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://hackbriven.com/api/events?status=Approved&limit=50&phase={phase}"
 MODES = {"online": "online", "virtual": "online", "hybrid": "hybrid", "in-person": "offline", "offline": "offline"}
@@ -16,19 +16,19 @@ def _prize(breakdown) -> int:
     for p in breakdown or []:
         if isinstance(p, dict):
             for k in ("amount", "cash", "value", "prize"):
-                v = p.get(k)
-                if isinstance(v, (int, float)):
-                    total += int(v)
+                v = parse_int(p.get(k))
+                if v is not None and v >= 0:
+                    total += v
                     break
     return total
 
 
 def _team(label) -> tuple[int | None, int | None]:
     """'Individual' -> (1, 1), '2-4 members' -> (2, 4), '3 members' -> (3, 3)."""
-    s = str(label or "").lower()
+    s = str(label or "")[:200].lower()
     if "individual" in s or "solo" in s:
         return 1, 1
-    nums = [int(n) for n in re.findall(r"\d+", s)][:2]
+    nums = [n for value in re.findall(r"\d+", s) if (n := parse_int(value)) is not None][:2]
     if not nums:
         return None, None
     return nums[0], nums[-1]

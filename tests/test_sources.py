@@ -172,6 +172,7 @@ def test_hasgeek_cards():
     wis = by_title(evs, "Women in Systems")
     assert wis.venue == "Microsoft, Bengaluru" and wis.start.date().isoformat() == "2026-11-28"
     assert by_title(evs, "Sponsor Rootconf").mode == "online"
+    assert wis.end.date().isoformat() == "2026-11-29"
 
 
 def test_hasgeek_date_labels():
@@ -182,6 +183,7 @@ def test_hasgeek_date_labels():
     assert (d.month, d.day) == (11, 20)
     d = p("28 Sep 2025–31 Dec 2026")
     assert (d.year, d.month) == (2025, 9)
+    assert p("30 Dec–2 Jan 2027").year == 2026
 
 
 def test_hackbriven():

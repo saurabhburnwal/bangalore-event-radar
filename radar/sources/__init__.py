@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
 
+from ..http import Http
 from . import devfolio, gdg, hackbriven, hasgeek, luma, meetup, unstop
 
 # Order matters for de-duplication: when two sources list the same event, the earlier one wins.
@@ -20,7 +21,7 @@ SOURCES = {
 MAY_BE_EMPTY = {"gdg", "hackbriven"}
 
 
-def collect(http, cfg: dict, cache: dict) -> dict[str, list | Exception]:
+def collect(cfg: dict, cache: dict) -> dict[str, list | Exception]:
     """Fetch every enabled source in parallel. A failing source returns its exception instead of raising."""
     scfg = cfg.get("sources") or {}
     names = [n for n in SOURCES if (scfg.get(n) or {}).get("enabled", True)]
@@ -31,7 +32,8 @@ def collect(http, cfg: dict, cache: dict) -> dict[str, list | Exception]:
         try:
             sub = dict(scfg.get(name) or {})
             sub.setdefault("usd_inr", cfg.get("scoring", {}).get("usd_inr", 88))
-            return SOURCES[name].fetch(http, sub, cache[name])
+            with Http(name) as http:
+                return SOURCES[name].fetch(http, sub, cache[name])
         except Exception as e:  # noqa: BLE001 - one broken site must never stop the rest
             return e
 

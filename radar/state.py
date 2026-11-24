@@ -6,8 +6,10 @@ so the file — and the repo — only change when something actually happens.
 from __future__ import annotations
 
 import json
+import os
 import re
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 from .models import Event
 from .util import IST, to_iso
@@ -25,6 +27,7 @@ def empty() -> dict:
         "sources": {},    # name -> {"fails": n, "warned": bool, "last_error": str}
         "cache": {},      # per-source detail-page cache (Devfolio city, GDG venue)
         "reminders": {},  # annual-program reminder keys already sent
+        "digest_delivery": {},  # same-day office and deadline rows already delivered
     }
 
 
@@ -52,7 +55,16 @@ def save(path: Path, state: dict) -> bool:
     except FileNotFoundError:
         pass
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(new, encoding="utf-8")
+    f = NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, prefix=f".{path.name}.", delete=False)
+    temp = Path(f.name)
+    try:
+        with f:
+            f.write(new)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temp, path)
+    finally:
+        temp.unlink(missing_ok=True)
     return True
 
 
@@ -112,7 +124,9 @@ def absorb(primary: Event, dup: Event) -> None:
     if dup.kind == "hackathon":
         primary.kind = "hackathon"
     primary.near_capacity = primary.near_capacity or dup.near_capacity
-    primary.extra.setdefault("also_on", []).append(dup.source)
+    listings = primary.extra.setdefault("listing_ids", [])
+    if dup.id not in listings:
+        listings.append(dup.id)
 
 
 def new_record(ev: Event, today: str) -> dict:
@@ -122,6 +136,7 @@ def new_record(ev: Event, today: str) -> dict:
 
 
 def refresh(rec: dict, ev: Event, today: str) -> None:
+    rec["listing_ids"] = sorted({*rec.get("listing_ids", []), ev.id, *ev.extra.get("listing_ids", [])})
     rec.update({
         "title": ev.title,
         "url": ev.url,

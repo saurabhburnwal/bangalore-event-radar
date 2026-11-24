@@ -290,7 +290,7 @@ sources:
 
 alerts:
   max_instant_per_run: 8   # more than this in one run are bundled into a single message
-  source_fail_runs: 6      # warn after this many failed runs in a row (~1 hour)
+  source_fail_runs: 6      # warn after this many failed polls in a row
 
 # Yearly programs that are easy to miss. Dates are approximate — the digest reminds you
 # 14 and 3 days before. Update "opens" (MM-DD) once the official dates are announced.

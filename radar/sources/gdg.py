@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 from ..models import Event
-from ..util import html_to_text, next_data, parse_dt
+from ..util import html_to_text, https_url, next_data, parse_dt
+from .details import cached_detail
 
 BASE = "https://gdg.community.dev"
 
@@ -65,16 +66,14 @@ def fetch(http, cfg: dict, cache: dict) -> list[Event]:
         chapter, upcoming = parse_chapter(http.text(f"{BASE}/{slug}/"))
         for e in upcoming:
             url = e.get("url") or ""
-            if not url:
+            if not isinstance(url, str) or not url:
                 continue
             full = BASE + url if url.startswith("/") else url
+            if not https_url(full, "gdg"):
+                continue
             live.add(full)
-            if full not in cache:
-                try:
-                    cache[full] = parse_detail(http.text(full))
-                except Exception:
-                    cache[full] = {}
-            events.append(build(chapter, e, cache[full]))
+            detail = cached_detail(cache, full, 1, lambda: parse_detail(http.text(full)))
+            events.append(build(chapter, e, detail))
     for k in list(cache):
         if k not in live:
             del cache[k]

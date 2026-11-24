@@ -9,8 +9,14 @@ _ONLINE = re.compile(r"\b(?:online|virtual|remote)\b", re.I)
 # Steps that aren't a round of work: signing up, profile review, joining a group, announcements, mentoring.
 _NOT_WORK = re.compile(
     r"\b(?:registrations?|register|whatsapp|discord|telegram|results?|announcements?|declaration|profile|"
-    r"application screening|mentor\w*|sessions?|orientation|inauguration|timeline|evaluation period|"
+    r"application screening|mentor\w*|orientation|inauguration|timeline|evaluation period|"
     r"problem statements? release)\b", re.I)
+_SESSION = re.compile(r"\bsessions?\b", re.I)
+_WORK = re.compile(r"\b(?:submissions?|assessments?|pitch\w*|quizzes|quiz|tests?|demos?|qualif\w*|hackathons?)\b", re.I)
+
+
+def _work_round(title: str) -> bool:
+    return not _NOT_WORK.search(title) and (not _SESSION.search(title) or bool(_WORK.search(title)))
 
 
 @dataclass
@@ -36,7 +42,7 @@ def has_screening(rounds: list[Round], hybrid: bool = False) -> bool:
 
     The round must eliminate entrants, precede another round, or belong to a hybrid event.
     """
-    work = [r for r in rounds if not _NOT_WORK.search(r.title)]
+    work = [r for r in rounds if _work_round(r.title)]
     if not work or round_mode(work[0]) is not True:
         return False
     return work[0].eliminator or len(work) > 1 or hybrid
@@ -46,7 +52,7 @@ def summary(rounds: list[Round], limit: int = 300) -> str:
     """'Idea Submission (online) → 24-Hour Hackathon (in person)'."""
     parts = []
     for r in rounds:
-        if _NOT_WORK.search(r.title):
+        if not _work_round(r.title):
             continue
         mode = round_mode(r)
         label = " (online)" if mode is True else " (in person)" if mode is False else ""
@@ -58,6 +64,24 @@ def summary(rounds: list[Round], limit: int = 300) -> str:
 
 
 _ROUNDISH = re.compile(r"\b(?:rounds?|prelim\w*|screening|qualif\w*|submission|shortlist\w*|finale|finals?|stages?)\b", re.I)
+_ROUND_NUMBER = re.compile(r"\b(?:round|stage|phase)\s*[-:#]?\s*(\d+|[ivx]+|zero|one|two|three)\b", re.I)
+_IN_PERSON = re.compile(r"\b(?:offline|on[- ]?campus|on[- ]?ground|in[- ]?person|on[- ]?site|at (?:the )?venue)\b", re.I)
+
+
+def first_round_in_person(text: str) -> bool:
+    """Use explicit numbered round descriptions to veto a later online keyword match."""
+    rounds = list(_ROUND_NUMBER.finditer(text))
+    for index, match in enumerate(rounds):
+        number = match.group(1).lower()
+        if number not in ("0", "1", "i", "zero", "one"):
+            continue
+        end = rounds[index + 1].start() if index + 1 < len(rounds) else len(text)
+        description = re.split(r"[.!?;]\s|\n|→", text[match.end():end], maxsplit=1)[0]
+        in_person = _IN_PERSON.search(description)
+        online = _ONLINE.search(description)
+        if in_person and (not online or in_person.start() < online.start()):
+            return True
+    return False
 
 
 def round_sentences(text: str, limit: int = 500) -> str:

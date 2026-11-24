@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from ..models import Event
-from ..util import next_data, parse_dt
+from ..util import next_data, parse_dt, parse_int
 
 DEFAULT_URLS = [
     "https://www.meetup.com/find/?location=in--Bengaluru&source=EVENTS&categoryId=546",
@@ -23,8 +23,8 @@ def parse(page: str) -> list[Event]:
             continue
         group = ref(e.get("group"))
         venue = ref(e.get("venue"))
-        going = (e.get("rsvps") or {}).get("totalCount")
-        cap = e.get("maxTickets") or 0
+        going = parse_int((e.get("rsvps") or {}).get("totalCount"))
+        cap = parse_int(e.get("maxTickets")) or 0
         spots = max(cap - going, 0) if cap and going is not None else None
         venue_name = venue.get("name") or ""
         if venue_name.lower() == "online event":

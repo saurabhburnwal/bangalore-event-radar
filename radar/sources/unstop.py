@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from ..eligibility import Round, has_screening, round_sentences, summary
 from ..models import Event
-from ..util import html_to_text, parse_dt
+from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&oppstatus=open&per_page=30&page={page}"
 DETAIL = "https://unstop.com/api/public/competition/{id}"
@@ -13,8 +13,13 @@ DETAIL_CACHE_VERSION = 1
 def _prize(prizes: list, usd_inr: float) -> tuple[int, bool, str]:
     total, ppi, perks = 0, False, []
     for p in prizes or []:
-        cash = p.get("cash") or 0
-        if isinstance(cash, (int, float)):
+        if not isinstance(p, dict):
+            continue
+        raw_cash = p.get("cash")
+        cash = parse_int(raw_cash)
+        if cash is not None and isinstance(raw_cash, float):
+            cash = raw_cash
+        if cash is not None and cash > 0:
             rate = usd_inr if "dollar" in str(p.get("currency") or "").lower() else 1
             total += int(cash * rate)
         if p.get("pre_placement_internship") or p.get("pre_placement_opportunity"):
@@ -22,13 +27,6 @@ def _prize(prizes: list, usd_inr: float) -> tuple[int, bool, str]:
         if p.get("others"):
             perks.append(str(p["others"]).strip())
     return total, ppi, " / ".join(dict.fromkeys(perks))[:400]
-
-
-def _int(v) -> int | None:
-    try:
-        return int(v) if v not in (None, "") else None
-    except (TypeError, ValueError):
-        return None
 
 
 def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
@@ -61,8 +59,8 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
             prize_data=True,
             perks=perks,
             reg_deadline=parse_dt(regn.get("end_regn_dt")),
-            team_min=_int(regn.get("min_team_size")),
-            team_max=_int(regn.get("max_team_size")),
+            team_min=parse_int(regn.get("min_team_size")),
+            team_max=parse_int(regn.get("max_team_size")),
             extra={"registered": o.get("registerCount"), "updated": o.get("updated_at")},
         ))
     return out, int(d.get("last_page") or 1)

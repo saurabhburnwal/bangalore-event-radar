@@ -1,6 +1,6 @@
 # Bangalore Event Radar
 
-Checks Luma, Meetup, Unstop, Devfolio, Google Developer Groups, Hasgeek and Hackbriven every 10 minutes
+Schedules checks of Luma, Meetup, Unstop, Devfolio, Google Developer Groups, Hasgeek and Hackbriven every 10 minutes
 for Bangalore tech events, and tells you on Telegram:
 
 - **🏢 Office visits, right away** — anything that gets you inside a tech giant's office (Google, Microsoft,
@@ -32,8 +32,9 @@ It runs free on GitHub Actions, so it keeps working while your laptop is off.
    python -m venv .venv && .venv/bin/pip install -r requirements.txt   # first time only
    .venv/bin/python -m radar setup
    ```
-   Paste the token when asked (it's hidden), then press **Start** in your bot's chat. The command finds your
-   chat id, saves both as GitHub repo secrets (needs `gh`, logged in), and sends you a confirmation message.
+   Paste the token when asked (it's hidden), open your bot's private chat, and press **Start** if prompted.
+   Send the pairing code shown in the terminal. The command verifies your chat, saves both as GitHub repo secrets
+   (needs `gh`, logged in), and sends you a confirmation message.
    The token never touches your shell history.
 3. **Turn the checks on:**
    ```sh
@@ -74,18 +75,18 @@ python -m pytest -q
 
 - `radar/sources/` — one reader per site. Luma, Unstop and Hackbriven have JSON APIs; Meetup, Devfolio and
   GDG embed their data in the page; Hasgeek is read from its HTML. Devfolio's city and team size, GDG's venue
-  and the round list of each in-person Unstop hackathon come from the event's own page, fetched once and
-  cached (Unstop's again only when the event is edited, at most 40 per run).
+  and the round list of each in-person Unstop hackathon come from the event's own page. Devfolio and GDG
+  refresh their cached details every six hours. Unstop refreshes details when an event is edited, up to 40
+  per poll. Failed detail reads are eligible for retry.
 - `radar/eligibility.py` — team sizes read from text, and whether an online round decides who goes on to the
   in-person part.
 - `radar/score.py` — keyword rules from `config.yaml` decide instant / digest / ignore, with a reason for each.
 - `radar/runner.py` — de-duplicates events listed on several sites, remembers what was already sent in
-  `state/seen.json` (committed back by the workflow), and warns you if a site stops returning events for
-  about an hour, so a broken reader never fails silently.
+  `state/seen.json` (committed back by the workflow), and warns you after a site fails six polls in a row by default.
 
 ## Limits
 
 - Events announced only on LinkedIn, X, Instagram or WhatsApp groups aren't covered.
 - Luma's city page is curated; follow specific community calendars in config for full coverage.
-- GitHub sometimes starts scheduled runs a few minutes late at busy times.
+- GitHub can delay or drop scheduled runs. Manually run the `poll` workflow on the default branch for an on-demand check.
 - Yearly-program dates are approximate; update them in config once the official dates are out.

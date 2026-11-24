@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-from .eligibility import team_from_text, team_label
+from .eligibility import first_round_in_person, team_from_text, team_label
 from .models import Event
 from .util import inr
 
@@ -150,7 +150,7 @@ class Scorer:
             else:
                 return Verdict(IGNORE, [f"restricted: {m.group(0)}"])
 
-        in_blr = bool(_find(self.blr, " ".join([ev.city, ev.venue, ev.title])))
+        in_blr = bool(_find(self.blr, ev.city or f"{ev.venue} {ev.title}"))
         in_person = ev.mode != "online"
         hack = ev.kind == "hackathon" or bool(_find(self.hack, title))
 
@@ -178,8 +178,9 @@ class Scorer:
             if not hack:
                 return Verdict(IGNORE, ["not in Bangalore"])
             if in_person:
+                plan = "\n".join([ev.description, ev.rounds])
                 screened = ev.screening if ev.screening is not None else \
-                    bool(_find(self.screen, " ".join([ev.description, ev.rounds])))
+                    bool(_find(self.screen, plan) and not first_round_in_person(plan))
                 if not screened:
                     return Verdict(IGNORE, ["outside Bangalore, no online screening round"])
             if offer:

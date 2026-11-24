@@ -65,7 +65,8 @@ def test_registration_step_before_an_online_evaluation_still_counts():
     assert has_screening(rounds)
 
 
-@pytest.mark.parametrize("first_round", [Round("Offline qualifier", False), Round("Qualifier", None)])
+@pytest.mark.parametrize("first_round", [Round("Offline qualifier", False), Round("Qualifier", None),
+                                         Round("In-person pitch session", False)])
 def test_online_screening_must_precede_any_round_that_could_require_travel(first_round):
     rounds = [first_round, Round("Online pitch", True, eliminator=True), Round("Offline final", False)]
     assert not has_screening(rounds, hybrid=True)

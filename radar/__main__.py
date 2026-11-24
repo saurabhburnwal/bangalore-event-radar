@@ -6,6 +6,7 @@ import copy
 import getpass
 import os
 import re
+import secrets
 import shutil
 import subprocess
 import sys
@@ -16,7 +17,7 @@ from pathlib import Path
 
 from . import config, messages, runner, sources
 from . import state as st
-from .http import Http
+from .http import issue
 from .models import Event
 from .notify import Console, Telegram
 from .score import HIGH, Verdict
@@ -33,7 +34,7 @@ def print_scored(results: dict, scored: list[tuple[Event, Verdict]], verbose: bo
     print("Sources:")
     for name, res in results.items():
         if isinstance(res, Exception):
-            print(f"  ✗ {name:11} FAILED  {type(res).__name__}: {str(res)[:120]}")
+            print(f"  ✗ {name:11} FAILED  {issue(res)}")
         else:
             flag = "" if res or name in sources.MAY_BE_EMPTY else "   ← no events, check this source"
             print(f"  ✓ {name:11} {len(res):3} events{flag}")
@@ -57,15 +58,21 @@ def cmd_run(args) -> int:
     state = st.load(args.state)
     work = copy.deepcopy(state) if args.dry_run else state
     notifier = Console() if args.dry_run else telegram()
-    results = sources.collect(Http(), cfg, work["cache"])
+    results = sources.collect(cfg, work["cache"])
     now = datetime.now(timezone.utc)
-    report = runner.poll(results, work, cfg, notifier, now)
+    wrote = False
+
+    def checkpoint() -> None:
+        nonlocal wrote
+        wrote = st.save(args.state, state) or wrote
+
+    report = runner.poll(results, work, cfg, notifier, now, None if args.dry_run else checkpoint)
     if args.dry_run:
         print_scored(results, report.scored, args.verbose)
         print(f"Would alert {len(report.alerted)}, re-alert {len(report.filling)} filling fast, "
               f"queue {len(report.queued)} for the digest. State not written.")
-        return 0
-    wrote = st.save(args.state, state)
+        return 1 if report.errors else 0
+    checkpoint()
     print(f"alerted={len(report.alerted)} filling={len(report.filling)} queued={len(report.queued)} "
           f"state_changed={wrote} errors={len(report.errors)}")
     for e in report.errors:
@@ -78,7 +85,14 @@ def cmd_digest(args) -> int:
     state = st.load(args.state)
     work = copy.deepcopy(state) if args.dry_run else state
     notifier = Console() if args.dry_run else telegram()
-    sent = runner.digest(work, cfg, notifier, datetime.now(timezone.utc))
+    def checkpoint() -> None:
+        st.save(args.state, state)
+
+    try:
+        sent = runner.digest(work, cfg, notifier, datetime.now(timezone.utc), None if args.dry_run else checkpoint)
+    except RuntimeError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
     if not sent:
         print("Nothing to send today.")
     if not args.dry_run:
@@ -128,13 +142,19 @@ def cmd_setup(args) -> int:
     except Exception as e:  # noqa: BLE001
         sys.exit(f"Telegram rejected the token ({e}). Nothing was saved.")
     print(f"\nBot found: @{me['username']}")
-    print(f"Now open https://t.me/{me['username']} in Telegram and press Start (or send it any message).")
-    print("Waiting for your message", end="", flush=True)
+    code = secrets.token_urlsafe(12)
+    print(f"Open https://t.me/{me['username']} in Telegram and send this pairing code in a private message:")
+    print(code)
+    print("Waiting for your pairing code", end="", flush=True)
     chat = None
-    for _ in range(90):  # up to ~3 minutes
-        for u in reversed(bot.updates()):
-            c = (u.get("message") or {}).get("chat") or {}
-            if c.get("type") == "private" and c.get("id"):
+    offset = None
+    deadline = time.monotonic() + 180
+    while time.monotonic() < deadline:
+        for update in bot.updates(offset):
+            offset = update["update_id"] + 1
+            message = update.get("message") or {}
+            c = message.get("chat") or {}
+            if c.get("type") == "private" and c.get("id") and message.get("text") == code:
                 chat = c
                 break
         if chat:
@@ -143,8 +163,8 @@ def cmd_setup(args) -> int:
         time.sleep(2)
     print()
     if not chat:
-        sys.exit("No message arrived. Press Start in the bot chat, then run this again. Nothing was saved.")
-    print(f"Got it — chat with {chat.get('first_name') or chat.get('username') or 'you'}.")
+        sys.exit("No matching pairing code arrived. Run setup again and send the new code to your bot.")
+    print("Private chat verified.")
     for name, value in (("TELEGRAM_BOT_TOKEN", token), ("TELEGRAM_CHAT_ID", str(chat["id"]))):
         r = subprocess.run(["gh", "secret", "set", name], input=value, text=True,
                            capture_output=True, cwd=config.ROOT)

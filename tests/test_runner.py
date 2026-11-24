@@ -3,8 +3,9 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from radar import runner
+from radar import messages, runner
 from radar import state as st
+from radar.http import SourceError
 from radar.models import Event
 
 NOW = datetime(2026, 11, 11, 6, 0, tzinfo=timezone.utc)
@@ -20,6 +21,13 @@ class Spy:
         if self.fail:
             raise RuntimeError("telegram down")
         self.sent.append(text)
+
+
+class OnePage(Spy):
+    def send(self, text, button_url=None, button_text="Register →"):
+        if self.sent:
+            raise RuntimeError("sending the next page failed")
+        super().send(text, button_url, button_text)
 
 
 def google(**kw):
@@ -78,6 +86,32 @@ def test_failed_send_is_retried_next_run(cfg, seeded):
     assert len(spy.sent) == 1
 
 
+def test_partial_bundle_retries_only_undelivered_events(cfg, seeded, monkeypatch):
+    monkeypatch.setattr(messages, "LIMIT", 600)
+    events = [google(native_id=str(i), title=f"DevFest {i:02} Bengaluru") for i in range(18)]
+    first = runner.poll(results(gdg=events), seeded, cfg, OnePage(), NOW)
+    assert first.errors and 0 < len(first.alerted) < len(events)
+    second = runner.poll(results(gdg=events), seeded, cfg, Spy(), NOW)
+    assert set(first.alerted).isdisjoint(second.alerted)
+    assert len(first.alerted) + len(second.alerted) == len(events)
+
+
+def test_partial_digest_persists_queue_progress(cfg, seeded, monkeypatch, tmp_path):
+    monkeypatch.setattr(messages, "LIMIT", 600)
+    events = [meetup_ev(native_id=str(i), title=f"Rust meetup {i:02}") for i in range(18)]
+    runner.poll(results(meetup=events), seeded, cfg, Spy(), NOW)
+    path = tmp_path / "seen.json"
+    first = OnePage()
+    with pytest.raises(RuntimeError, match="next page"):
+        runner.digest(seeded, cfg, first, NOW, lambda: st.save(path, seeded))
+    stored = st.load(path)
+    assert 0 < len(stored["queue"]) < len(events)
+    second = "\n".join(runner.digest(stored, cfg, Spy(), NOW))
+    for event in events:
+        assert (event.title in first.sent[0]) != (event.title in second)
+    assert not stored["queue"]
+
+
 def test_digest_event_escalates_when_filling_then_realerts_never(cfg, seeded):
     runner.poll(results(meetup=[meetup_ev()]), seeded, cfg, Spy(), NOW)
     assert len(seeded["queue"]) == 1
@@ -123,6 +157,45 @@ def test_different_events_with_overlapping_titles_are_not_merged(cfg, seeded):
     assert len(rep.scored) == 2
 
 
+def test_same_source_events_with_the_same_title_keep_separate_ids(cfg, seeded):
+    runner.poll(results(meetup=[meetup_ev(native_id="first"), meetup_ev(native_id="second")]), seeded, cfg, Spy(), NOW)
+    assert {entry["id"] for entry in seeded["queue"]} == {"meetup:first", "meetup:second"}
+
+
+def test_queue_refreshes_and_withdraws_under_a_second_source_id(cfg, seeded):
+    first = meetup_ev(source="luma", native_id="rust-hack", title="Rust Hackathon", url="https://luma.com/rust")
+    second = meetup_ev(source="unstop", native_id="rust", title=first.title, url="https://unstop.com/hackathons/rust")
+    runner.poll(results(luma=[first]), seeded, cfg, Spy(), NOW)
+    runner.poll(results(unstop=[second]), seeded, cfg, Spy(), NOW)
+    queued, = seeded["queue"]
+    assert queued["id"] == first.id and queued["url"] == second.url
+    second.team_min = 4
+    runner.poll(results(unstop=[second]), seeded, cfg, Spy(), NOW)
+    assert seeded["queue"] == [] and seeded["events"][first.id]["dropped"]
+
+
+def test_known_duplicate_listings_alert_once_after_a_date_change(cfg, seeded):
+    first = meetup_ev(source="luma", native_id="rust-hack", title="Rust Hackathon", url="https://luma.com/rust")
+    second = meetup_ev(source="unstop", native_id="rust", title=first.title, url="https://unstop.com/hackathons/rust")
+    runner.poll(results(luma=[first], unstop=[second]), seeded, cfg, Spy(), NOW)
+    first.start += timedelta(days=1)
+    first.spots_left = second.spots_left = 2
+    report = runner.poll(results(luma=[first], unstop=[second]), seeded, cfg, Spy(), NOW)
+    assert report.alerted == [first.title] and seeded["queue"] == []
+
+
+def test_expired_registrations_are_removed_before_alert_and_digest(cfg, seeded):
+    early = meetup_ev(reg_deadline=NOW + timedelta(minutes=15))
+    runner.poll(results(meetup=[early]), seeded, cfg, Spy(), NOW)
+    assert seeded["queue"]
+    now = NOW + timedelta(minutes=30)
+    assert runner.digest(seeded, cfg, Spy(), now) == []
+    closed = google(reg_deadline=NOW)
+    ended = google(native_id="ended", start=NOW - timedelta(days=1))
+    report = runner.poll(results(gdg=[closed, ended]), seeded, cfg, Spy(), now)
+    assert not report.alerted
+
+
 def test_digest_groups_closing_soon_and_clears_queue(cfg, seeded):
     hack = Event(source="unstop", native_id="h", title="Rewired (Tech Hackathon)", url="https://unstop.com/h",
                  end=SOON, city="Bangalore", kind="hackathon", prize_inr=20000, prize_data=True, tech_source=True,
@@ -150,11 +223,18 @@ def test_annual_reminder_fires_once_per_threshold(cfg, seeded):
     assert "Hacktoberfest" in body and "in 3 days" in body
 
 
+def test_leap_day_reminder_survives_non_leap_years(seeded):
+    cfg = {"annual_programs": [{"opens": "02-29", "name": "Leap Day", "url": "https://example.org/leap"}]}
+    assert runner.digest(seeded, cfg, Spy(), datetime(2024, 3, 1, tzinfo=timezone.utc)) == []
+    body = "\n".join(runner.digest(seeded, cfg, Spy(), datetime(2028, 2, 15, tzinfo=timezone.utc)))
+    assert "Leap Day" in body and "in 14 days" in body
+
+
 def test_broken_source_warns_once_and_recovers(cfg, seeded):
     seeded["sources"] = {}  # the seeding run saw every source empty
     # Give the other sources an event each so only Luma is broken.
     ok = {n: [meetup_ev(source=n, native_id=n)] for n in ("unstop", "devfolio", "meetup", "hasgeek")}
-    boom = results(luma=RuntimeError("HTTP 403"), **ok)
+    boom = results(luma=SourceError("HTTP 403"), **ok)
     for i in range(5):
         spy = Spy()
         runner.poll(boom, seeded, cfg, spy, NOW)
@@ -176,6 +256,23 @@ def test_empty_result_counts_as_broken_only_for_sources_that_always_have_events(
         runner.poll(results(), seeded, cfg, Spy(), NOW)
     assert seeded["sources"]["unstop"]["fails"] == 6 + 1  # +1 from the seeding run
     assert seeded["sources"]["gdg"]["fails"] == 0
+
+
+def test_all_sources_down_does_not_send_a_startup_summary(cfg):
+    state, spy = st.empty(), Spy()
+    report = runner.poll({"luma": RuntimeError("network unavailable")}, state, cfg, spy, NOW)
+    assert report.errors and not state["initialized"] and not spy.sent
+
+
+def test_recovery_notification_retries_after_failed_send(cfg, seeded):
+    seeded["sources"]["luma"] = {"fails": 6, "warned": True}
+    ok = {"luma": [meetup_ev(source="luma")]}
+    runner.poll(ok, seeded, cfg, Spy(fail=True), NOW)
+    assert seeded["sources"]["luma"]["warned"]
+    spy = Spy()
+    runner.poll(ok, seeded, cfg, spy, NOW)
+    assert "Luma is working again" in spy.sent[0]
+    assert not seeded["sources"]["luma"]["warned"]
 
 
 def test_past_events_are_pruned(cfg, seeded):
