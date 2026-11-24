@@ -1,0 +1,103 @@
+{
+ "data": {
+  "status": true,
+  "competition": {
+   "id": 1790097,
+   "title": "WIE HackEarth 2.0",
+   "region": "offline",
+   "updated_at": "2026-11-14T15:01:36+05:30",
+   "rounds": [
+    {
+     "entity_type": "App\\Model\\OfflineRound",
+     "subtype": null,
+     "round_order": 1,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "FINISHED",
+     "details": [
+      {
+       "title": "Registration Timeline",
+       "start_date": "2026-11-02T12:00:00+05:30",
+       "end_date": "2026-11-16T23:59:00+05:30",
+       "seo_data": {
+        "description": "Offline Round as part of WIE HackEarth 2.0"
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Model\\Rounds",
+     "subtype": null,
+     "round_order": 2,
+     "eliminator_round": 1,
+     "is_hidden": 0,
+     "status": "LIVE",
+     "details": [
+      {
+       "title": "PPT Submission Round",
+       "start_date": "2026-11-10T06:00:00+05:30",
+       "end_date": "2026-11-17T23:59:00+05:30",
+       "seo_data": {
+        "description": "Online Submission Round as part of WIE HackEarth 2.0"
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Models\\AssessmentRound\\AssessmentRound",
+     "subtype": null,
+     "round_order": 3,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "DRAFT",
+     "details": [
+      {
+       "title": "Panel",
+       "start_date": "2026-11-18T09:00:00+05:30",
+       "end_date": "2026-11-19T18:00:00+05:30",
+       "seo_data": {
+        "description": null
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Models\\AssessmentRound\\AssessmentRound",
+     "subtype": null,
+     "round_order": 4,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "DRAFT",
+     "details": [
+      {
+       "title": "Result Announcement !",
+       "start_date": "2026-11-20T10:00:00+05:30",
+       "end_date": "2026-11-20T19:00:00+05:30",
+       "seo_data": {
+        "description": null
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Model\\OfflineRound",
+     "subtype": null,
+     "round_order": 5,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "NOT_STARTED",
+     "details": [
+      {
+       "title": "Offline Round",
+       "start_date": "2026-11-29T12:00:00+05:30",
+       "end_date": "2026-11-30T12:01:00+05:30",
+       "seo_data": {
+        "description": "Offline Round as part of WIE HackEarth 2.0"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,6 +1,7 @@
-"""Devfolio: the hackathon listing, plus each hackathon's own page for city and prize (cached)."""
+"""Devfolio: the hackathon listing, plus each hackathon's own page for city, prize, team size and rounds (cached)."""
 from __future__ import annotations
 
+from ..eligibility import round_sentences
 from ..models import Event
 from ..util import html_to_text, next_data, parse_dt
 
@@ -22,16 +23,26 @@ def parse_listing(page: str) -> list[dict]:
     return list(found.values())
 
 
+CACHE_VERSION = 2  # bump when parse_detail starts returning new fields, so cached pages are read again
+
+
 def parse_detail(page: str, usd_inr: float = 88) -> dict:
     pp = next_data(page)["props"]["pageProps"]
     h = pp.get("hackathon") or {}
     value = pp.get("aggregatePrizeValue") or 0
     if str(pp.get("aggregatePrizeCurrency") or "").upper() == "USD":
         value *= usd_inr
+    full = html_to_text(((h.get("tagline") or "") + " " + (h.get("desc") or "")).strip(), 20000)
+    faqs = " ".join(html_to_text(f"{f.get('question', '')}. {f.get('answer', '')}", 2000)
+                    for f in h.get("faqs") or [] if isinstance(f, dict))
     return {
+        "v": CACHE_VERSION,
         "city": h.get("city") or "",
         "location": h.get("location") or "",
-        "desc": html_to_text(((h.get("tagline") or "") + " " + (h.get("desc") or "")).strip(), 1200),
+        "desc": full[:1200],
+        "rounds": round_sentences(full + " " + faqs),  # Devfolio has no round list; organisers describe rounds in prose
+        "team_min": h.get("team_min"),
+        "team_max": h.get("team_max"),
         "prize_inr": int(value),
     }
 
@@ -54,6 +65,9 @@ def build(h: dict, detail: dict) -> Event:
         tech_source=True,
         prize_inr=detail.get("prize_inr", 0),
         reg_deadline=parse_dt(settings.get("reg_ends_at")),
+        team_min=detail.get("team_min"),
+        team_max=detail.get("team_max"),
+        rounds=detail.get("rounds", ""),
         extra={"participants": h.get("participants_count")},
     )
 
@@ -68,10 +82,10 @@ def fetch(http, cfg: dict, cache: dict) -> list[Event]:
     events = []
     for h in listing:
         slug = h["slug"]
-        if slug not in cache and not h.get("is_online"):
+        if (cache.get(slug) or {}).get("v") != CACHE_VERSION:
             try:
                 cache[slug] = parse_detail(http.text(DETAIL.format(slug=slug)), usd)
             except Exception:
-                cache[slug] = {}  # fetch once; don't hammer a broken page every run
+                cache[slug] = {"v": CACHE_VERSION}  # fetch once; don't hammer a broken page every run
         events.append(build(h, cache.get(slug) or {}))
     return events

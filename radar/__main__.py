@@ -46,7 +46,8 @@ def print_scored(results: dict, scored: list[tuple[Event, Verdict]], verbose: bo
             print(f"── {tier} ──")
         for ev, v in rows:
             when = ev.when.strftime("%d %b") if ev.when else "      "
-            print(f"  {when}  [{ev.source:10}] {ev.title[:60]:60}  {'; '.join(v.reasons)}")
+            mark = "🏢" if v.office else "  "
+            print(f"  {when} {mark} [{ev.source:10}] {ev.title[:60]:60}  {'; '.join(v.reasons)}")
         if rows:
             print()
 
@@ -89,7 +90,7 @@ def cmd_test_notify(args) -> int:
     ev = Event(source="gdg", native_id="test", title="Sample: GSoC Meetup @Google Ananta",
                url="https://gdg.community.dev/gdg-bangalore/", start=datetime.now(timezone.utc),
                city="Bengaluru", venue="Google Ananta", host="GDG Bangalore")
-    v = Verdict(HIGH, ["Google venue/host", "filling fast (18 spots left)"])
+    v = Verdict(HIGH, ["at Google office", "filling fast (18 spots left)"], office="Google")
     text = "🧪 <i>Test alert from your event radar</i>\n\n" + messages.alert(ev, v)
     (Console() if args.dry_run else telegram()).send(text, ev.url)
     print("Sent." if not args.dry_run else "")

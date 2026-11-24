@@ -121,6 +121,10 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime) -> Poll
         v = scorer(ev)
         report.scored.append((ev, v))
         if v.tier == IGNORE:
+            old = state["events"].get(ev.id)
+            if old:  # seen before but no longer wanted (e.g. its team size became known): keep it out of every list
+                old["dropped"] = True
+                old.pop("office", None)
             continue
         fp = st.fingerprint(ev)
         rid = _known(state, ev, fp)
@@ -131,6 +135,11 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime) -> Poll
         else:
             st.refresh(rec, ev, today)
             state["fps"].setdefault(fp, rid)
+            rec.pop("dropped", None)
+        if v.office:
+            rec["office"] = {"why": v.reasons[0], "where": messages.where(ev), "when_label": messages.when_label(ev)}
+        else:
+            rec.pop("office", None)
 
         if v.tier == HIGH and not rec["alerted"]:
             new_high.append((ev, v, rec))
@@ -173,8 +182,8 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime) -> Poll
             rec["filling_alerted"] = True
             report.filling.append(ev.title)
 
-    alerted_ids = {rid for rid, rec in state["events"].items() if rec["alerted"]}
-    state["queue"] = [q for q in state["queue"] if q["id"] not in alerted_ids]
+    done = {rid for rid, rec in state["events"].items() if rec["alerted"] or rec.get("dropped")}
+    state["queue"] = [q for q in state["queue"] if q["id"] not in done]
     _prune(state, now)
     return report
 
@@ -198,6 +207,17 @@ def _due_reminders(cfg: dict, state: dict, today: date) -> tuple[list[tuple[dict
     return due, keys
 
 
+def _upcoming_offices(state: dict, now: datetime) -> list[dict]:
+    """Office-visit events already alerted that haven't started yet, soonest first, for the top of every digest."""
+    out = []
+    for rec in state["events"].values():
+        when = parse_dt(rec.get("start") or rec.get("end"))
+        if rec.get("office") and rec.get("alerted") and (when is None or when > now):
+            out.append({"title": rec["title"], "url": rec["url"], "source": rec["source"], "when": to_iso(when),
+                        **rec["office"]})
+    return sorted(out, key=lambda o: o["when"] or "9999")
+
+
 def digest(state: dict, cfg: dict, notifier, now: datetime) -> list[str]:
     """Send the daily digest. Returns the messages sent (empty when there was nothing to say)."""
     window = timedelta(hours=(cfg.get("scoring") or {}).get("closing_soon_hours", 72))
@@ -205,15 +225,16 @@ def digest(state: dict, cfg: dict, notifier, now: datetime) -> list[str]:
     closing = [
         {"title": r["title"], "url": r["url"], "reg_deadline": r["reg_deadline"]}
         for r in state["events"].values()
-        if (r.get("alerted") or r.get("queued")) and r.get("reg_deadline")
+        if (r.get("alerted") or r.get("queued")) and not r.get("dropped") and r.get("reg_deadline")
         and now < parse_dt(r["reg_deadline"]) <= now + window
     ]
     today = now.astimezone(IST).date()
     reminders, keys = _due_reminders(cfg, state, today)
-    if not (queue or closing or reminders):
+    offices = _upcoming_offices(state, now)
+    if not (queue or closing or reminders or offices):
         state["queue"] = []
         return []
-    texts = messages.digest(queue, closing, reminders, now.astimezone(IST))
+    texts = messages.digest(queue, closing, reminders, now.astimezone(IST), offices)
     for t in texts:
         notifier.send(t)
     state["queue"] = []

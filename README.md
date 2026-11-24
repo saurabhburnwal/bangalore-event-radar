@@ -3,12 +3,23 @@
 Checks Luma, Meetup, Unstop, Devfolio, Google Developer Groups, Hasgeek and Hackbriven every 10 minutes
 for Bangalore tech events, and tells you on Telegram:
 
-- **Right away** — hackathons with an internship / PPI / PPO prize, events at big-tech offices (Google,
-  Microsoft, Atlassian, IBM…), DevFests, Bangalore hackathons with ₹1 lakh+ in prizes, and anything
-  relevant that is **filling fast** (one follow-up when spots run low).
+- **🏢 Office visits, right away** — anything that gets you inside a tech giant's office (Google, Microsoft,
+  Atlassian, IBM…): held there, a hackathon finale there (even in another city), an office visit as the prize,
+  or an in-person event the company itself organises. These also stay listed at the top of every digest until
+  they happen.
+- **Right away** — hackathons with an internship / PPI / PPO prize, DevFests, Bangalore hackathons with
+  ₹1 lakh+ in prizes, and anything relevant that is **filling fast** (one follow-up when spots run low).
 - **In a 09:00 digest** — every other relevant tech event, grouped into Hackathons / Big-tech &
-  networking / Other, plus registrations closing within 72 hours and reminders before yearly programs
-  (Hacktoberfest, GSoC, Flipkart GRiD…).
+  networking / Other / Outside Bangalore / Online, plus registrations closing within 72 hours and reminders
+  before yearly programs (Hacktoberfest, GSoC, Flipkart GRiD…).
+
+Hackathons are only kept if **you can enter solo or as a pair** (the minimum team size is 2 or less). Unstop,
+Devfolio and Hackbriven list team sizes; for other sites the description is checked ("teams of 3–4"), and if
+it says nothing the event is kept and tagged *team size not listed*.
+
+**Offline hackathons outside Bangalore** are kept only when an **online round comes first** (idea/PPT
+submission, online test…), so you travel only once shortlisted, and only with an internship/PPO, ₹1 lakh+
+in prizes, or an office visit. Plain application/profile review doesn't count as a screening round.
 
 It runs free on GitHub Actions, so it keeps working while your laptop is off.
 
@@ -41,7 +52,10 @@ Useful switches:
 
 | Want | Change |
 |---|---|
-| Fewer remote alerts | `online_ppi_instant: false` (remote internship hackathons go to the digest) |
+| A different team size | `my_team_size` (you enter solo or in a team of this many) |
+| Catch more ways of describing an online first round | add a phrase to `screening_keywords` |
+| More/fewer companies counted as tech giants | `big_tech` |
+| Fewer remote alerts | `online_ppi_instant: false` (remote and out-of-town internship hackathons go to the digest) |
 | More/fewer "filling fast" | `filling_spots` |
 | Follow a Luma community | add its `cal-…` id under `sources.luma.calendars` |
 | Silence a kind of event | add a word to `deny_keywords` |
@@ -59,8 +73,11 @@ python -m pytest -q
 ## How it works
 
 - `radar/sources/` — one reader per site. Luma, Unstop and Hackbriven have JSON APIs; Meetup, Devfolio and
-  GDG embed their data in the page; Hasgeek is read from its HTML. Devfolio's city and GDG's venue come from
-  each event's own page, fetched once and cached.
+  GDG embed their data in the page; Hasgeek is read from its HTML. Devfolio's city and team size, GDG's venue
+  and the round list of each in-person Unstop hackathon come from the event's own page, fetched once and
+  cached (Unstop's again only when the event is edited, at most 40 per run).
+- `radar/eligibility.py` — team sizes read from text, and whether an online round decides who goes on to the
+  in-person part.
 - `radar/score.py` — keyword rules from `config.yaml` decide instant / digest / ignore, with a reason for each.
 - `radar/runner.py` — de-duplicates events listed on several sites, remembers what was already sent in
   `state/seen.json` (committed back by the workflow), and warns you if a site stops returning events for

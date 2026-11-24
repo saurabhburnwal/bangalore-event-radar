@@ -1,10 +1,14 @@
 """Hackbriven: JSON events API, upcoming and ongoing phases."""
 from __future__ import annotations
 
+import re
+
+from ..eligibility import Round, has_screening, summary
 from ..models import Event
 from ..util import html_to_text, parse_dt
 
 API = "https://hackbriven.com/api/events?status=Approved&limit=50&phase={phase}"
+MODES = {"online": "online", "virtual": "online", "hybrid": "hybrid", "in-person": "offline", "offline": "offline"}
 
 
 def _prize(breakdown) -> int:
@@ -19,12 +23,37 @@ def _prize(breakdown) -> int:
     return total
 
 
+def _team(label) -> tuple[int | None, int | None]:
+    """'Individual' -> (1, 1), '2-4 members' -> (2, 4), '3 members' -> (3, 3)."""
+    s = str(label or "").lower()
+    if "individual" in s or "solo" in s:
+        return 1, 1
+    nums = [int(n) for n in re.findall(r"\d+", s)][:2]
+    if not nums:
+        return None, None
+    return nums[0], nums[-1]
+
+
+def _rounds(stages) -> list[Round]:
+    out = []
+    for s in stages or []:
+        if not isinstance(s, dict) or not s.get("name"):
+            continue
+        kind = (s.get("type") or "").lower()
+        # Submissions and quizzes happen on Hackbriven itself; judging/result/custom steps say nothing either way.
+        online = True if kind in ("submission", "assessment") else None
+        out.append(Round(title=s["name"], online=online, eliminator=bool(s.get("isEliminator")) and not s.get("isFinal")))
+    return out
+
+
 def parse(data: dict) -> list[Event]:
     out = []
     for e in data.get("events", []):
         if not e.get("slug"):
             continue
-        lt = (e.get("locationType") or "").lower()
+        mode = MODES.get((e.get("locationType") or "").lower(), "offline")
+        team_min, team_max = _team(e.get("teamSize"))
+        rounds = _rounds(e.get("stages"))
         out.append(Event(
             source="hackbriven",
             native_id=e["slug"],
@@ -33,7 +62,7 @@ def parse(data: dict) -> list[Event]:
             start=parse_dt(e.get("startDate")),
             end=parse_dt(e.get("endDate")),
             venue=e.get("location") or "",
-            mode="online" if lt == "online" else "hybrid" if lt == "hybrid" else "offline",
+            mode=mode,
             host=e.get("organizationName") or "",
             org=e.get("organizationName") or "",
             description=html_to_text(e.get("description")),
@@ -41,6 +70,10 @@ def parse(data: dict) -> list[Event]:
             tech_source=True,
             prize_inr=_prize(e.get("prizeBreakdown")),
             reg_deadline=parse_dt(e.get("registrationEndDate") or e.get("registrationDeadline")),
+            team_min=team_min,
+            team_max=team_max,
+            screening=has_screening(rounds, mode == "hybrid") if rounds else None,
+            rounds=summary(rounds),
             extra={"participants": e.get("participants")},
         ))
     return out

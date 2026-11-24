@@ -1,4 +1,6 @@
 """Parsers against real responses saved on 2026-11-11."""
+import pytest
+
 from conftest import data, text
 
 from radar.sources import devfolio, gdg, hackbriven, hasgeek, luma, meetup, unstop
@@ -40,6 +42,99 @@ def test_unstop_prizes_and_ppi():
     inc = by_title(evs, "Inceptrix 3.0")
     assert inc.city == "Bangalore" and inc.prize_inr == 250000 and inc.mode == "hybrid"
     assert inc.reg_deadline is not None and inc.kind == "hackathon"
+    assert (inc.team_min, inc.team_max) == (4, 5) and (bs.team_min, bs.team_max) == (1, 1)
+
+
+def test_unstop_round_lists():
+    # CODERED'26 (hybrid, Yelahanka): idea submission → online evaluation → on-campus sprint.
+    d = unstop.parse_detail(data("unstop_competition_codered.json"))
+    assert d["screen"] is True
+    assert d["rounds"].startswith("Round 1 (Idea Submission) (online) → Round 2")
+    assert d["rounds"].endswith("(in person)")
+    # WIE HackEarth: a "Registration Timeline" step filed as an offline round, then a PPT submission.
+    assert unstop.parse_detail(data("unstop_competition_wie_hackearth.json"))["screen"] is True
+    # A CTF with only an offline round: no screening.
+    assert unstop.parse_detail(data("unstop_competition_ctf_davanagere.json"))["screen"] is False
+    # Hacksmart (hybrid): Unstop's "Application Screening" is profile review and doesn't count, but the
+    # online Round 1 of a hybrid event does.
+    hs = unstop.parse_detail(data("unstop_competition_hacksmart.json"))
+    assert hs["screen"] is True and "Application" not in hs["rounds"]
+    assert unstop.parse_detail({"data": {"competition": {"rounds": []}}}) == {"screen": None, "rounds": ""}
+
+
+class FakeHttp:
+    def __init__(self, pages):
+        self.pages, self.calls = pages, []
+
+    def json(self, url):
+        self.calls.append(url)
+        response = self.pages[url]
+        if isinstance(response, Exception):
+            raise response
+        return response
+
+
+def test_unstop_fetches_round_lists_for_in_person_events_once_until_they_change():
+    listing = data("unstop.json")
+    listing["data"]["last_page"] = 1
+    detail = data("unstop_competition_codered.json")
+    pages = {unstop.API.format(page=1): listing}
+    in_person = [str(o["id"]) for o in listing["data"]["data"] if o["region"] != "online"]
+    for i in in_person:
+        pages[unstop.DETAIL.format(id=i)] = detail
+    http, cache = FakeHttp(pages), {}
+    evs = unstop.fetch(http, {"details_per_run": 100}, cache)
+    assert len(http.calls) == 1 + len(in_person) and set(cache) == set(in_person)
+    assert all(e.screening is True for e in evs if e.native_id in in_person)
+    assert all(e.screening is None for e in evs if e.native_id not in in_person)
+    http.calls.clear()
+    unstop.fetch(http, {}, cache)
+    assert http.calls == [unstop.API.format(page=1)]  # cached: only the listing again
+    listing["data"]["data"][0]["updated_at"] = "2099-01-01T00:00:00+05:30"
+    http.calls.clear()
+    unstop.fetch(http, {}, cache)
+    changed = str(listing["data"]["data"][0]["id"])
+    assert http.calls == [unstop.API.format(page=1)] + ([unstop.DETAIL.format(id=changed)] if changed in in_person else [])
+
+
+def test_unstop_detail_fetches_are_capped_per_run():
+    listing = data("unstop.json")
+    listing["data"]["last_page"] = 1
+    pages = {unstop.API.format(page=1): listing}
+    for o in listing["data"]["data"]:
+        pages[unstop.DETAIL.format(id=o["id"])] = data("unstop_competition_codered.json")
+    http, cache = FakeHttp(pages), {}
+    unstop.fetch(http, {"details_per_run": 3}, cache)
+    assert len(http.calls) == 1 + 3 and len(cache) == 3
+
+
+@pytest.mark.parametrize("legacy_detail", [
+    None,
+    {"screen": None, "rounds": ""},
+    {"screen": True, "rounds": "Legacy online round"},
+])
+def test_unstop_retries_failed_details_and_refreshes_legacy_cache(legacy_detail):
+    listing = data("unstop.json")
+    entry = next(o for o in listing["data"]["data"] if o["region"] != "online")
+    listing["data"].update(data=[entry], last_page=1)
+    listing_url = unstop.API.format(page=1)
+    detail_url = unstop.DETAIL.format(id=entry["id"])
+    event_id = str(entry["id"])
+    old = {"u": entry.get("updated_at"), **legacy_detail} if legacy_detail is not None else None
+    cache = {event_id: old} if old is not None else {}
+    http = FakeHttp({listing_url: listing, detail_url: ConnectionError("temporary detail outage")})
+
+    event, = unstop.fetch(http, {}, cache)
+    assert event.screening is None
+    assert cache.get(event_id) == old
+
+    http.pages[detail_url] = data("unstop_competition_ctf_davanagere.json")
+    event, = unstop.fetch(http, {}, cache)
+    assert event.screening is False
+
+    event, = unstop.fetch(http, {}, cache)
+    assert event.screening is False
+    assert http.calls == [listing_url, detail_url, listing_url, detail_url, listing_url]
 
 
 def test_devfolio_listing_and_detail():
@@ -49,6 +144,14 @@ def test_devfolio_listing_and_detail():
     assert detail["city"] == "Kolkata"
     ev = devfolio.build(next(h for h in listing if h["slug"] == "devnexus2"), detail)
     assert ev.city == "Kolkata" and ev.reg_deadline is not None and ev.url == "https://devnexus2.devfolio.co/"
+
+
+def test_devfolio_detail_team_size_and_rounds():
+    d = devfolio.parse_detail(text("devfolio_detail_innerve11.html"))
+    assert (d["team_min"], d["team_max"]) == (2, 4) and d["city"] == "Pune"
+    assert "Idea submission round" in d["rounds"] and "*" not in d["rounds"]
+    ev = devfolio.build({"slug": "innerve-11", "name": "Innerve 11", "is_online": False}, d)
+    assert (ev.team_min, ev.team_max) == (2, 4) and ev.screening is None and ev.rounds
 
 
 def test_gdg_chapter_and_detail():
@@ -86,3 +189,12 @@ def test_hackbriven():
     assert {e.title for e in evs} == {"Notion Workshop BLR", "Build Bengaluru 2.0"}
     assert by_title(evs, "Build Bengaluru").kind == "hackathon"
     assert hackbriven.parse(data("hackbriven_upcoming.json")) == []
+
+
+def test_hackbriven_virtual_events_team_size_and_stages():
+    evs = hackbriven.parse(data("hackbriven_ongoing_virtual.json"))
+    bol = by_title(evs, "BOLBHARAT")
+    assert bol.mode == "online"  # Hackbriven calls online events "virtual"
+    assert (bol.team_min, bol.team_max) == (1, 1) and bol.screening is True and bol.rounds == "Round 1 (online)"
+    notion = by_title(evs, "Notion Workshop")
+    assert notion.mode == "offline" and notion.screening is None

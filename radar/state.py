@@ -102,9 +102,13 @@ def absorb(primary: Event, dup: Event) -> None:
     primary.ppi = primary.ppi or dup.ppi
     if dup.perks and dup.perks not in primary.perks:
         primary.perks = " / ".join(x for x in [primary.perks, dup.perks] if x)
-    for f in ("reg_deadline", "spots_left", "venue", "city", "org", "description"):
+    for f in ("reg_deadline", "spots_left", "venue", "city", "org", "description", "rounds"):
         if not getattr(primary, f) and getattr(dup, f):
             setattr(primary, f, getattr(dup, f))
+    if primary.team_min is None and dup.team_min is not None:
+        primary.team_min, primary.team_max = dup.team_min, dup.team_max
+    if primary.screening is None:
+        primary.screening = dup.screening
     if dup.kind == "hackathon":
         primary.kind = "hackathon"
     primary.near_capacity = primary.near_capacity or dup.near_capacity

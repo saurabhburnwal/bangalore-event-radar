@@ -195,3 +195,75 @@ def test_state_round_trip_is_stable(tmp_path, cfg, seeded):
     # (The fake results leave the other sources empty, which bumps their failure counters; ignore those.)
     loaded["sources"] = seeded["sources"]
     assert not st.save(p, loaded)
+
+
+def test_office_visit_alert_has_its_own_badge(cfg, seeded):
+    spy = Spy()
+    runner.poll(results(gdg=[google()]), seeded, cfg, spy, NOW)
+    assert spy.sent[0].startswith("🏢 <b>OFFICE VISIT · Google</b>\n<b>DevFest Bengaluru 2026</b>")
+    assert "at Google office" in spy.sent[0]
+
+
+def test_bundled_alerts_put_office_visits_first(cfg, seeded):
+    cfg = {**cfg, "alerts": {**cfg["alerts"], "max_instant_per_run": 1}}
+    hack = Event(source="unstop", native_id="h", title="Big Prize Hack", url="https://unstop.com/h", end=SOON,
+                 city="Bangalore", kind="hackathon", prize_inr=500000, prize_data=True, tech_source=True,
+                 team_min=1, team_max=4)
+    spy = Spy()
+    runner.poll(results(unstop=[hack], gdg=[google()]), seeded, cfg, spy, NOW)
+    body = spy.sent[0]
+    assert body.index("🏢 <b>Office visits</b>") < body.index("DevFest") < body.index("Other high-priority") < body.index("Big Prize")
+
+
+def test_digest_lists_upcoming_office_visits_every_day_until_they_happen(cfg, seeded):
+    runner.poll(results(gdg=[google()]), seeded, cfg, Spy(), NOW)  # alerted instantly, never queued
+    assert seeded["queue"] == []
+    for day in (1, 2):
+        body = "\n".join(runner.digest(seeded, cfg, Spy(), NOW + timedelta(days=day)))
+        assert "🏢 <b>Office visits</b>" in body and "DevFest Bengaluru 2026" in body and "at Google office" in body
+    assert runner.digest(seeded, cfg, Spy(), SOON + timedelta(hours=1)) == []  # it has started: gone
+
+
+def test_office_visit_section_comes_before_the_new_events(cfg, seeded):
+    runner.poll(results(gdg=[google()], meetup=[meetup_ev()]), seeded, cfg, Spy(), NOW)
+    body = "\n".join(runner.digest(seeded, cfg, Spy(), NOW + timedelta(hours=1)))
+    assert body.index("Office visits") < body.index("Rust Systems Night")
+
+
+def test_out_of_town_hackathon_with_online_first_round_reaches_the_digest(cfg, seeded):
+    away = Event(source="unstop", native_id="q", title="Quasar 5.0", url="https://unstop.com/q", end=SOON,
+                 city="Mumbai", mode="offline", kind="hackathon", prize_inr=300000, prize_data=True,
+                 tech_source=True, team_min=2, team_max=4, screening=True,
+                 rounds="Round 0 : PPT Submission Round (online) → Final Offline Round : 36 Hour Hackathon (in person)")
+    runner.poll(results(unstop=[away]), seeded, cfg, Spy(), NOW)
+    body = "\n".join(runner.digest(seeded, cfg, Spy(), NOW + timedelta(hours=1)))
+    assert "🧳 <b>Outside Bangalore, online round first</b>" in body and "Quasar 5.0" in body
+    assert "online round first · team 2–4" in body
+
+
+def test_event_dropped_by_the_new_rules_leaves_every_digest_list(cfg, seeded):
+    hack = Event(source="unstop", native_id="sf", title="StarForge", url="https://unstop.com/sf", end=SOON,
+                 city="Bangalore", kind="hackathon", prize_inr=65000, prize_data=True, tech_source=True,
+                 reg_deadline=NOW + timedelta(hours=30))
+    runner.poll(results(unstop=[hack]), seeded, cfg, Spy(), NOW)
+    assert seeded["queue"]
+    hack.team_min, hack.team_max = 3, 4  # now we know it needs three people
+    runner.poll(results(unstop=[hack]), seeded, cfg, Spy(), NOW)
+    assert seeded["queue"] == [] and seeded["events"]["unstop:sf"]["dropped"]
+    assert runner.digest(seeded, cfg, Spy(), NOW + timedelta(hours=1)) == []
+
+
+def test_long_messages_never_end_on_a_section_header():
+    from radar import messages
+    lines = ["☀️ <b>Event digest</b>", ""] + [f"• item {i} " + "x" * 300 for i in range(12)] + \
+            ["", "🧳 <b>Outside Bangalore, online round first</b>"] + [f"• away {i} " + "y" * 300 for i in range(6)]
+    parts = messages.split(lines)
+    assert len(parts) >= 2 and all(len(p) <= messages.LIMIT for p in parts)
+    assert not any(p.rstrip().splitlines()[-1].startswith("🧳") for p in parts)
+    assert any(p.startswith("🧳 <b>Outside Bangalore") for p in parts[1:])
+
+
+def test_round_titles_are_cut_at_a_word():
+    from radar.eligibility import Round, summary
+    s = summary([Round("Build Phase (1 Jan – 10 Jan): Working on the problem statement released earlier", True)])
+    assert s == "Build Phase (1 Jan – 10 Jan): Working on the problem… (online)"

@@ -30,6 +30,10 @@ class Event:
     near_capacity: bool = False
     sold_out: bool = False
     reg_deadline: datetime | None = None
+    team_min: int | None = None   # allowed team size, when the source states it
+    team_max: int | None = None
+    screening: bool | None = None # an online round comes first (None: the source lists no rounds)
+    rounds: str = ""              # short round summary, e.g. "Idea Submission (online) → Grand Finale (offline)"
     extra: dict = field(default_factory=dict)
 
     @property

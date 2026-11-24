@@ -34,15 +34,18 @@ location:
     - binnamangala
 
 scoring:
+  my_team_size: 2               # you enter solo or in a team of this many: hackathons needing a bigger team are skipped
   high_prize_inr: 100000        # a Bangalore hackathon with at least this much prize money → instant alert
-  min_online_prize_inr: 100000  # an online hackathon with no internship needs this much to reach the digest
-  online_ppi_instant: true      # online hackathons offering an internship/PPO → instant alert (false = digest only)
+  min_online_prize_inr: 100000  # an online or out-of-town hackathon with no internship needs this much to reach the digest
+  online_ppi_instant: true      # online/out-of-town hackathons offering an internship/PPO → instant alert (false = digest only)
   filling_spots: 25             # this many spots left or fewer → "filling fast"
   closing_soon_hours: 72        # digest lists events whose registration closes within this window
   usd_inr: 88                   # for prizes listed in dollars
 
-  # Companies whose venue or hosting makes an event worth an instant alert.
-  # Matched against the venue and the organiser — not the description, so "built on AWS" doesn't count.
+  # Tech giants. An event that takes you into one of their offices is an instant "🏢 OFFICE VISIT" alert:
+  # held at their office (venue, or "@ Google" in the title), its finale is at their office, the prize is an
+  # office visit, or (in person) the company itself organises it. Description text only counts when it names
+  # the office ("at Google's Bengaluru office", "visit to Microsoft Reactor"), so "built on AWS" doesn't.
   big_tech:
     - google
     - microsoft
@@ -100,6 +103,25 @@ scoring:
     - interview opportunit(y|ies)
     - fast[- ]track(ed)? interviews?
     - hiring
+
+  # Organiser names that carry a big-tech brand but aren't the company itself.
+  organiser_not_company:
+    - students?
+    - ambassadors?
+    - clubs?
+    - user groups?
+    - on campus
+    - chapters?
+
+  # An offline hackathon outside Bangalore is only kept if an online round comes first, so you travel only
+  # once shortlisted. Unstop and Hackbriven list rounds; when a site lists none (Devfolio, some Unstop events),
+  # the description is checked for these phrases instead.
+  screening_keywords:
+    - online( \w+){0,2} (rounds?|submissions?|assessments?|tests?|quiz|pitch|presentations?|evaluations?|qualifiers?|screening|prelims?|challenge|abstracts?|ideas?|ppts?|proposals?)
+    - (round|stage|phase) ?(1|one|i|0)\W{0,4}online
+    - (idea|ppt|abstract|proposal|project|prototype|video) submissions?( round)?
+    - (screening|qualifier|qualifying|preliminary|elimination) rounds?
+    - submit (your|an?) (idea|ppt|abstract|proposal|presentation)
 
   office_visit_keywords:
     - office visit

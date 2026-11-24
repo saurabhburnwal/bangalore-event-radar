@@ -1,10 +1,13 @@
-"""Unstop: public opportunity search API, open hackathons only."""
+"""Unstop: public opportunity search API, open hackathons only, plus each in-person event's round list (cached)."""
 from __future__ import annotations
 
+from ..eligibility import Round, has_screening, round_sentences, summary
 from ..models import Event
 from ..util import html_to_text, parse_dt
 
 API = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&oppstatus=open&per_page=30&page={page}"
+DETAIL = "https://unstop.com/api/public/competition/{id}"
+DETAIL_CACHE_VERSION = 1
 
 
 def _prize(prizes: list, usd_inr: float) -> tuple[int, bool, str]:
@@ -21,6 +24,13 @@ def _prize(prizes: list, usd_inr: float) -> tuple[int, bool, str]:
     return total, ppi, " / ".join(dict.fromkeys(perks))[:400]
 
 
+def _int(v) -> int | None:
+    try:
+        return int(v) if v not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
+
+
 def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
     """Return (events, last_page)."""
     d = data["data"]
@@ -30,6 +40,7 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
         regn = o.get("regnRequirements") or {}
         prize, ppi, perks = _prize(o.get("prizes"), usd_inr)
         region = (o.get("region") or "online").lower()
+        full = html_to_text(o.get("details"), 20000)
         out.append(Event(
             source="unstop",
             native_id=str(o["id"]),
@@ -41,7 +52,8 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
             mode=region if region in ("online", "offline", "hybrid") else "online",
             host=(o.get("organisation") or {}).get("name") or "",
             org=(o.get("organisation") or {}).get("name") or "",
-            description=html_to_text(o.get("details")),
+            description=full[:1500],
+            rounds=round_sentences(full),  # the round plan in prose; replaced by the real round list when there is one
             kind="hackathon",
             tech_source=True,
             prize_inr=prize,
@@ -49,9 +61,38 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
             prize_data=True,
             perks=perks,
             reg_deadline=parse_dt(regn.get("end_regn_dt")),
-            extra={"registered": o.get("registerCount")},
+            team_min=_int(regn.get("min_team_size")),
+            team_max=_int(regn.get("max_team_size")),
+            extra={"registered": o.get("registerCount"), "updated": o.get("updated_at")},
         ))
     return out, int(d.get("last_page") or 1)
+
+
+def _round(r: dict) -> Round | None:
+    if (r.get("subtype") or "").lower() == "screening":
+        return None  # Unstop's "Application Screening": the organiser reviews profiles, no work is submitted
+    d = r.get("details")
+    d = (d[0] if d else {}) if isinstance(d, list) else (d or {})
+    kind = r.get("entity_type") or ""
+    seo = ((d.get("seo_data") or {}).get("description") or "").lower()
+    if "OfflineRound" in kind or seo.startswith("offline"):
+        online = False
+    elif kind.endswith(("\\Rounds", "AssessmentRound")):
+        online = True  # a submission or a test taken on Unstop
+    else:
+        online = None
+    return Round(title=d.get("title") or "", online=online, eliminator=bool(r.get("eliminator_round")))
+
+
+def parse_detail(data: dict) -> dict:
+    """{'screen': bool | None, 'rounds': summary}. 'screen' is None when the event lists no rounds."""
+    c = data["data"]["competition"]
+    raw = sorted(c.get("rounds") or [], key=lambda r: r.get("round_order") or 0)
+    rounds = [x for x in map(_round, raw) if x and x.title]
+    if not raw:
+        return {"screen": None, "rounds": ""}
+    hybrid = (c.get("region") or "").lower() == "hybrid"
+    return {"screen": has_screening(rounds, hybrid), "rounds": summary(rounds)}
 
 
 def fetch(http, cfg: dict, cache: dict) -> list[Event]:
@@ -59,4 +100,30 @@ def fetch(http, cfg: dict, cache: dict) -> list[Event]:
     events, last = parse(http.json(API.format(page=1)), usd)
     for page in range(2, min(last, cfg.get("max_pages", 10)) + 1):
         events += parse(http.json(API.format(page=page)), usd)[0]
-    return list({e.native_id: e for e in events}.values())
+    events = list({e.native_id: e for e in events}.values())
+
+    # Reuse successful detail reads until the event changes. Cap requests per run so a cold cache
+    # or a detail endpoint outage doesn't send a request for every in-person event at once.
+    live = {e.native_id for e in events}
+    for k in list(cache):
+        if k not in live:
+            del cache[k]
+    budget = cfg.get("details_per_run", 40)
+    for e in events:
+        if e.mode == "online":
+            continue
+        updated = e.extra.get("updated")
+        hit = cache.get(e.native_id)
+        if not hit or hit.get("version") != DETAIL_CACHE_VERSION or hit.get("u") != updated:
+            if budget <= 0:
+                continue
+            budget -= 1
+            try:
+                detail = parse_detail(http.json(DETAIL.format(id=e.native_id)))
+            except Exception:
+                continue  # Use the listing description this run and retry the detail on a later poll.
+            hit = {"version": DETAIL_CACHE_VERSION, "u": updated, **detail}
+            cache[e.native_id] = hit
+        e.screening = hit["screen"]
+        e.rounds = hit["rounds"] or e.rounds
+    return events

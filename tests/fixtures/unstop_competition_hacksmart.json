@@ -1,0 +1,49 @@
+{
+ "data": {
+  "status": true,
+  "competition": {
+   "id": 1799091,
+   "title": "Hacksmart 2.0",
+   "region": "hybrid",
+   "updated_at": "2026-11-10T16:53:03+05:30",
+   "rounds": [
+    {
+     "entity_type": "App\\Model\\Rounds",
+     "subtype": "screening",
+     "round_order": 1,
+     "eliminator_round": 1,
+     "is_hidden": 1,
+     "status": "LIVE",
+     "details": [
+      {
+       "title": "Application Screening",
+       "start_date": "2026-11-06T00:00:00+05:30",
+       "end_date": "2026-12-15T23:59:00+05:30",
+       "seo_data": {
+        "description": "Online Submission Round as part of Hacksmart 2.0"
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Models\\AssessmentRound\\AssessmentRound",
+     "subtype": null,
+     "round_order": 2,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "DRAFT",
+     "details": [
+      {
+       "title": "Round 1",
+       "start_date": "2026-11-06T12:41:00+05:30",
+       "end_date": "2026-12-15T23:59:00+05:30",
+       "seo_data": {
+        "description": null
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

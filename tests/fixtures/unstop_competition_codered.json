@@ -1,0 +1,67 @@
+{
+ "data": {
+  "status": true,
+  "competition": {
+   "id": 1810268,
+   "title": "CODERED'26",
+   "region": "hybrid",
+   "updated_at": "2026-11-15T21:11:17+05:30",
+   "rounds": [
+    {
+     "entity_type": "App\\Model\\Rounds",
+     "subtype": null,
+     "round_order": 1,
+     "eliminator_round": 1,
+     "is_hidden": 0,
+     "status": "DRAFT",
+     "details": [
+      {
+       "title": "Round 1 (Idea Submission)",
+       "start_date": "2026-11-14T23:59:00+05:30",
+       "end_date": "2026-11-27T23:59:00+05:30",
+       "seo_data": {
+        "description": "Online Submission Round as part of CODERED'26"
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Model\\Rounds",
+     "subtype": null,
+     "round_order": 2,
+     "eliminator_round": 1,
+     "is_hidden": 0,
+     "status": "DRAFT",
+     "details": [
+      {
+       "title": "Round 2 (Online Meet Based Evaluation)",
+       "start_date": "2026-12-02T21:00:00+05:30",
+       "end_date": "2026-12-12T09:00:00+05:30",
+       "seo_data": {
+        "description": "Online Submission Round as part of CODERED'26"
+       }
+      }
+     ]
+    },
+    {
+     "entity_type": "App\\Model\\OfflineRound",
+     "subtype": null,
+     "round_order": 3,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "NOT_STARTED",
+     "details": [
+      {
+       "title": "Round 3 (On-Campus Product Development Sprint)",
+       "start_date": "2026-12-28T08:00:00+05:30",
+       "end_date": "2026-12-29T16:30:00+05:30",
+       "seo_data": {
+        "description": "Offline Round as part of CODERED'26"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

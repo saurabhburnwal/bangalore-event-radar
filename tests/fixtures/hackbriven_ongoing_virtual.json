@@ -1,0 +1,191 @@
+{
+ "events": [
+  {
+   "_id": "6af8278532ff8da86e3f9f3d",
+   "eventName": "BOLBHARAT",
+   "description": "<p><strong>BOLBHARAT – The Gnani Voice AI Innovation Challenge 🎙️</strong></p><p>HackBriven, in collaboration with <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"text-primary underline cursor-pointer\" href=\"http://Gnani.ai\">Gnani.ai</a>, brings you BolBharat, a 100% online Voice AI Innovation Challenge!</p><p>💬 <strong>Join the WhatsApp Community:</strong></p><p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"text-primary underline cursor-pointer\" href=\"https://chat.whatsapp.com/F3Vo00c02GKHE1TNGjvNcm?s=cl&amp;p=a&amp;iam=2\">https://chat.whatsapp.com/F3Vo00c02GKHE1TNGjvNcm?s=cl&amp;p=a&amp;iam=2</a></p><hr><p>📅 Starts: 15 November</p><p>🔥 Registrations are now open!</p><hr><p>🏆 What's in it for you?</p><p>- Exciting prizes for winners.</p><p>- Top 5 projects Early access invites to Gnani AI in-house dev sessions.</p><p>- E-certificates for participants.</p><p>- Recognition across <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"text-primary underline cursor-pointer\" href=\"http://Gnani.ai\">Gnani.ai</a> and HackBriven.</p><p>- Opportunity to work on real-world problem-solving.</p>",
+   "organizationName": "HackBriven",
+   "eventType": "event",
+   "locationType": "virtual",
+   "participationType": "individual",
+   "registrationFields": [
+    "name",
+    "email",
+    "phone",
+    "city",
+    "year",
+    "college",
+    "course"
+   ],
+   "customRegistrationFields": [],
+   "audience": "students",
+   "isPaid": false,
+   "eventStatus": "ongoing",
+   "registrationStatus": "open",
+   "startDate": "2026-11-14T18:30:00.000Z",
+   "endDate": "2026-11-23T18:14:00.000Z",
+   "registrationStartDate": "2026-11-14T09:15:00.000Z",
+   "registrationEndDate": "2026-11-23T09:15:00.000Z",
+   "registrationDeadline": "2026-11-23T09:15:00.000Z",
+   "location": "Online",
+   "tags": [],
+   "prizeBreakdown": [],
+   "tracks": [
+    {
+     "name": "Healthcare: Voice field register for ASHA workers",
+     "description": "<p>Build a voice agent that turns an ASHA worker's spoken home-visit notes into a</p><p>structured visit record and a follow-up list, with no typing.</p><p>Background. ASHA workers log pregnancy, newborn and immunisation visits in paper</p><p>registers and phone apps, typing on small screens while walking between houses. Data</p><p>entry eats into visit time, and records arrive late or incomplete.</p><p></p><p><strong>Problem statement. </strong>How might an ASHA worker speak her visit notes in any supported</p><p>Indic language with English code-mix, and get a correct record plus next actions before</p><p>she reaches the next house?</p><p>Must work with household and street noise.</p><p>What to build (required)</p><p>Criterion Weight What we look for</p><p>Live judge test 30 Judges speak to the agent live. Task success,</p><p>accuracy on names and numbers and time to first</p><p>audio (end of caller speech to first agent audio)</p><p>Speech-layer depth 20 Streaming end to end, barge-in handling,</p><p>endpointing, code-mix and noise handling</p><p>Fit for the target user 20 The named user finishes the task without help,</p><p>on the device they actually own</p><p>Innovation 10 A fresh take on the workflow, beyond a chatbot</p><p>with a voice</p><p>Responsible AI and</p><p>compliance</p><p></p><p>10 Meets the baseline below, with guardrails that</p><p>hold in the live demo</p><p>Demo and docs 10 Clear story, working live demo, README a</p><p>stranger can follow</p><p>Gnani Voice Hackathon: Problem Statements</p><hr><p>1. Voice capture. Streaming STT that handles code-mix and local health words (\"TT</p><p>injection\", \"ANC checkup\", \"IFA goli\").</p><p></p><p>2. Structured record with read-back. Your agent fills a visit form (beneficiary ID, visit</p><p>type, weight, vaccinations due, next visit date). Before saving, your agent reads the</p><p>form aloud so she can confirm it, and she fixes any mistake by voice (\"no, weight is 2.8</p><p>kilo\").</p><p></p><p>3. Danger-sign escalation. When the notes mention a danger sign from the team's list</p><p>(bleeding in pregnancy, high fever in a newborn), your agent tells her in her language</p><p>to refer to the PHC now and flags the record. It follows the list only and gives no</p><p>diagnosis or treatment advice.</p><p></p><p>Judged on. Judges dictate visit notes live with background noise. Scored on field</p><p>accuracy and correct danger-sign flags. A missed danger sign costs double.</p><p>Track-specific guardrails. Synthetic beneficiaries only. Teams build their danger-sign list</p><p>from a public health guideline and cite it in the README.</p>",
+     "prizes": "",
+     "sponsors": [],
+     "categories": [],
+     "requirements": "",
+     "resources": ""
+    },
+    {
+     "name": "Voice Khata for kirana stores",
+     "description": "<p>Build a voice ledger that a shopkeeper talks to across the counter, mid-sale, which records</p><p>credit and payments correctly and tells him who owes what.</p><p>Background. Many kirana stores run customer credit (udhaar) in a paper khata book.</p><p>Nobody types into an app during rush hour. Shop talk is fast, code-mixed and full of</p><p>numbers and names, over the noise of a busy street.</p><p>Problem statement. How might a shopkeeper say \"Ramesh ka 340 udhaar, kal 200 diya</p><p>tha\", or the same in any supported Indic language with English code-mix, during a sale and</p><p>have the ledger update correctly without touching the screen?</p><p>Channel. Android phone or browser on a low-end device, push-to-talk or wake phrase.</p><p></p><p><strong>What to build (required)</strong></p><p>1. Numbers under noise. Streaming STT that gets amounts right in any form: \"teen sau</p><p>chaalis\", \"340\" or \"three-forty\", with shop noise behind them.</p><p>2. Ledger logic. Parses customer, amount, credit or payment, and relative dates (\"kal\",</p><p>\"parso\"). Handles spoken corrections (\"nahi, 430\"). Asks a short spoken question</p><p>when two customers share a name.</p><p>3. Spoken answers. \"Aaj kitna udhaar gaya?\" or \"Ramesh ka total?\" answered by voice</p><p>within 2 seconds of the question ending.</p><p>Gnani Voice Hackathon: Problem Statements</p><hr><p>Judged on. Judges speak shop entries live with noise playing. Scored on exact amount</p><p>match, correct credit or payment direction and correction handling.</p><p>Track-specific guardrails. Reminders stay polite, go only to customers who opted in, and</p><p>carry no pressure or threat language. Ledger data stays on the device or is encrypted at</p><p>rest.</p><p>Responsible AI and compliance baseline</p><p>Every track must meet these rules. Breaking one in the live demo caps the Responsible AI</p><p>score at zero.</p><p>AI disclosure. The agent says it is an AI in its first turn, in the user's language.</p><p>Data. Synthetic or consented data only. Anything teams collect in demos falls under</p><p>the DPDP Act, and transcripts are encrypted at rest and deleted after judging.</p><p>Health. No diagnosis, treatment or dosage advice. Fixed protocols only.</p><p>Money. No lending, no pressure language, opt-in reminders only.</p><p>Secrets. Keep the API key out of the public repo. Store it in a .env file listed in</p><p>.gitignore.</p><p>Voices. No cloning of any real person's voice.</p>",
+     "prizes": "",
+     "sponsors": [],
+     "categories": [],
+     "requirements": "",
+     "resources": ""
+    }
+   ],
+   "stages": [
+    {
+     "stageId": "submission-1",
+     "name": "Round 1",
+     "description": "",
+     "startDate": "2026-11-14T18:30:00.000Z",
+     "endDate": "2026-11-23T09:30:00.000Z",
+     "isOpen": true,
+     "requirements": [],
+     "submissionType": "General",
+     "type": "submission",
+     "submissionFields": [
+      {
+       "fieldId": "file_1794648604041",
+       "fieldType": "url",
+       "label": "Deployed Link ",
+       "required": true,
+       "allowedFormats": [],
+       "options": []
+      },
+      {
+       "fieldId": "cf_mwg7hmt60",
+       "fieldType": "url",
+       "label": "Repo Link",
+       "required": true,
+       "allowedFormats": [],
+       "options": []
+      },
+      {
+       "fieldId": "cf_mwg7x1x91",
+       "fieldType": "text",
+       "label": "Project Title",
+       "required": true,
+       "allowedFormats": [],
+       "options": []
+      }
+     ],
+     "submittedBy": "leader_only",
+     "stageType": "review",
+     "isEliminator": true,
+     "isFinal": false,
+     "progressionMode": "manual",
+     "judgingEnabled": false,
+     "judgingCriteria": [],
+     "judgingOpen": true,
+     "judgingDeadline": null,
+     "judgingClosedAt": null,
+     "judgingClosedBy": null,
+     "_id": "6af82eed136040361bb03a0d"
+    }
+   ],
+   "status": "Approved",
+   "organizerId": {
+    "_id": "69dfe3d458b5d00e7be20f3f",
+    "email": "hellocertifyx@gmail.com",
+    "firstName": "HackBriven",
+    "lastName": ""
+   },
+   "isFeatured": false,
+   "views": 1705,
+   "createdAt": "2026-11-14T09:19:01.809Z",
+   "slug": "bolbharat",
+   "imageUrl": "/api/files/events/banners/69dfe3d458b5d00e7be20f3f/1794647944106-e304b50502c5-banner.jpg",
+   "mobileBanner": "/api/files/events/mobile-banners/69dfe3d458b5d00e7be20f3f/1794647945384-1591dfb23935-mobileBanner.jpg",
+   "thumbnail": "/api/files/events/thumbnails/69dfe3d458b5d00e7be20f3f/1794647946158-62d87b717510-thumbnail.jpg",
+   "webBanner": "/api/files/events/banners/69dfe3d458b5d00e7be20f3f/1794647944106-e304b50502c5-banner.jpg",
+   "prizePool": "",
+   "participants": 272,
+   "duration": "9-Day",
+   "teamSize": "Individual",
+   "daysLeft": null
+  },
+  {
+   "_id": "6ad9bf26aa382734f5938b10",
+   "eventName": "Notion Workshop BLR",
+   "description": "<p><strong>Notion Workshop Bengaluru</strong></p><p>​Join us for a hands-on Notion workshop where you'll learn how to organize your work, build powerful databases, and explore new ways to use Notion beyond note-taking.<br><br>​<strong>Join the WhatsApp group: </strong><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"text-primary underline cursor-pointer\" href=\"https://chat.whatsapp.com/KDKxVkshWEa1Z86fzJ8Za9\"><strong>https://chat.whatsapp.com/KDKxVkshWEa1Z86fzJ8Za9</strong></a><br></p><p>​<strong>What you'll learn:</strong></p><ul><li><p>​🧩 Notion basics and workspace setup</p></li><li><p>​🗂️ Building and managing Notion databases</p></li><li><p>​🛠️ Hands-on workflows using Notion as a backend</p></li><li><p>​🤖 Exploring AI agents with Notion<br></p></li></ul><p>​📅 <strong>Date:</strong> 21st November 2026<br>⏰ <strong>Time:</strong> 11:00 AM – 1:00 PM<br>📍 <strong>Venue:</strong> Dodo Payments Office, Bengaluru<br></p><p>​Whether you're new to Notion or looking to explore its capabilities, this workshop will help you build practical workflows and discover what's possible with Notion.<br></p><p>​Come learn, build, and explore the future of productivity with Notion!</p>",
+   "organizationName": "HackBriven",
+   "eventType": "workshop",
+   "locationType": "in-person",
+   "participationType": "individual",
+   "registrationFields": [
+    "name",
+    "email",
+    "phone",
+    "city",
+    "year",
+    "company",
+    "course",
+    "jobTitle",
+    "yearsOfExperience"
+   ],
+   "customRegistrationFields": [],
+   "audience": "both",
+   "isPaid": false,
+   "eventStatus": "upcoming",
+   "registrationStatus": "open",
+   "startDate": "2026-11-21T04:30:00.000Z",
+   "endDate": "2026-11-21T09:30:00.000Z",
+   "registrationStartDate": "2026-10-21T18:30:00.000Z",
+   "registrationEndDate": "2026-11-17T18:30:00.000Z",
+   "registrationDeadline": "2026-11-17T18:30:00.000Z",
+   "location": "Dodo Payments",
+   "tags": [],
+   "prizeBreakdown": [],
+   "tracks": [],
+   "stages": [],
+   "status": "Approved",
+   "organizerId": {
+    "_id": "69e06962565e8156070f71c4",
+    "email": "amitkd.dev@gmail.com",
+    "firstName": "Amit",
+    "lastName": ""
+   },
+   "isFeatured": false,
+   "views": 1285,
+   "createdAt": "2026-10-22T07:45:42.764Z",
+   "slug": "notion-workshop-blr",
+   "imageUrl": "/api/files/events/banners/69e06962565e8156070f71c4/1792655146160-230c1f943a94-banner.jpg",
+   "mobileBanner": "/api/files/events/mobile-banners/69e06962565e8156070f71c4/1792655148392-953ee213130c-mobileBanner.jpg",
+   "thumbnail": "/api/files/events/thumbnails/69e06962565e8156070f71c4/1792655149994-c1854d716cee-thumbnail.jpg",
+   "webBanner": "/api/files/events/banners/69e06962565e8156070f71c4/1792655146160-230c1f943a94-banner.jpg",
+   "participants": 234,
+   "duration": "5-Hour",
+   "teamSize": "Individual",
+   "daysLeft": 5
+  }
+ ],
+ "total": 2,
+ "page": 1,
+ "limit": 50,
+ "hasMore": false,
+ "statusCounts": {
+  "ongoing": 2,
+  "upcoming": 0,
+  "closed": 36,
+  "total": 38
+ },
+ "totalParticipants": 35606
+}

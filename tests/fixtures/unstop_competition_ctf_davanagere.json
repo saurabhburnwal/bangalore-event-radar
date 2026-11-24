@@ -1,0 +1,31 @@
+{
+ "data": {
+  "status": true,
+  "competition": {
+   "id": 1791574,
+   "title": "Capture The Flag (CTF)",
+   "region": "offline",
+   "updated_at": "2026-11-14T18:49:00+05:30",
+   "rounds": [
+    {
+     "entity_type": "App\\Model\\OfflineRound",
+     "subtype": null,
+     "round_order": 1,
+     "eliminator_round": 0,
+     "is_hidden": 0,
+     "status": "NOT_STARTED",
+     "details": [
+      {
+       "title": "Offline Round",
+       "start_date": "2026-12-03T10:00:00+05:30",
+       "end_date": "2026-12-03T17:00:00+05:30",
+       "seo_data": {
+        "description": "Offline Round as part of Capture The Flag (CTF)"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
