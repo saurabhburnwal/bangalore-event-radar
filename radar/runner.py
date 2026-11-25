@@ -4,12 +4,11 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
 
-from . import messages
+from . import health, messages
 from . import state as st
-from .http import issue
 from .models import Event
 from .score import DIGEST, HIGH, IGNORE, Scorer, Verdict
-from .sources import MAY_BE_EMPTY, SOURCES
+from .sources import SOURCES
 from .util import IST, https_url, parse_dt, to_iso
 
 
@@ -46,11 +45,8 @@ def _health(results: dict, state: dict, cfg: dict, notifier, report: PollReport)
     failed = 0
     for name, res in results.items():
         h = state["sources"].setdefault(name, {"fails": 0, "warned": False})
-        if isinstance(res, Exception):
-            err = issue(res)
-        elif not res and name not in MAY_BE_EMPTY:
-            err = "returned no events"
-        else:
+        status, err = health.source_status(name, res)
+        if status != "failed":
             still_warned = h.get("warned", False) and not _send(notifier, report, messages.source_up(name))
             state["sources"][name] = {"fails": 0, "warned": still_warned}
             continue
@@ -60,7 +56,7 @@ def _health(results: dict, state: dict, cfg: dict, notifier, report: PollReport)
         if h["fails"] >= limit and not h.get("warned"):
             if _send(notifier, report, messages.source_down(name, h["fails"], err)):
                 h["warned"] = True
-    if results and failed == len(results):
+    if failed == len(results):
         report.errors.append("all enabled event sources failed")
 
 
@@ -142,6 +138,7 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
     today = now.astimezone(IST).date().isoformat()
     max_instant = (cfg.get("alerts") or {}).get("max_instant_per_run", 8)
 
+    health.record(state.setdefault("health", {}), results, now)
     _health(results, state, cfg, notifier, report)
     pending = {q["id"]: q for q in state["queue"]}
 
@@ -317,7 +314,8 @@ def digest(state: dict, cfg: dict, notifier, now: datetime, checkpoint=None) -> 
     if not (queue or closing or reminders or offices):
         return []
     sent = []
-    for page in messages.digest(list(queue.values()), closing, reminders, now.astimezone(IST), offices):
+    pages = messages.digest(list(queue.values()), closing, reminders, now.astimezone(IST), offices)
+    for index, page in enumerate(pages):
         notifier.send(page.text)
         sent.append(page.text)
         for key in page.keys:
@@ -329,6 +327,8 @@ def digest(state: dict, cfg: dict, notifier, now: datetime, checkpoint=None) -> 
                 delivered.add(key)
         state["queue"] = list(queue.values())
         state["digest_delivery"] = {"day": day, "keys": sorted(delivered)} if delivered else {}
+        if index == len(pages) - 1:
+            state["last_digest_day"] = day
         if checkpoint:
             checkpoint()
     state["reminders"] = {k: v for k, v in state["reminders"].items()

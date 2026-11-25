@@ -1,0 +1,23 @@
+:root {color-scheme:light; font:100%/1.55 "Inter",system-ui,sans-serif; color:#192932; background:#f5f8fa}
+* {box-sizing:border-box}
+body {margin:0}
+main {max-width:66rem; padding:2rem clamp(1rem,4vw,3rem) 4rem; margin:auto}
+header,.metrics {display:flex; align-items:center; justify-content:space-between; gap:1rem}
+header {border-bottom:1px solid #a8b8bd; padding-bottom:1rem}
+header p {font-weight:700; margin:0}
+a {color:#075f64; text-underline-offset:4px}
+h1 {font-size:clamp(2.4rem,7vw,4.2rem); line-height:1.08; margin:3rem 0 .6rem; letter-spacing:-.05em}
+h2 {font-size:1.25rem; margin:0 0 .6rem}
+.metrics {margin:2rem 0; align-items:stretch; justify-content:start; flex-wrap:wrap}
+.metrics div {flex:1 1 13rem; background:white; padding:1.25rem; border-top:3px solid #176c70}
+.metrics h2,th {font-size:.9rem}
+strong {font-size:2rem; display:block}
+small,.note {color:#455b64; font-size:.9rem}
+.scroll {overflow-x:auto}
+table {width:100%; border-collapse:collapse; white-space:nowrap}
+td,th {text-align:left; padding:.7rem .9rem .7rem 0; border-bottom:1px solid #cdd7db}
+th {color:#405660}
+td:first-child {font-weight:600}
+[data-value="Fresh"],[data-value="complete"] {color:#11604e}
+[data-value="Stale"],[data-value="partial"] {color:#854900}
+[data-value="failed"] {color:#9a2c26}

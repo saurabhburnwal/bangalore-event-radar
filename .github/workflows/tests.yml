@@ -2,7 +2,7 @@ name: tests
 
 on:
   push:
-    paths: ["radar/**", "tests/**", "config.yaml", "requirements.txt", ".github/workflows/**"]
+    paths: ["radar/**", "status/**", "tests/**", "config.yaml", "requirements.txt", ".github/workflows/**"]
   pull_request:
   workflow_dispatch:
 
@@ -18,3 +18,4 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
+      - run: node --test tests/status.test.mjs

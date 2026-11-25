@@ -1,0 +1,54 @@
+name: Run radar cycle
+on:
+  workflow_call:
+    inputs:
+      trigger:
+        required: true
+        type: string
+    secrets:
+      TELEGRAM_BOT_TOKEN:
+        required: true
+      TELEGRAM_CHAT_ID:
+        required: true
+
+jobs:
+  cycle:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Recognize the last digest during upgrade
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! jq -e 'has("last_digest_day")' state/seen.json >/dev/null; then
+            previous=$(gh run list --workflow digest.yml --branch "$GITHUB_REF_NAME" --status success --limit 1 --json startedAt --jq '.[0].startedAt // empty')
+            echo "RADAR_PREVIOUS_DIGEST=$previous" >> "$GITHUB_ENV"
+          fi
+      - name: Check events and deliver due messages
+        env:
+          TRIGGER: ${{ inputs.trigger }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m radar cycle "$TRIGGER"
+      - name: Save delivery progress and public status
+        if: always()
+        env:
+          TRIGGER: ${{ inputs.trigger }}
+        run: |
+          git config user.name "event-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- state/seen.json
+          if test -f state/status.json; then git add -- state/status.json; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "state: $TRIGGER [skip ci]"
+          git pull -q --rebase
+          git push -q

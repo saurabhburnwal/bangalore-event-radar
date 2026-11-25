@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feed status · Bangalore Event Radar</title>
+  <link rel="stylesheet" href="status.css">
+  <script type="module" src="status.mjs"></script>
+</head>
+<body>
+  <main>
+    <header><p>Bangalore Event Radar</p><a id="workflow" href="https://github.com/saurabhburnwal/bangalore-event-radar/actions/workflows/poll.yml">Open poll workflow</a></header>
+    <h1>Feed status</h1>
+    <p id="last" aria-live="polite">Loading the last usable check…</p>
+    <section class="metrics" aria-label="Coverage over the last seven days">
+      <div><h2>Hourly coverage</h2><strong id="coverage">—</strong><small id="windows">Completed hours over the last 7 days</small></div>
+      <div><h2>Longest gap</h2><strong id="gap">—</strong><small>Between usable checks, including the current wait</small></div>
+    </section>
+    <section><h2>Sources</h2>
+      <div class="scroll"><table><thead><tr><th>Source</th><th>Latest attempt</th><th>Events read</th><th>Last usable check · IST</th><th>Freshness</th></tr></thead><tbody id="feeds"></tbody></table></div>
+      <p class="note">A check becomes stale after 60 minutes. A usable check read at least one enabled feed successfully.</p>
+    </section>
+    <noscript>Enable JavaScript to see current feed status.</noscript>
+  </main>
+</body>
+</html>

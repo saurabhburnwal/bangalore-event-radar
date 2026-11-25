@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import copy
 import getpass
 import os
 import re
@@ -15,12 +14,13 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import config, messages, runner, sources
+from . import config, health, messages, runner, sources
 from . import state as st
 from .http import issue
 from .models import Event
 from .notify import Console, Telegram
 from .score import HIGH, Verdict
+from .util import IST, parse_dt
 
 
 def telegram() -> Telegram:
@@ -56,47 +56,67 @@ def print_scored(results: dict, scored: list[tuple[Event, Verdict]], verbose: bo
 def cmd_run(args) -> int:
     cfg = config.load(args.config)
     state = st.load(args.state)
-    work = copy.deepcopy(state) if args.dry_run else state
     notifier = Console() if args.dry_run else telegram()
-    results = sources.collect(cfg, work["cache"])
+    trigger = getattr(args, "trigger", None)
     now = datetime.now(timezone.utc)
-    wrote = False
+    telemetry = state.setdefault("health", {})
+    if trigger and "last_digest_day" not in state:
+        legacy = parse_dt(os.environ.get("RADAR_PREVIOUS_DIGEST"))
+        state["last_digest_day"] = legacy.astimezone(IST).date().isoformat() if legacy else None
 
     def checkpoint() -> None:
-        nonlocal wrote
-        wrote = st.save(args.state, state) or wrote
+        if not args.dry_run:
+            st.save(args.state, state)
 
-    report = runner.poll(results, work, cfg, notifier, now, None if args.dry_run else checkpoint)
-    if args.dry_run:
-        print_scored(results, report.scored, args.verbose)
-        print(f"Would alert {len(report.alerted)}, re-alert {len(report.filling)} filling fast, "
-              f"queue {len(report.queued)} for the digest. State not written.")
-        return 1 if report.errors else 0
+    errors = []
+    usable = not health.poll_due(telemetry, now)
+    if trigger != "digest" or not usable:
+        results = sources.collect(cfg, state["cache"])
+        now = datetime.now(timezone.utc)
+        report = runner.poll(results, state, cfg, notifier, now, checkpoint)
+        errors.extend(report.errors)
+        usable = any(row["outcome"] != "failed" for row in telemetry["sources"].values())
+        if args.dry_run:
+            print_scored(results, report.scored, args.verbose)
+        print(f"alerted={len(report.alerted)} filling={len(report.filling)} queued={len(report.queued)}")
+
+    local = now.astimezone(IST)
+    if trigger and local.hour >= 9 and state.get("last_digest_day") != local.date().isoformat():
+        try:
+            sent = runner.digest(state, cfg, notifier, now, checkpoint)
+            if sent or usable:
+                state["last_digest_day"] = local.date().isoformat()
+            print(f"digest_pages={len(sent)}")
+        except RuntimeError as exc:
+            errors.append(str(exc))
     checkpoint()
-    print(f"alerted={len(report.alerted)} filling={len(report.filling)} queued={len(report.queued)} "
-          f"state_changed={wrote} errors={len(report.errors)}")
-    for e in report.errors:
-        print("error:", e, file=sys.stderr)
-    return 1 if report.errors else 0
+    if not args.dry_run and trigger:
+        st.save(args.state.with_name("status.json"), telemetry)
+    for error in errors:
+        print("error:", error, file=sys.stderr)
+    return int(bool(errors))
 
 
 def cmd_digest(args) -> int:
     cfg = config.load(args.config)
     state = st.load(args.state)
-    work = copy.deepcopy(state) if args.dry_run else state
     notifier = Console() if args.dry_run else telegram()
+    now = datetime.now(timezone.utc)
+
     def checkpoint() -> None:
-        st.save(args.state, state)
+        if not args.dry_run:
+            st.save(args.state, state)
 
     try:
-        sent = runner.digest(work, cfg, notifier, datetime.now(timezone.utc), None if args.dry_run else checkpoint)
+        sent = runner.digest(state, cfg, notifier, now, checkpoint)
     except RuntimeError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+    if sent or not health.poll_due(state.get("health", {}), now):
+        state["last_digest_day"] = now.astimezone(IST).date().isoformat()
     if not sent:
         print("Nothing to send today.")
-    if not args.dry_run:
-        st.save(args.state, state)
+    checkpoint()
     return 0
 
 
@@ -185,13 +205,17 @@ def main(argv=None) -> int:
     r = sub.add_parser("run", help="check every source; alert on new high-priority events")
     r.add_argument("--dry-run", action="store_true", help="print instead of sending; don't write state")
     r.add_argument("-v", "--verbose", action="store_true", help="with --dry-run, also list ignored events")
+    cycle = sub.add_parser("cycle", help="run a scheduled check and catch up overdue work")
+    cycle.add_argument("trigger", choices=("poll", "digest"))
+    cycle.add_argument("--dry-run", action="store_true")
+    cycle.add_argument("-v", "--verbose", action="store_true")
     d = sub.add_parser("digest", help="send the daily digest")
     d.add_argument("--dry-run", action="store_true")
     t = sub.add_parser("test-notify", help="send a sample alert to Telegram")
     t.add_argument("--dry-run", action="store_true")
     sub.add_parser("telegram-chat-id", help="print the chat id of whoever messaged your bot")
     args = p.parse_args(argv)
-    return {"setup": cmd_setup, "run": cmd_run, "digest": cmd_digest, "test-notify": cmd_test_notify,
+    return {"setup": cmd_setup, "run": cmd_run, "cycle": cmd_run, "digest": cmd_digest, "test-notify": cmd_test_notify,
             "telegram-chat-id": cmd_chat_id}[args.cmd](args)
 
 

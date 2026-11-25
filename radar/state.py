@@ -1,7 +1,6 @@
 """Persistent state, committed to the repo by the workflow after each run.
 
-Only stable facts are stored (no spot counts or timestamps that change every run),
-so the file — and the repo — only change when something actually happens.
+Delivery checkpoints and poll telemetry are saved together after each scheduled cycle.
 """
 from __future__ import annotations
 
