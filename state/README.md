@@ -3,3 +3,5 @@ queue, and source health. Don't edit it by hand while the workflows are running.
 next run behave like a first run (one "what's open now" summary, no flood).
 
 `status.json` is the public projection of poll health in `seen.json`. Each completed check records the outcome and listing count per enabled feed and keeps eight days of usable poll timestamps for the status page. Delivery progress stays in `seen.json`.
+
+[The public status snapshot](status.md) is rendered from the JSON at poll time. Its dashboard download updates freshness in the browser.

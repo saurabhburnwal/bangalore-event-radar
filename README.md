@@ -93,7 +93,7 @@ python -m pytest -q
 
 ## Poll coverage
 
-[View live feed status](https://saurabhburnwal.github.io/bangalore-event-radar/) for the last usable check, per-feed freshness, hourly coverage, and longest gap. The browser marks a feed stale after 60 minutes. Quiet hours appear on this page.
+[View feed status on GitHub](state/status.md) for the last usable check, per-feed freshness, hourly coverage, and longest gap as of the latest poll. For live freshness, [download the dashboard](https://github.com/saurabhburnwal/bangalore-event-radar/releases/download/feed-status/radar-status.html) and open it in a browser. It fetches data directly from GitHub and marks feeds stale after 60 minutes even when the workflows are idle. Quiet hours appear here. After the first 168 completed hours, the next poll publishes a first-week coverage review linked from the status snapshot.
 
 Both GitHub workflows can catch up overdue work. The digest workflow polls first if the last usable check is at least an hour old. The first workflow after 09:00 IST sends any due digest once per day and resumes interrupted deliveries. Open the poll workflow and select **Run workflow** for an immediate check.
 

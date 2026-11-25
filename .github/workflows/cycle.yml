@@ -39,6 +39,13 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m radar cycle "$TRIGGER"
+      - name: Render the public status snapshot
+        if: ${{ always() && hashFiles('state/status.json') != '' }}
+        run: |
+          prior="$RUNNER_TEMP/radar-prior-status.json"
+          if git cat-file -e HEAD:state/status.json; then git show HEAD:state/status.json > "$prior"; fi
+          node scripts/status-snapshot.mjs state/status.json state/status.md state/first-week.md "$prior"
+          cat state/status.md >> "$GITHUB_STEP_SUMMARY"
       - name: Save delivery progress and public status
         if: always()
         env:
@@ -47,7 +54,9 @@ jobs:
           git config user.name "event-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- state/seen.json
-          if test -f state/status.json; then git add -- state/status.json; fi
+          for file in state/status.json state/status.md state/first-week.md; do
+            if test -f "$file"; then git add -- "$file"; fi
+          done
           if git diff --cached --quiet; then exit 0; fi
           git commit -q -m "state: $TRIGGER [skip ci]"
           git pull -q --rebase

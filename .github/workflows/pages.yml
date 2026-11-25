@@ -1,29 +1,30 @@
-name: Publish feed status
+name: Publish status dashboard
 on:
   push:
     branches: [main]
-    paths: ["status/**", ".github/workflows/pages.yml"]
+    paths: ["status/**", "scripts/build-status.mjs", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: radar-pages
+  group: radar-dashboard
   cancel-in-progress: false
+
 jobs:
-  deploy:
+  publish:
     if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.publish.outputs.page_url }}
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/configure-pages@v6
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: status
-      - id: publish
-        uses: actions/deploy-pages@v5
+      - run: node --test tests/status.test.mjs
+      - run: node scripts/build-status.mjs "$RUNNER_TEMP/radar-status.html"
+      - name: Publish downloadable dashboard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view feed-status >/dev/null 2>&1; then
+            gh release create feed-status "$RUNNER_TEMP/radar-status.html" --target "$GITHUB_SHA" --latest=false --title "Live feed status" --notes "Download radar-status.html and open it in a browser. The dashboard reads current poll data directly from the public GitHub repository."
+          else
+            gh release upload feed-status "$RUNNER_TEMP/radar-status.html" --clobber
+          fi
