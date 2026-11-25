@@ -251,3 +251,15 @@ def test_independent_listing_pages_survive_first_failure(reader, options, payloa
     batch = reader.fetch(Feed(), options, cache)
     assert source_status(reader.__name__.split(".")[-1], batch)[0] == "partial"
     assert batch and "unread" in cache
+
+
+def test_cancellation_requires_explicit_event_signal():
+    listing = data("hackbriven_ongoing.json")
+    event = listing["events"][0]
+    event["registrationStatus"] = "cancelled"
+    assert not hackbriven.parse(listing)[0].cancelled
+    event["eventStatus"] = "cancelled"
+    assert hackbriven.parse(listing)[0].cancelled
+    listing = data("luma.json")
+    listing["entries"][0]["event"]["canceled_at"] = "2026-11-25T06:00:00Z"
+    assert luma.parse(listing)[0].cancelled

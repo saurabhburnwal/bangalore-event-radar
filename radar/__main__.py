@@ -75,7 +75,7 @@ def cmd_run(args) -> int:
         usable = any(row["outcome"] != "failed" for row in telemetry["sources"].values())
         if args.dry_run:
             print_scored(results, report.scored, args.verbose)
-        print(f"alerted={len(report.alerted)} filling={len(report.filling)} queued={len(report.queued)}")
+        print(f"alerted={len(report.alerted)} corrected={len(report.corrected)} filling={len(report.filling)} queued={len(report.queued)}")
 
     local = now.astimezone(IST)
     if trigger and local.hour >= 9 and state.get("last_digest_day") != local.date().isoformat():

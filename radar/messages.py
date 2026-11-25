@@ -69,6 +69,20 @@ def alert(ev: Event, v: Verdict) -> str:
     return "\n".join(lines)
 
 
+def correction(rec: dict) -> str:
+    changes = rec["pending_correction"]
+    lines = [f"📍 <b>Event update · {_text(rec['title'], 180)}</b>"]
+    if changes.get("cancelled"):
+        lines.append("The organizer has cancelled this event.")
+    if "venue" in changes:
+        old, new = changes["venue"]
+        lines.append(f"Venue: {_text(old, 160)} → {_text(new, 160)}")
+    if "deadline" in changes:
+        old, new = [fmt_dt(parse_dt(t), show_midnight=True) for t in changes["deadline"]]
+        lines.append(f"Registration now closes earlier: {old} → {new}")
+    return "\n".join(lines)
+
+
 def filling(ev: Event) -> str:
     left = f"only {ev.spots_left} spots left" if ev.spots_left else "almost full"
     return f"⚠️ <b>Filling fast:</b> {_text(ev.title, 200)}\n{left} · {fmt_dt(ev.start)}"

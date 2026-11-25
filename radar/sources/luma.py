@@ -1,6 +1,7 @@
 """Luma: the Bengaluru discover feed plus any community calendars listed in config."""
 from __future__ import annotations
 
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from .batch import ListingBatch
 from ..util import parse_dt
@@ -23,6 +24,7 @@ def parse(data: dict) -> list[Event]:
         org = ", ".join(([cal_name] if cal_name else []) + hosts)
         loc_type = ev.get("location_type") or "offline"
         out.append(Event(
+            cancelled=confirmed_cancellation(ev),
             source="luma",
             native_id=ev.get("api_id") or ev["url"],
             title=ev["name"].strip(),

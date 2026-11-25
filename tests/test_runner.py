@@ -364,3 +364,42 @@ def test_round_titles_are_cut_at_a_word():
     from radar.eligibility import Round, summary
     s = summary([Round("Build Phase (1 Jan – 10 Jan): Working on the problem statement released earlier", True)])
     assert s == "Build Phase (1 Jan – 10 Jan): Working on the problem… (online)"
+
+
+def test_confirmed_corrections_combine_retry_and_skip_quiet_digest_events(cfg, seeded):
+    original = google(venue="Campus Hall A", reg_deadline=NOW + timedelta(days=4))
+    runner.poll(results(gdg=[original], meetup=[meetup_ev()]), seeded, cfg, Spy(), NOW)
+    changed = google(venue="Campus Hall <B>", reg_deadline=NOW + timedelta(days=2))
+    rep = runner.poll(results(gdg=[changed], meetup=[meetup_ev(venue="New hall")]), seeded, cfg, Spy(fail=True), NOW)
+    assert rep.errors and not rep.corrected
+    spy = Spy()
+    rep = runner.poll(results(), seeded, cfg, spy, NOW)
+    assert rep.corrected == [original.title] and len(spy.sent) == 1
+    assert "Campus Hall A → Campus Hall &lt;B&gt;" in spy.sent[0] and "closes earlier" in spy.sent[0]
+    assert not runner.poll(results(gdg=[changed]), seeded, cfg, Spy(), NOW).corrected
+
+
+def test_corrections_require_same_listing_and_confirmed_values(cfg, seeded):
+    ev = google(venue="Campus, North")
+    twin = google(source="meetup", native_id="another", venue="Unrelated secondary venue")
+    runner.poll(results(gdg=[ev]), seeded, cfg, Spy(), NOW)
+    for feeds in [dict(gdg=[ev], meetup=[twin]), dict(meetup=[twin]), dict(gdg=[google(venue="TBD")]),
+                  dict(gdg=[google(venue="CAMPUS NORTH")]), dict(gdg=[])]:
+        assert not runner.poll(results(**feeds), seeded, cfg, Spy(), NOW).corrected
+    twin.cancelled = True
+    assert not runner.poll(results(meetup=[twin]), seeded, cfg, Spy(), NOW).corrected
+    cancelled = google(cancelled=True, venue="Campus, North")
+    spy = Spy()
+    rep = runner.poll(results(gdg=[cancelled]), seeded, cfg, spy, NOW)
+    assert rep.corrected == [ev.title] and "organizer has cancelled" in spy.sent[0]
+    assert not runner.poll(results(gdg=[ev]), seeded, cfg, Spy(), NOW).corrected
+    assert not runner.digest(seeded, cfg, Spy(), NOW)
+
+
+def test_existing_alert_silently_establishes_baseline(cfg, seeded):
+    ev = google(venue="Campus hall")
+    runner.poll(results(gdg=[ev]), seeded, cfg, Spy(), NOW)
+    seeded["events"][ev.id].pop("correction_baseline")
+    rep = runner.poll(results(gdg=[google(venue="New building")]), seeded, cfg, Spy(), NOW)
+    assert not rep.corrected
+    assert runner.poll(results(gdg=[ev]), seeded, cfg, Spy(), NOW).corrected == [ev.title]

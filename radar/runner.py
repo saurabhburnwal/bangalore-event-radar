@@ -1,10 +1,10 @@
 """The two jobs: poll (every 10 minutes) and digest (daily)."""
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import date, datetime, timedelta
 
-from . import health, messages
+from . import corrections, health, messages
 from . import state as st
 from .models import Event
 from .score import DIGEST, HIGH, IGNORE, Scorer, Verdict
@@ -16,6 +16,7 @@ from .util import IST, https_url, parse_dt, to_iso
 class PollReport:
     scored: list[tuple[Event, Verdict]] = field(default_factory=list)
     alerted: list[str] = field(default_factory=list)
+    corrected: list[str] = field(default_factory=list)
     filling: list[str] = field(default_factory=list)
     queued: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
@@ -75,9 +76,10 @@ def _merge(results: dict, state: dict) -> list[Event]:
         res = results.get(name)
         if not isinstance(res, list):
             continue
-        for ev in res:
-            if ev.id in ids:
+        for listing in res:
+            if listing.id in ids:
                 continue
+            ev = replace(listing, extra={**listing.extra, "listing_ids": list(listing.extra.get("listing_ids", []))})
             ids.add(ev.id)
             fp = st.fingerprint(ev)
             rid = listings.get(ev.id)
@@ -147,6 +149,11 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
 
     new_high: list[tuple[Event, Verdict, str]] = []
     newly_filling: list[tuple[Event, str]] = []
+    original = {e.id: e for batch in results.values() if isinstance(batch, list) for e in batch}
+
+    def listings(ev):
+        return [original[key] for key in (ev.id, *ev.extra.get("listing_ids", [])) if key in original]
+
     for ev in _merge(results, state):
         fp = st.fingerprint(ev)
         rid = _known(state, ev, fp)
@@ -156,6 +163,16 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
                 pending.setdefault(rid, {**pending.pop(listing), "id": rid})
         expired = _expired(now, ev.end or ev.start, ev.reg_deadline)
         v = scorer(ev)
+        observed = listings(ev)
+        if rec and rec["alerted"]:
+            corrections.observe(rec, observed)
+        cancelled = bool(rec and rec.get("cancelled"))
+        if not rec or not rec["alerted"]:
+            cancelled = cancelled or observed[0].cancelled
+        if cancelled:
+            v = Verdict(IGNORE, ["organizer cancelled event"])
+            if rec:
+                rec["cancelled"] = True
         excluded = v.tier == IGNORE
         if expired and not excluded:
             v = Verdict(IGNORE, ["event ended or registration closed"])
@@ -198,6 +215,7 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
 
     def mark_alerted(ev, verdict, rid):
         state["events"][rid].update(alerted=True, filling_alerted=verdict.filling)
+        corrections.observe(state["events"][rid], listings(ev))
         pending.pop(rid, None)
         report.alerted.append(ev.title)
 
@@ -227,6 +245,13 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
         for ev, v, rid in new_high:
             if _send(notifier, report, messages.alert(ev, v), https_url(ev.url, ev.source)):
                 mark_alerted(ev, v, rid)
+                save_deliveries()
+
+    for rec in state["events"].values():
+        if rec.get("pending_correction") and rec.get("alerted"):
+            if _send(notifier, report, messages.correction(rec), https_url(rec["url"], rec["source"])):
+                corrections.delivered(rec)
+                report.corrected.append(rec["title"])
                 save_deliveries()
 
     for ev, rid in newly_filling:

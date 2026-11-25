@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from ..eligibility import round_sentences
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from ..util import html_to_text, next_data, parse_dt
 from .details import cached_detail
@@ -52,6 +53,7 @@ def build(h: dict, detail: dict) -> Event:
     settings = h.get("settings") or {}
     themes = [t.get("theme", {}).get("name", "") for t in h.get("themes") or [] if isinstance(t, dict)]
     return Event(
+        cancelled=confirmed_cancellation(h),
         source="devfolio",
         native_id=h["slug"],
         title=(h.get("name") or h["slug"]).strip(),

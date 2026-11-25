@@ -37,6 +37,7 @@ class Event:
     screening: bool | None = None # an online round comes first (None: the source lists no rounds)
     rounds: str = ""              # short round summary, e.g. "Idea Submission (online) → Grand Finale (offline)"
     extra: dict = field(default_factory=dict)
+    cancelled: bool = False
 
     def __post_init__(self) -> None:
         for field_name in ("title", "city", "venue", "host", "org"):

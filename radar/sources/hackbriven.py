@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 
 from ..eligibility import Round, has_screening, summary
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from .batch import ListingBatch
 from ..util import html_to_text, parse_dt, parse_int
@@ -56,6 +57,7 @@ def parse(data: dict) -> list[Event]:
         team_min, team_max = _team(e.get("teamSize"))
         rounds = _rounds(e.get("stages"))
         out.append(Event(
+            cancelled=confirmed_cancellation(e),
             source="hackbriven",
             native_id=e["slug"],
             title=(e.get("eventName") or e["slug"]).strip(),

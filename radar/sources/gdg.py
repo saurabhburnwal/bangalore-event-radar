@@ -1,6 +1,7 @@
 """Google Developer Groups: upcoming events of the configured chapters, with venue from each event page (cached)."""
 from __future__ import annotations
 
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from .batch import ListingBatch
 from ..util import html_to_text, https_url, next_data, parse_dt
@@ -47,6 +48,7 @@ def build(chapter: dict, e: dict, detail: dict) -> Event:
         url = BASE + url
     etype = (e.get("event_type_title") or "").lower()
     return Event(
+        cancelled=confirmed_cancellation(e),
         source="gdg",
         native_id=url.rstrip("/").rsplit("/", 1)[-1],
         title=(e.get("title") or "").strip(),

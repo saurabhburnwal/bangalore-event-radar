@@ -98,3 +98,5 @@ python -m pytest -q
 Both GitHub workflows can catch up overdue work. The digest workflow polls first if the last usable check is at least an hour old. The first workflow after 09:00 IST sends any due digest once per day and resumes interrupted deliveries. Open the poll workflow and select **Run workflow** for an immediate check.
 
 A partial feed means one or more listing pages failed. Events from readable pages still reach scoring and the next poll retries the configured pages. Counts on the status page describe listings before cross-site de-duplication.
+
+Previously instant-alerted events can trigger one correction when a confirmed venue moves, registration closes earlier, or the organizer explicitly reports cancellation. Missing listings and unconfirmed fields do not trigger corrections. Some feeds remove cancelled events without publishing a cancellation signal.

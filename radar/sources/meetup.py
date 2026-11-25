@@ -1,6 +1,7 @@
 """Meetup: search result pages, read from the Apollo state in __NEXT_DATA__."""
 from __future__ import annotations
 
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from .batch import ListingBatch
 from ..util import next_data, parse_dt, parse_int
@@ -31,6 +32,7 @@ def parse(page: str) -> list[Event]:
         if venue_name.lower() == "online event":
             venue_name = ""
         out.append(Event(
+            cancelled=confirmed_cancellation(e),
             source="meetup",
             native_id=str(e["id"]),
             title=e["title"].replace("​", "").strip(),

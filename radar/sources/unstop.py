@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from ..eligibility import Round, has_screening, round_sentences, summary
+from ..corrections import confirmed_cancellation
 from ..models import Event
 from .batch import ListingBatch
 from ..util import html_to_text, parse_dt, parse_int
@@ -41,6 +42,7 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
         region = (o.get("region") or "online").lower()
         full = html_to_text(o.get("details"), 20000)
         out.append(Event(
+            cancelled=confirmed_cancellation(o),
             source="unstop",
             native_id=str(o["id"]),
             title=(o.get("title") or "").strip(),

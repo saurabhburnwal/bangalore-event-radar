@@ -59,6 +59,7 @@ def parse(page: str) -> list[Event]:
         low = place.lower()
         mode = "online" if low == "online" else "hybrid" if "hybrid" in low or "online" in low else "offline"
         out.append(Event(
+            cancelled=bool(card.select_one('[itemprop="eventStatus"][content="https://schema.org/EventCancelled"], [itemprop="eventStatus"][href="https://schema.org/EventCancelled"]')),
             source="hasgeek",
             native_id=href.strip("/"),
             title=title_el.get_text(" ", strip=True),
