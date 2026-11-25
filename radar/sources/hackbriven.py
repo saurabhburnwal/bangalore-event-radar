@@ -5,6 +5,7 @@ import re
 
 from ..eligibility import Round, has_screening, summary
 from ..models import Event
+from .batch import ListingBatch
 from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://hackbriven.com/api/events?status=Approved&limit=50&phase={phase}"
@@ -80,8 +81,9 @@ def parse(data: dict) -> list[Event]:
 
 
 def fetch(http, cfg: dict, cache: dict) -> list[Event]:
-    events: dict[str, Event] = {}
+    batch = ListingBatch()
     for phase in ("upcoming", "ongoing"):
-        for e in parse(http.json(API.format(phase=phase))):
-            events.setdefault(e.native_id, e)
-    return list(events.values())
+        with batch.page(phase):
+            batch.extend(parse(http.json(API.format(phase=phase))))
+    batch.deduplicate()
+    return batch

@@ -200,3 +200,54 @@ def test_hackbriven_virtual_events_team_size_and_stages():
     assert (bol.team_min, bol.team_max) == (1, 1) and bol.screening is True and bol.rounds == "Round 1 (online)"
     notion = by_title(evs, "Notion Workshop")
     assert notion.mode == "offline" and notion.screening is None
+
+
+def test_unstop_scores_read_pages_and_recovers_without_realert(cfg):
+    from datetime import datetime, timezone
+    from radar import health, runner, state
+    from radar.notify import Console
+
+    def page(n):
+        return {"data": {"last_page": 4, "data": [{"id": n, "title": f"Campus Sprint {n}", "region": "offline",
+                "address_with_country_logo": {"city": "Bangalore"}, "prizes": [{"cash": 150000}]}]}}
+
+    pages = {unstop.API.format(page=n): page(n) for n in range(1, 5)}
+    pages[unstop.API.format(page=3)] = RuntimeError()
+    cache = {"unread": {}}
+    http = FakeHttp(pages)
+    settings = {"details_per_run": 0}
+    batch = unstop.fetch(http, settings, cache)
+    assert health.source_status("unstop", batch)[0] == "partial" and "unread" in cache
+    now = datetime(2026, 11, 1, tzinfo=timezone.utc)
+    saved = state.empty()
+    first = runner.poll({"unstop": batch}, saved, cfg, Console(), now)
+    assert len(first.scored) == len(first.alerted) == 3
+    assert saved["health"]["sources"]["unstop"]["outcome"] == "partial"
+    pages[unstop.API.format(page=3)] = page(3)
+    batch = unstop.fetch(http, settings, cache)
+    assert health.source_status("unstop", batch)[0] == "complete" and "unread" not in cache
+    second = runner.poll({"unstop": batch}, saved, cfg, Console(), now)
+    assert second.alerted == ["Campus Sprint 3"]
+
+
+@pytest.mark.parametrize("reader,options,payload", [
+    (luma, {"calendars": ["second"]}, "luma_calendar.json"),
+    (meetup, {"urls": ["first", "second"]}, "meetup.html"),
+    (gdg, {"chapters": ["first", "second"]}, "gdg.html"),
+    (hackbriven, {}, "hackbriven_ongoing.json"),
+])
+def test_independent_listing_pages_survive_first_failure(reader, options, payload):
+    from radar.health import source_status
+    class Feed:
+        calls = 0
+        def read(self, url):
+            self.calls += 1
+            if self.calls == 1:
+                raise ConnectionError()
+            return data(payload) if payload.endswith(".json") else text(payload)
+        text = json = read
+
+    cache = {"unread": {}}
+    batch = reader.fetch(Feed(), options, cache)
+    assert source_status(reader.__name__.split(".")[-1], batch)[0] == "partial"
+    assert batch and "unread" in cache

@@ -16,7 +16,6 @@ from pathlib import Path
 
 from . import config, health, messages, runner, sources
 from . import state as st
-from .http import issue
 from .models import Event
 from .notify import Console, Telegram
 from .score import HIGH, Verdict
@@ -33,11 +32,9 @@ def telegram() -> Telegram:
 def print_scored(results: dict, scored: list[tuple[Event, Verdict]], verbose: bool) -> None:
     print("Sources:")
     for name, res in results.items():
-        if isinstance(res, Exception):
-            print(f"  ✗ {name:11} FAILED  {issue(res)}")
-        else:
-            flag = "" if res or name in sources.MAY_BE_EMPTY else "   ← no events, check this source"
-            print(f"  ✓ {name:11} {len(res):3} events{flag}")
+        status, detail = health.source_status(name, res)
+        count = 0 if isinstance(res, Exception) else len(res)
+        print(f"  {name:11} {status:8} {count:3} events  {detail}")
     tiers = Counter(v.tier for _, v in scored)
     print(f"\nScored {len(scored)} unique events: {tiers.get('HIGH', 0)} instant, "
           f"{tiers.get('DIGEST', 0)} digest, {tiers.get('IGNORE', 0)} ignored\n")

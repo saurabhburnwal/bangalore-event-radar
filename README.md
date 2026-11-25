@@ -96,3 +96,5 @@ python -m pytest -q
 [View live feed status](https://saurabhburnwal.github.io/bangalore-event-radar/) for the last usable check, per-feed freshness, hourly coverage, and longest gap. The browser marks a feed stale after 60 minutes. Quiet hours appear on this page.
 
 Both GitHub workflows can catch up overdue work. The digest workflow polls first if the last usable check is at least an hour old. The first workflow after 09:00 IST sends any due digest once per day and resumes interrupted deliveries. Open the poll workflow and select **Run workflow** for an immediate check.
+
+A partial feed means one or more listing pages failed. Events from readable pages still reach scoring and the next poll retries the configured pages. Counts on the status page describe listings before cross-site de-duplication.

@@ -46,7 +46,10 @@ def _health(results: dict, state: dict, cfg: dict, notifier, report: PollReport)
     for name, res in results.items():
         h = state["sources"].setdefault(name, {"fails": 0, "warned": False})
         status, err = health.source_status(name, res)
-        if status != "failed":
+        if status == "partial":
+            h["fails"] = 0
+            continue
+        if status == "complete":
             still_warned = h.get("warned", False) and not _send(notifier, report, messages.source_up(name))
             state["sources"][name] = {"fails": 0, "warned": still_warned}
             continue

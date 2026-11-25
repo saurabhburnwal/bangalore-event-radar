@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from ..models import Event
+from .batch import ListingBatch
 from ..util import next_data, parse_dt, parse_int
 
 DEFAULT_URLS = [
@@ -48,8 +49,9 @@ def parse(page: str) -> list[Event]:
 
 
 def fetch(http, cfg: dict, cache: dict) -> list[Event]:
-    events: dict[str, Event] = {}
-    for url in cfg.get("urls") or DEFAULT_URLS:
-        for e in parse(http.text(url)):
-            events.setdefault(e.native_id, e)
-    return list(events.values())
+    batch = ListingBatch()
+    for index, url in enumerate(cfg.get("urls") or DEFAULT_URLS, 1):
+        with batch.page(f"search {index}"):
+            batch.extend(parse(http.text(url)))
+    batch.deduplicate()
+    return batch

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from ..models import Event
+from .batch import ListingBatch
 from ..util import html_to_text, https_url, next_data, parse_dt
 from .details import cached_detail
 
@@ -61,20 +62,22 @@ def build(chapter: dict, e: dict, detail: dict) -> Event:
 
 
 def fetch(http, cfg: dict, cache: dict) -> list[Event]:
-    events, live = [], set()
+    events, live = ListingBatch(), set()
     for slug in cfg.get("chapters") or ["gdg-bangalore", "gdg-cloud-bengaluru"]:
-        chapter, upcoming = parse_chapter(http.text(f"{BASE}/{slug}/"))
-        for e in upcoming:
-            url = e.get("url") or ""
-            if not isinstance(url, str) or not url:
-                continue
-            full = BASE + url if url.startswith("/") else url
-            if not https_url(full, "gdg"):
-                continue
-            live.add(full)
-            detail = cached_detail(cache, full, 1, lambda: parse_detail(http.text(full)))
-            events.append(build(chapter, e, detail))
-    for k in list(cache):
-        if k not in live:
+        with events.page(slug):
+            chapter, upcoming = parse_chapter(http.text(f"{BASE}/{slug}/"))
+            for e in upcoming:
+                url = e.get("url") or ""
+                if not isinstance(url, str) or not url:
+                    continue
+                full = BASE + url if url.startswith("/") else url
+                if not https_url(full, "gdg"):
+                    continue
+                live.add(full)
+                detail = cached_detail(cache, full, 1, lambda: parse_detail(http.text(full)))
+                events.append(build(chapter, e, detail))
+    if not events.failures:
+        for k in cache.keys() - live:
             del cache[k]
+    events.deduplicate()
     return events

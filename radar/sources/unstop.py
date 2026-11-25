@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from ..eligibility import Round, has_screening, round_sentences, summary
 from ..models import Event
+from .batch import ListingBatch
 from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&oppstatus=open&per_page=30&page={page}"
@@ -95,16 +96,22 @@ def parse_detail(data: dict) -> dict:
 
 def fetch(http, cfg: dict, cache: dict) -> list[Event]:
     usd = cfg.get("usd_inr", 88)
-    events, last = parse(http.json(API.format(page=1)), usd)
-    for page in range(2, min(last, cfg.get("max_pages", 10)) + 1):
-        events += parse(http.json(API.format(page=page)), usd)[0]
-    events = list({e.native_id: e for e in events}.values())
+    events = ListingBatch()
+    last = max(1, cfg.get("max_pages", 10))
+    for page in range(1, last + 1):
+        if page > last:
+            break
+        with events.page(f"page {page}"):
+            rows, reported = parse(http.json(API.format(page=page)), usd)
+            last = min(last, reported)
+            events.extend(rows)
+    events.deduplicate()
 
     # Reuse successful detail reads until the event changes. Cap requests per run so a cold cache
     # or a detail endpoint outage doesn't send a request for every in-person event at once.
     live = {e.native_id for e in events}
-    for k in list(cache):
-        if k not in live:
+    if not events.failures:
+        for k in cache.keys() - live:
             del cache[k]
     budget = cfg.get("details_per_run", 40)
     for e in events:
