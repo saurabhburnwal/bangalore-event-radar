@@ -6,7 +6,7 @@ import re
 from ..eligibility import Round, has_screening, summary
 from ..corrections import confirmed_cancellation
 from ..models import Event
-from .batch import ListingBatch
+from .batch import ListingBatch, listing_rows
 from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://hackbriven.com/api/events?status=Approved&limit=50&phase={phase}"
@@ -50,7 +50,7 @@ def _rounds(stages) -> list[Round]:
 
 def parse(data: dict) -> list[Event]:
     out = []
-    for e in data.get("events", []):
+    for e in listing_rows(data, "events"):
         if not e.get("slug"):
             continue
         mode = MODES.get((e.get("locationType") or "").lower(), "offline")

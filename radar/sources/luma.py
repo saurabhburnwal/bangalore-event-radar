@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from ..corrections import confirmed_cancellation
 from ..models import Event
-from .batch import ListingBatch
+from .batch import ListingBatch, listing_rows
 from ..util import parse_dt
 
 DISCOVER = "https://api.lu.ma/discover/get-paginated-events?discover_place_api_id={place}&pagination_limit=50"
@@ -12,7 +12,7 @@ CALENDAR = "https://api.lu.ma/calendar/get-items?calendar_api_id={cal}&period=fu
 
 def parse(data: dict) -> list[Event]:
     out = []
-    for e in data.get("entries", []):
+    for e in listing_rows(data, "entries"):
         ev = e.get("event") or {}
         if not ev.get("url") or not ev.get("name"):
             continue

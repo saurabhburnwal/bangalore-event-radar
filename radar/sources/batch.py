@@ -1,8 +1,15 @@
 """Keep readable listing pages when another page in the same feed fails."""
 from contextlib import contextmanager
 
-from ..http import issue
+from ..http import SourceError, issue
 from ..models import Event
+
+
+def listing_rows(payload: dict, field: str) -> list:
+    rows = payload.get(field) if isinstance(payload, dict) else None
+    if not isinstance(rows, list):
+        raise SourceError(f"missing or invalid listing field {field}")
+    return rows
 
 
 class ListingBatch(list[Event]):

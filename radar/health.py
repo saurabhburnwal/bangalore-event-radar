@@ -11,7 +11,7 @@ def source_status(name, result):
     if isinstance(result, Exception):
         return "failed", issue(result)
     if isinstance(result, ListingBatch) and result.failures:
-        usable = result.completed and (result or name in MAY_BE_EMPTY)
+        usable = bool(result) or (result.completed > 0 and name in MAY_BE_EMPTY)
         return ("partial" if usable else "failed"), "; ".join(result.failures)[:300]
     if not result and name not in MAY_BE_EMPTY:
         return "failed", "returned no events"

@@ -263,3 +263,12 @@ def test_cancellation_requires_explicit_event_signal():
     listing = data("luma.json")
     listing["entries"][0]["event"]["canceled_at"] = "2026-11-25T06:00:00Z"
     assert luma.parse(listing)[0].cancelled
+
+
+def test_empty_feed_requires_a_valid_listing():
+    from radar.http import SourceError
+    assert hackbriven.parse({"events": []}) == []
+    with pytest.raises(SourceError):
+        hackbriven.parse({"message": "temporarily offline"})
+    with pytest.raises(SourceError):
+        gdg.parse_chapter(text("gdg_event_flutter.html"))

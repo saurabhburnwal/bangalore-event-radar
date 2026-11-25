@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from ..corrections import confirmed_cancellation
 from ..models import Event
-from .batch import ListingBatch
+from .batch import ListingBatch, listing_rows
 from ..util import html_to_text, https_url, next_data, parse_dt
 from .details import cached_detail
 
@@ -13,7 +13,7 @@ BASE = "https://gdg.community.dev"
 def parse_chapter(page: str) -> tuple[dict, list[dict]]:
     pp = next_data(page)["props"]["pageProps"]
     chapter = pp.get("chapterData") or {}
-    upcoming = ((pp.get("prerenderData") or {}).get("upcomingEvents") or {}).get("results") or []
+    upcoming = listing_rows((pp.get("prerenderData") or {}).get("upcomingEvents"), "results")
     return chapter, upcoming
 
 

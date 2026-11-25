@@ -21,6 +21,7 @@ class PollReport:
     queued: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     first_run: bool = False
+    usable: bool = False
 
 
 def _entry(ev: Event, v: Verdict, rid: str) -> dict:
@@ -143,7 +144,7 @@ def poll(results: dict, state: dict, cfg: dict, notifier, now: datetime, checkpo
     today = now.astimezone(IST).date().isoformat()
     max_instant = (cfg.get("alerts") or {}).get("max_instant_per_run", 8)
 
-    health.record(state.setdefault("health", {}), results, now)
+    report.usable = health.record(state.setdefault("health", {}), results, now)
     _health(results, state, cfg, notifier, report)
     pending = {q["id"]: q for q in state["queue"]}
 

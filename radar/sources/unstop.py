@@ -4,7 +4,7 @@ from __future__ import annotations
 from ..eligibility import Round, has_screening, round_sentences, summary
 from ..corrections import confirmed_cancellation
 from ..models import Event
-from .batch import ListingBatch
+from .batch import ListingBatch, listing_rows
 from ..util import html_to_text, parse_dt, parse_int
 
 API = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&oppstatus=open&per_page=30&page={page}"
@@ -35,7 +35,7 @@ def parse(data: dict, usd_inr: float = 88) -> tuple[list[Event], int]:
     """Return (events, last_page)."""
     d = data["data"]
     out = []
-    for o in d.get("data", []):
+    for o in listing_rows(d, "data"):
         addr = o.get("address_with_country_logo") or {}
         regn = o.get("regnRequirements") or {}
         prize, ppi, perks = _prize(o.get("prizes"), usd_inr)

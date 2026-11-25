@@ -72,10 +72,13 @@ def cmd_run(args) -> int:
         now = datetime.now(timezone.utc)
         report = runner.poll(results, state, cfg, notifier, now, checkpoint)
         errors.extend(report.errors)
-        usable = any(row["outcome"] != "failed" for row in telemetry["sources"].values())
+        usable = report.usable
         if args.dry_run:
             print_scored(results, report.scored, args.verbose)
         print(f"alerted={len(report.alerted)} corrected={len(report.corrected)} filling={len(report.filling)} queued={len(report.queued)}")
+
+    else:
+        print("Latest usable poll is under 60 minutes old.")
 
     local = now.astimezone(IST)
     if trigger and local.hour >= 9 and state.get("last_digest_day") != local.date().isoformat():
@@ -86,7 +89,13 @@ def cmd_run(args) -> int:
             print(f"digest_pages={len(sent)}")
         except RuntimeError as exc:
             errors.append(str(exc))
+    elif trigger:
+        print("Daily digest already completed." if state.get("last_digest_day") == local.date().isoformat()
+              else "Daily digest is due at 09:00 IST.")
     checkpoint()
+    if args.dry_run:
+        print("Dry run complete. State was not written.")
+    print(f"errors={len(errors)}")
     if not args.dry_run and trigger:
         st.save(args.state.with_name("status.json"), telemetry)
     for error in errors:
