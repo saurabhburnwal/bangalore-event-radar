@@ -199,6 +199,17 @@
     "team_min": 2,
     "v": 2
    },
+   "makeathon-9": {
+    "city": "Patiala",
+    "desc": "One of North-India's largest hackathon Now in its ninth edition, **MAKEATHON 9.0** is the flagship hackathon of the Microsoft Learn Student Chapter. It brings together developers, designers, and problem solvers from across the country to turn ideas into working solutions. Through workshops, mentorship, and a focused 24-hour building experience, participants will explore real-world challenges and demonstrate what they can create together. **Who can participate?** Undergraduate and postgraduate students from all colleges, academic years, and disciplines are welcome. Teams can include students from different colleges and disciplines. A mix of skills in development, design, AI/ML, and databases is encouraged. Each team must choose one problem statement from the officially released list and build a solution that directly addresses it. ***Presentation template [here](https://drive.google.com/file/d/1ParNnJk0hPwFmsks70bdAxQaPj3hNJcP/view?usp=sharing)*** **Round 1 — Online Screening** Teams must submit: - A project proposal explaining the problem, proposed solution, technical approach, and expected impact. - An implementation plan outlining how the solution will be developed. Submissions w",
+    "expires": 1795633326,
+    "location": "Thapar Institute of Engineering & Technology, Bhadson Road, Patiala, Punjab, India",
+    "prize_inr": 1100000,
+    "rounds": "Presentation template [here](https://drive.google.com/file/d/1ParNnJk0hPwFmsks70bdAxQaPj3hNJcP/view?usp=sharing) Round 1 — Online Screening Teams must submit: - A project proposal explaining the problem, proposed solution, technical approach, and expected impact. Shortlisted teams will advance to the on-campus hackathon. Round 2 — On-Campus Hackathon Shortlisted teams will develop a functional prototype from scratch during the hackathon. Judges will conduct periodic progress checkpoints, followe",
+    "team_max": 5,
+    "team_min": 2,
+    "v": 2
+   },
    "makerspark": {
     "city": "Thiruvananthapuram",
     "desc": "**MakerSpark** is an 8-hour hardware-only hackathon organized by the **IEEE Sensors Council Kerala Chapter**, in collaboration with **Arduino, Maker Village, and Semicon Keralam**. Hosted at the **Indian Institute of Information Technology and Management–Kerala (IIITM-K), Technopark, Thiruvananthapuram**, the event brings together aspiring innovators, engineers, and technology enthusiasts to transform creative ideas into impactful hardware solutions. Shortlisted participants will be provided with **Arduino UNO Q** boards and will be required to develop Physical AI-based projects **using the board as a mandatory component** during the hackathon. ***TRACKS*** **1. Industry 2.0 – The Future of Automation** Centred on the future of industries, exploring intelligent automation, industrial transformation, robotics, and the evolution of manufacturing and production systems. **2. HealthTech – Beyond Boundaries** Exploring the role of technology in revolutionising healthcare, focusing on medical innovation, healthcare accessibility, patient well-being, and advancements in health technologies. **3. Utopia – Envisioning a Better World** Dedicated to technological innovation for a better futur",
@@ -230,17 +241,6 @@
     "rounds": "TecHacks 5.0 is Season 05 of TecHacks: one 24-hour hackathon, fully in person , on one stage at Chitkara University, Punjab. 🎪 Launch window - 📅 15–16 January 2027 · 24 hours · fully in person · no online round - 📍 Chitkara University, Chandigarh–Patiala National Highway, Rajpura, Punjab - 👥 Crews of 2–4 (solo?",
     "team_max": 4,
     "team_min": 2,
-    "v": 2
-   },
-   "touch-some-grass": {
-    "city": "Chennai",
-    "desc": "Touch grass. Touch hardware. Ship it. # TOUCH SOME GRASS ### Touch Grass. Touch Hardware. Ship it. We're taking innovation out of the usual coding environment. **TOUCH SOME GRASS** is a Hardware and AI Embedded Systems Hackathon, challenging builders, engineers, designers and innovators to step beyond conventional software development and create solutions that interact with the real world. From intelligent machines and connected devices to AI-powered systems and unconventional hardware innovations, this is where ideas move beyond screens and become something tangible. Forget building just another application. Think about the problems around you. Experiment with technology. Combine hardware, software and intelligence to create something that actually makes a difference. ### WHAT'S THE CHALLENGE? Explore the intersection of hardware, artificial intelligence and real-world problem-solving. Push boundaries, experiment with emerging technologies, and turn ambitious ideas into functional prototypes. Whether you're passionate about robotics, AI/ML, embedded systems, IoT or unconventional engineering, there's room to experiment, innovate and build. ### WHAT TO EXPECT - **Build from Scratch",
-    "expires": 1795632723,
-    "location": "Chennai, Tamil Nadu, India",
-    "prize_inr": 0,
-    "rounds": "",
-    "team_max": 5,
-    "team_min": 4,
     "v": 2
    },
    "udaya-2-o": {
@@ -940,6 +940,22 @@
    "title": "Innerve 11.0",
    "url": "https://innerve-11.devfolio.co/"
   },
+  "devfolio:makeathon-9": {
+   "alerted": false,
+   "end": "2027-01-31T04:00:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "listing_ids": [
+    "devfolio:makeathon-9"
+   ],
+   "queued": true,
+   "reg_deadline": "2027-01-05T18:29:00+00:00",
+   "source": "devfolio",
+   "start": "2027-01-30T05:30:00+00:00",
+   "title": "Makeathon 9.0",
+   "url": "https://makeathon-9.devfolio.co/"
+  },
   "devfolio:udaya-2-o": {
    "alerted": false,
    "end": "2026-12-04T14:15:00+00:00",
@@ -958,6 +974,13 @@
   },
   "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
+    "venue": {
+     "listing": "gdg:google-gdg-bangalore-presents-devfest-bengaluru-2026",
+     "value": "Google Ananta, Rio Business Park, Mahadevapura Village, Krishnarajapuram Hobli"
+    }
+   },
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -992,6 +1015,13 @@
   },
   "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints",
+    "venue": {
+     "listing": "gdg:google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints",
+     "value": "Google Bangalore - Kyoto Campus, Circle"
+    }
+   },
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-20",
@@ -1026,6 +1056,9 @@
   },
   "gdg:google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "gdg:google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud"
+   },
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-23",
@@ -1068,6 +1101,13 @@
   },
   "hasgeek:bengalurusystemsmeetup/women-in-systems2": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "hasgeek:bengalurusystemsmeetup/women-in-systems2",
+    "venue": {
+     "listing": "hasgeek:bengalurusystemsmeetup/women-in-systems2",
+     "value": "Microsoft, Bengaluru"
+    }
+   },
    "end": "2026-11-29T00:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -1321,6 +1361,13 @@
   },
   "luma:evt-U7GTbfJZwAdOiQO": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "luma:evt-U7GTbfJZwAdOiQO",
+    "venue": {
+     "listing": "luma:evt-U7GTbfJZwAdOiQO",
+     "value": "Kaverppa Layout"
+    }
+   },
    "end": "2026-11-28T11:30:00+00:00",
    "filling_alerted": true,
    "first_seen": "2026-11-15",
@@ -1450,6 +1497,13 @@
   },
   "luma:evt-xY3je64znkOZxzS": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "luma:evt-xY3je64znkOZxzS",
+    "venue": {
+     "listing": "luma:evt-xY3je64znkOZxzS",
+     "value": "OLake"
+    }
+   },
    "end": "2026-12-05T11:30:00+00:00",
    "filling_alerted": true,
    "first_seen": "2026-11-15",
@@ -1621,6 +1675,13 @@
   },
   "meetup:317101247": {
    "alerted": true,
+   "correction_baseline": {
+    "listing": "meetup:317101247",
+    "venue": {
+     "listing": "meetup:317101247",
+     "value": "Red Hat India , Bagmane Constellation Tech Park,, East Tower, 10th Floor"
+    }
+   },
    "end": null,
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -1890,6 +1951,13 @@
   },
   "unstop:1745778": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1745778",
+     "value": "2026-12-10T18:29:58+00:00"
+    },
+    "listing": "unstop:1745778"
+   },
    "end": "2026-12-27T09:31:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -1922,6 +1990,17 @@
   },
   "unstop:1760462": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1760462",
+     "value": "2026-12-01T18:30:00+00:00"
+    },
+    "listing": "unstop:1760462",
+    "venue": {
+     "listing": "unstop:1760462",
+     "value": "SNS iHub"
+    }
+   },
    "dropped": true,
    "end": "2026-12-02T00:00:00+05:30",
    "filling_alerted": false,
@@ -1994,6 +2073,17 @@
   },
   "unstop:1768100": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1768100",
+     "value": "2026-12-16T18:30:00+00:00"
+    },
+    "listing": "unstop:1768100",
+    "venue": {
+     "listing": "unstop:1768100",
+     "value": "Muhammadiya shaadi Hall, Ooty"
+    }
+   },
    "dropped": true,
    "end": "2026-12-17T00:00:00+05:30",
    "filling_alerted": false,
@@ -2095,6 +2185,17 @@
   },
   "unstop:1771992": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1771992",
+     "value": "2027-01-08T18:30:00+00:00"
+    },
+    "listing": "unstop:1771992",
+    "venue": {
+     "listing": "unstop:1771992",
+     "value": "Indraprastha Engineering College, ghaziabad ( Near Uttam Toyota )"
+    }
+   },
    "end": "2027-02-15T20:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -2295,6 +2396,17 @@
   },
   "unstop:1787722": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1787722",
+     "value": "2026-12-30T18:30:00+00:00"
+    },
+    "listing": "unstop:1787722",
+    "venue": {
+     "listing": "unstop:1787722",
+     "value": "New Delhi"
+    }
+   },
    "end": "2027-01-12T08:39:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -2340,6 +2452,13 @@
   },
   "unstop:1791313": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1791313",
+     "value": "2026-12-02T05:07:13+00:00"
+    },
+    "listing": "unstop:1791313"
+   },
    "end": "2026-12-14T10:00:20+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -2398,6 +2517,13 @@
   },
   "unstop:1792826": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1792826",
+     "value": "2026-12-02T13:00:00+00:00"
+    },
+    "listing": "unstop:1792826"
+   },
    "end": "2026-12-14T22:08:33+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -2430,6 +2556,17 @@
   },
   "unstop:1794479": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1794479",
+     "value": "2026-12-24T18:29:00+00:00"
+    },
+    "listing": "unstop:1794479",
+    "venue": {
+     "listing": "unstop:1794479",
+     "value": "5th km, NH - 209,Jakkasandra Post, Bengaluru - Kanakapura Rd, Bengaluru, Karnataka, 562112"
+    }
+   },
    "dropped": true,
    "end": "2027-02-20T20:00:00+05:30",
    "filling_alerted": false,
@@ -2447,6 +2584,13 @@
   },
   "unstop:1794522": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1794522",
+     "value": "2026-12-03T13:00:48+00:00"
+    },
+    "listing": "unstop:1794522"
+   },
    "end": "2026-12-17T00:00:27+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-11",
@@ -2489,6 +2633,17 @@
   },
   "unstop:1799091": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1799091",
+     "value": "2026-12-15T18:29:00+00:00"
+    },
+    "listing": "unstop:1799091",
+    "venue": {
+     "listing": "unstop:1799091",
+     "value": "6th Floor, Tower C, Pioneer Urban Square, Sector 62, Gurugram, Ghata, Haryana 122098"
+    }
+   },
    "end": "2027-02-07T19:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-18",
@@ -2696,6 +2851,13 @@
   },
   "unstop:1809486": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1809486",
+     "value": "2026-12-30T18:30:00+00:00"
+    },
+    "listing": "unstop:1809486"
+   },
    "end": "2027-01-10T22:26:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-14",
@@ -2712,6 +2874,17 @@
   },
   "unstop:1810268": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1810268",
+     "value": "2026-11-27T18:29:00+00:00"
+    },
+    "listing": "unstop:1810268",
+    "venue": {
+     "listing": "unstop:1810268",
+     "value": "BMS Institute of Technology and Management"
+    }
+   },
    "dropped": true,
    "end": "2026-11-27T23:59:00+05:30",
    "filling_alerted": false,
@@ -2745,6 +2918,13 @@
   },
   "unstop:1811016": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1811016",
+     "value": "2026-12-18T18:30:00+00:00"
+    },
+    "listing": "unstop:1811016"
+   },
    "end": "2027-01-09T11:01:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-15",
@@ -2793,6 +2973,13 @@
   },
   "unstop:1814036": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1814036",
+     "value": "2026-11-27T18:30:00+00:00"
+    },
+    "listing": "unstop:1814036"
+   },
    "end": "2026-11-28T00:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -2873,6 +3060,13 @@
   },
   "unstop:1817737": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1817737",
+     "value": "2026-12-03T18:29:00+00:00"
+    },
+    "listing": "unstop:1817737"
+   },
    "end": "2026-12-13T09:50:44+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-19",
@@ -2889,6 +3083,13 @@
   },
   "unstop:1817749": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1817749",
+     "value": "2026-12-02T07:30:48+00:00"
+    },
+    "listing": "unstop:1817749"
+   },
    "end": "2026-12-13T10:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-19",
@@ -2995,6 +3196,13 @@
   },
   "unstop:1820502": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1820502",
+     "value": "2026-12-11T18:29:00+00:00"
+    },
+    "listing": "unstop:1820502"
+   },
    "end": "2026-12-26T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-24",
@@ -3011,6 +3219,13 @@
   },
   "unstop:1820715": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1820715",
+     "value": "2026-12-06T18:29:36+00:00"
+    },
+    "listing": "unstop:1820715"
+   },
    "end": "2027-03-09T12:06:52+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-21",
@@ -3091,6 +3306,13 @@
   },
   "unstop:1823739": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1823739",
+     "value": "2026-12-07T13:01:47+00:00"
+    },
+    "listing": "unstop:1823739"
+   },
    "end": "2026-12-09T22:00:31+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-23",
@@ -3107,6 +3329,13 @@
   },
   "unstop:1825938": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1825938",
+     "value": "2026-12-07T18:30:00+00:00"
+    },
+    "listing": "unstop:1825938"
+   },
    "end": "2026-12-15T23:59:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -3123,6 +3352,17 @@
   },
   "unstop:1826211": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1826211",
+     "value": "2026-12-13T08:00:42+00:00"
+    },
+    "listing": "unstop:1826211",
+    "venue": {
+     "listing": "unstop:1826211",
+     "value": "Mlr institute of technology,Dundigal Police Station Road, Hyderabad, Telangana ,500043"
+    }
+   },
    "end": "2026-12-13T13:30:42+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -3139,6 +3379,13 @@
   },
   "unstop:1826250": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1826250",
+     "value": "2026-12-07T18:30:00+00:00"
+    },
+    "listing": "unstop:1826250"
+   },
    "end": "2027-01-03T21:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -3155,6 +3402,13 @@
   },
   "unstop:1826567": {
    "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1826567",
+     "value": "2026-12-24T07:30:00+00:00"
+    },
+    "listing": "unstop:1826567"
+   },
    "end": "2026-12-28T08:59:56+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
@@ -3296,6 +3550,7 @@
   "llmops production observability evals guardrails|2026-11-21": "meetup:317058082",
   "logithon 2026|2026-12-04": "unstop:1827287",
   "lovable builders|2026-12-12": "luma:evt-XozJ4jFTE0z8QzX",
+  "makeathon 9 0|2027-01-30": "devfolio:makeathon-9",
   "manus fellow event build manus ai quad|2026-11-28": "luma:evt-6AgD8sIZmDs3MEa",
   "merry shipmas christmas ai hackathon|2026-12-12": "unstop:1820028",
   "myonne national bug bounty challenge 2026|2026-11-28": "unstop:1817686",
@@ -3348,45 +3603,46 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-25T12:52:05+00:00",
-  "last_usable": "2026-11-25T12:52:05+00:00",
+  "last_attempt": "2026-11-25T13:02:14+00:00",
+  "last_usable": "2026-11-25T13:02:14+00:00",
   "polls": [
-   "2026-11-25T12:52:05+00:00"
+   "2026-11-25T12:52:05+00:00",
+   "2026-11-25T13:02:14+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "gdg": {
     "events": 3,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 12,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "luma": {
     "events": 14,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "meetup": {
     "events": 23,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    },
    "unstop": {
     "events": 179,
-    "last_usable": "2026-11-25T12:52:05+00:00",
+    "last_usable": "2026-11-25T13:02:14+00:00",
     "outcome": "complete"
    }
   },
@@ -3394,7 +3650,25 @@
  },
  "initialized": true,
  "last_digest_day": "2026-11-25",
- "queue": [],
+ "queue": [
+  {
+   "category": "Outside Bangalore, online round first",
+   "id": "devfolio:makeathon-9",
+   "reasons": [
+    "₹11,00,000 prize pool",
+    "online round first",
+    "team 2–5"
+   ],
+   "reg_deadline": "2027-01-05T18:29:00+00:00",
+   "score": 40,
+   "source": "devfolio",
+   "title": "Makeathon 9.0",
+   "url": "https://makeathon-9.devfolio.co/",
+   "when": "2027-01-30T05:30:00+00:00",
+   "when_label": "Sat 30 Jan · 11:00 IST",
+   "where": "Thapar Institute of Engineering & Technology, Patiala"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
