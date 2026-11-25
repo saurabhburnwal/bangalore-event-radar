@@ -199,17 +199,6 @@
     "team_min": 2,
     "v": 2
    },
-   "makeathon-9": {
-    "city": "Patiala",
-    "desc": "One of North-India's largest hackathon Now in its ninth edition, **MAKEATHON 9.0** is the flagship hackathon of the Microsoft Learn Student Chapter. It brings together developers, designers, and problem solvers from across the country to turn ideas into working solutions. Through workshops, mentorship, and a focused 24-hour building experience, participants will explore real-world challenges and demonstrate what they can create together. **Who can participate?** Undergraduate and postgraduate students from all colleges, academic years, and disciplines are welcome. Teams can include students from different colleges and disciplines. A mix of skills in development, design, AI/ML, and databases is encouraged. Each team must choose one problem statement from the officially released list and build a solution that directly addresses it. ***Presentation template [here](https://drive.google.com/file/d/1ParNnJk0hPwFmsks70bdAxQaPj3hNJcP/view?usp=sharing)*** **Round 1 — Online Screening** Teams must submit: - A project proposal explaining the problem, proposed solution, technical approach, and expected impact. - An implementation plan outlining how the solution will be developed. Submissions w",
-    "expires": 1795633326,
-    "location": "Thapar Institute of Engineering & Technology, Bhadson Road, Patiala, Punjab, India",
-    "prize_inr": 1100000,
-    "rounds": "Presentation template [here](https://drive.google.com/file/d/1ParNnJk0hPwFmsks70bdAxQaPj3hNJcP/view?usp=sharing) Round 1 — Online Screening Teams must submit: - A project proposal explaining the problem, proposed solution, technical approach, and expected impact. Shortlisted teams will advance to the on-campus hackathon. Round 2 — On-Campus Hackathon Shortlisted teams will develop a functional prototype from scratch during the hackathon. Judges will conduct periodic progress checkpoints, followe",
-    "team_max": 5,
-    "team_min": 2,
-    "v": 2
-   },
    "makerspark": {
     "city": "Thiruvananthapuram",
     "desc": "**MakerSpark** is an 8-hour hardware-only hackathon organized by the **IEEE Sensors Council Kerala Chapter**, in collaboration with **Arduino, Maker Village, and Semicon Keralam**. Hosted at the **Indian Institute of Information Technology and Management–Kerala (IIITM-K), Technopark, Thiruvananthapuram**, the event brings together aspiring innovators, engineers, and technology enthusiasts to transform creative ideas into impactful hardware solutions. Shortlisted participants will be provided with **Arduino UNO Q** boards and will be required to develop Physical AI-based projects **using the board as a mandatory component** during the hackathon. ***TRACKS*** **1. Industry 2.0 – The Future of Automation** Centred on the future of industries, exploring intelligent automation, industrial transformation, robotics, and the evolution of manufacturing and production systems. **2. HealthTech – Beyond Boundaries** Exploring the role of technology in revolutionising healthcare, focusing on medical innovation, healthcare accessibility, patient well-being, and advancements in health technologies. **3. Utopia – Envisioning a Better World** Dedicated to technological innovation for a better futur",
@@ -241,6 +230,17 @@
     "rounds": "TecHacks 5.0 is Season 05 of TecHacks: one 24-hour hackathon, fully in person , on one stage at Chitkara University, Punjab. 🎪 Launch window - 📅 15–16 January 2027 · 24 hours · fully in person · no online round - 📍 Chitkara University, Chandigarh–Patiala National Highway, Rajpura, Punjab - 👥 Crews of 2–4 (solo?",
     "team_max": 4,
     "team_min": 2,
+    "v": 2
+   },
+   "touch-some-grass": {
+    "city": "Chennai",
+    "desc": "Touch grass. Touch hardware. Ship it. # TOUCH SOME GRASS ### Touch Grass. Touch Hardware. Ship it. We're taking innovation out of the usual coding environment. **TOUCH SOME GRASS** is a Hardware and AI Embedded Systems Hackathon, challenging builders, engineers, designers and innovators to step beyond conventional software development and create solutions that interact with the real world. From intelligent machines and connected devices to AI-powered systems and unconventional hardware innovations, this is where ideas move beyond screens and become something tangible. Forget building just another application. Think about the problems around you. Experiment with technology. Combine hardware, software and intelligence to create something that actually makes a difference. ### WHAT'S THE CHALLENGE? Explore the intersection of hardware, artificial intelligence and real-world problem-solving. Push boundaries, experiment with emerging technologies, and turn ambitious ideas into functional prototypes. Whether you're passionate about robotics, AI/ML, embedded systems, IoT or unconventional engineering, there's room to experiment, innovate and build. ### WHAT TO EXPECT - **Build from Scratch",
+    "expires": 1795639971,
+    "location": "Chennai, Tamil Nadu, India",
+    "prize_inr": 0,
+    "rounds": "",
+    "team_max": 5,
+    "team_min": 4,
     "v": 2
    },
    "udaya-2-o": {
@@ -513,7 +513,7 @@
    "1781078": {
     "rounds": "Idea Pitch & PPT Submission (online) → Getting busy with hacking (in person) → First Evaluation - Ideation & Initial Progress (in person) → Second Evaluation - Development & Implementation (in person) → Third Evaluation - Final Prototype & Demo (in person)",
     "screen": true,
-    "u": "2026-11-25T14:10:03+05:30",
+    "u": "2026-11-25T19:54:21+05:30",
     "version": 1
    },
    "1781449": {
@@ -537,19 +537,19 @@
    "1782949": {
     "rounds": "Prelims 1 (online) → Prelims 2 (online) → Finals (in person)",
     "screen": true,
-    "u": "2026-11-24T11:22:03+05:30",
+    "u": "2026-11-25T18:57:21+05:30",
     "version": 1
    },
    "1782995": {
     "rounds": "Prelims 1 (online) → Prelims 2 (online) → Finals (in person)",
     "screen": true,
-    "u": "2026-11-24T10:35:44+05:30",
+    "u": "2026-11-25T18:51:32+05:30",
     "version": 1
    },
    "1783515": {
     "rounds": "Prelims (online) → Offline Finals (in person)",
     "screen": true,
-    "u": "2026-11-24T01:19:41+05:30",
+    "u": "2026-11-25T18:44:38+05:30",
     "version": 1
    },
    "1784631": {
@@ -837,13 +837,13 @@
    "1822587": {
     "rounds": "Prelims (online) → Finale (in person)",
     "screen": true,
-    "u": "2026-11-25T18:09:44+05:30",
+    "u": "2026-11-25T20:18:25+05:30",
     "version": 1
    },
    "1822588": {
     "rounds": "Preliminary Screening Round (online) → Final Contest (in person)",
     "screen": true,
-    "u": "2026-11-24T12:28:23+05:30",
+    "u": "2026-11-25T20:04:23+05:30",
     "version": 1
    },
    "1823379": {
@@ -868,6 +868,12 @@
     "rounds": "",
     "screen": false,
     "u": "2026-11-25T12:39:48+05:30",
+    "version": 1
+   },
+   "1826867": {
+    "rounds": "Online Round (online) → Offline Round (in person)",
+    "screen": true,
+    "u": "2026-11-25T19:08:53+05:30",
     "version": 1
    },
    "1827287": {
@@ -1410,6 +1416,22 @@
    "start": "2026-12-12T05:30:00+00:00",
    "title": "Lovable Builders",
    "url": "https://luma.com/1mjcegf0"
+  },
+  "luma:evt-bOXDkZ9HkdFeGFB": {
+   "alerted": false,
+   "end": "2026-12-16T10:30:00+00:00",
+   "filling_alerted": false,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "listing_ids": [
+    "luma:evt-bOXDkZ9HkdFeGFB"
+   ],
+   "queued": true,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-12-16T09:00:00+00:00",
+   "title": "Seed to Scale: Physical AI Applications",
+   "url": "https://luma.com/jyuex7jw"
   },
   "luma:evt-jDWwvEe0lr7H3q4": {
    "alerted": true,
@@ -3438,6 +3460,29 @@
    "start": null,
    "title": "LogiTHON 2026",
    "url": "https://unstop.com/hackathons/logithon-2026-softlink-global-ltd-1827287"
+  },
+  "unstop:1827866": {
+   "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1827866",
+     "value": "2026-12-25T00:36:26+00:00"
+    },
+    "listing": "unstop:1827866"
+   },
+   "end": "2026-12-29T10:00:51+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "listing_ids": [
+    "unstop:1827866"
+   ],
+   "queued": false,
+   "reg_deadline": "2026-12-25T06:06:26+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "CodePulse 48 - National Hackathon",
+   "url": "https://unstop.com/hackathons/codepulse-48-national-hackathon-wecodecoders-1827866"
   }
  },
  "fps": {
@@ -3491,6 +3536,7 @@
   "codecrafters india 2026 national hackathon|2026-12-14": "unstop:1792826",
   "codeelitepune hack pune|2026-12-17": "unstop:1794522",
   "codeencoders india 2026 national hackathon|2026-12-09": "unstop:1823739",
+  "codepulse 48 national hackathon|2026-12-29": "unstop:1827866",
   "codered 26|2026-12-29": "unstop:1810268",
   "codeunited india national hackathon|2026-12-13": "unstop:1817749",
   "codewarriors india 2026 national hackathon|2026-12-13": "unstop:1817737",
@@ -3572,6 +3618,7 @@
   "quasar 5 0 36 hour international hackathon|2027-01-24": "unstop:1772406",
   "rootconf 2026 annual conference platforms ai ai platforms|2026-11-20": "hasgeek:rootconf/2026",
   "seed hackathon 2026|2026-12-22": "unstop:1798287",
+  "seed to scale physical ai applications|2026-12-16": "luma:evt-bOXDkZ9HkdFeGFB",
   "silicon sprint 2026|2026-11-28": "unstop:1814263",
   "silicon sprint 2026|2026-12-28": "unstop:1814263",
   "skill hackathon 2027|2027-02-23": "unstop:1770707",
@@ -3603,47 +3650,48 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-25T13:03:55+00:00",
-  "last_usable": "2026-11-25T13:03:55+00:00",
+  "last_attempt": "2026-11-25T14:53:01+00:00",
+  "last_usable": "2026-11-25T14:53:01+00:00",
   "polls": [
    "2026-11-25T12:52:05+00:00",
    "2026-11-25T13:02:14+00:00",
-   "2026-11-25T13:03:55+00:00"
+   "2026-11-25T13:03:55+00:00",
+   "2026-11-25T14:53:01+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "gdg": {
     "events": 3,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 12,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "luma": {
     "events": 14,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "meetup": {
-    "events": 23,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "events": 22,
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    },
    "unstop": {
-    "events": 179,
-    "last_usable": "2026-11-25T13:03:55+00:00",
+    "events": 181,
+    "last_usable": "2026-11-25T14:53:01+00:00",
     "outcome": "complete"
    }
   },
@@ -3668,6 +3716,21 @@
    "when": "2027-01-30T05:30:00+00:00",
    "when_label": "Sat 30 Jan · 11:00 IST",
    "where": "Thapar Institute of Engineering & Technology, Patiala"
+  },
+  {
+   "category": "Other events",
+   "id": "luma:evt-bOXDkZ9HkdFeGFB",
+   "reasons": [
+    "tech event in Bangalore"
+   ],
+   "reg_deadline": null,
+   "score": 5.0,
+   "source": "luma",
+   "title": "Seed to Scale: Physical AI Applications",
+   "url": "https://luma.com/jyuex7jw",
+   "when": "2026-12-16T09:00:00+00:00",
+   "when_label": "Wed 16 Dec · 14:30 IST",
+   "where": "Laxmi Sagar Layout, Bengaluru"
   }
  ],
  "reminders": {},
