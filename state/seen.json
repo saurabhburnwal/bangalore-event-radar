@@ -465,7 +465,7 @@
    "1771992": {
     "rounds": "INDIA GOT SPOT 1.0 — Project Submission Round (online) → Grand Offline Round of India Got Spot 1.0 (in person)",
     "screen": true,
-    "u": "2026-11-26T16:52:22+05:30",
+    "u": "2026-11-26T20:25:19+05:30",
     "version": 1
    },
    "1772164": {
@@ -1598,8 +1598,8 @@
    "queued": true,
    "reg_deadline": null,
    "source": "meetup",
-   "start": "2026-12-19T10:30:00+05:30",
-   "title": "Python Meetup",
+   "start": "2026-12-12T10:30:00+05:30",
+   "title": "BangPypers X DataArt Meetup",
    "url": "https://www.meetup.com/bangpypers/events/312819341/"
   },
   "meetup:313629005": {
@@ -2211,7 +2211,7 @@
    "correction_baseline": {
     "deadline": {
      "listing": "unstop:1771992",
-     "value": "2027-02-26T18:29:36+00:00"
+     "value": "2027-02-10T18:29:36+00:00"
     },
     "listing": "unstop:1771992",
     "venue": {
@@ -2219,7 +2219,7 @@
      "value": "Indraprastha Engineering College, ghaziabad ( Near Uttam Toyota )"
     }
    },
-   "end": "2027-02-26T23:59:36+05:30",
+   "end": "2027-02-20T18:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-25",
    "last_seen": "2026-11-26",
@@ -2227,7 +2227,7 @@
     "unstop:1771992"
    ],
    "queued": false,
-   "reg_deadline": "2027-02-26T23:59:36+05:30",
+   "reg_deadline": "2027-02-10T23:59:36+05:30",
    "source": "unstop",
    "start": null,
    "title": "INDIA GOT SPOT 1.0",
@@ -3093,7 +3093,7 @@
     },
     "listing": "unstop:1817737"
    },
-   "end": "2026-12-28T10:01:15+05:30",
+   "end": "2026-12-27T10:01:15+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-19",
    "last_seen": "2026-11-26",
@@ -3513,6 +3513,7 @@
   "aws cloud quest hunt learn build compete|2026-11-20": "meetup:317235816",
   "aws cloud quest hunt learn build compete|2026-11-21": "meetup:317235816",
   "azure sql user group meeting dec 2026|2026-12-19": "meetup:317510607",
+  "bangpypers dataart meetup|2026-12-12": "meetup:312819341",
   "bangpypers pathfinder community meetup|2026-11-21": "meetup:312819340",
   "beyond vibe checks hands on workshop on evaluating llm apps rag agents|2026-12-12": "meetup:317510480",
   "bharat academix global innovatex 2027|2027-01-03": "unstop:1826250",
@@ -3544,6 +3545,7 @@
   "codeunited india national hackathon|2026-12-13": "unstop:1817749",
   "codeunited india national hackathon|2026-12-27": "unstop:1817749",
   "codewarriors india 2026 national hackathon|2026-12-13": "unstop:1817737",
+  "codewarriors india 2026 national hackathon|2026-12-27": "unstop:1817737",
   "codewarriors india 2026 national hackathon|2026-12-28": "unstop:1817737",
   "comemor contributor challenge|2026-12-15": "unstop:1825938",
   "competitive programming|2026-11-20": "unstop:1771951",
@@ -3589,6 +3591,7 @@
   "incursion 2027 24 hour national level hackathon|2027-01-31": "unstop:1806016",
   "india ai open 2026 free ai talent contest students engineers|2026-12-26": "unstop:1820502",
   "india got spot 1 0|2027-02-15": "unstop:1771992",
+  "india got spot 1 0|2027-02-20": "unstop:1771992",
   "india got spot 1 0|2027-02-26": "unstop:1771992",
   "innerve 11 0|2027-01-29": "devfolio:innerve-11",
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
@@ -3657,8 +3660,8 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-26T13:02:21+00:00",
-  "last_usable": "2026-11-26T13:02:21+00:00",
+  "last_attempt": "2026-11-26T15:32:40+00:00",
+  "last_usable": "2026-11-26T15:32:40+00:00",
   "polls": [
    "2026-11-25T12:52:05+00:00",
    "2026-11-25T13:02:14+00:00",
@@ -3666,42 +3669,43 @@
    "2026-11-25T14:53:01+00:00",
    "2026-11-25T23:26:52+00:00",
    "2026-11-26T05:22:52+00:00",
-   "2026-11-26T13:02:21+00:00"
+   "2026-11-26T13:02:21+00:00",
+   "2026-11-26T15:32:40+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "gdg": {
     "events": 3,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 12,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "luma": {
     "events": 17,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "meetup": {
-    "events": 22,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "events": 21,
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    },
    "unstop": {
-    "events": 189,
-    "last_usable": "2026-11-26T13:02:21+00:00",
+    "events": 187,
+    "last_usable": "2026-11-26T15:32:40+00:00",
     "outcome": "complete"
    }
   },
