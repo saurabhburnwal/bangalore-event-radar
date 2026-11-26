@@ -891,18 +891,16 @@
   }
  },
  "digest_delivery": {
-  "day": "2026-11-25",
+  "day": "2026-11-26",
   "keys": [
    "closing:unstop:1772496",
    "closing:unstop:1781078",
    "closing:unstop:1786652",
    "closing:unstop:1793392",
    "closing:unstop:1800324",
-   "closing:unstop:1800629",
    "closing:unstop:1811085",
    "closing:unstop:1814036",
    "closing:unstop:1814263",
-   "closing:unstop:1817686",
    "closing:unstop:1817736",
    "closing:unstop:1817798",
    "closing:unstop:1821962",
@@ -1322,6 +1320,29 @@
    "start": "2026-11-25T13:00:00+00:00",
    "title": "Steam & Silicon: What the first machine age can teach the AI age",
    "url": "https://luma.com/0gz2qjfs"
+  },
+  "luma:evt-JFKup8B2EEU84iK": {
+   "alerted": true,
+   "correction_baseline": {
+    "listing": "luma:evt-JFKup8B2EEU84iK",
+    "venue": {
+     "listing": "luma:evt-JFKup8B2EEU84iK",
+     "value": "All In Capital"
+    }
+   },
+   "end": "2026-12-05T16:30:00+00:00",
+   "filling_alerted": true,
+   "first_seen": "2026-11-26",
+   "last_seen": "2026-11-26",
+   "listing_ids": [
+    "luma:evt-JFKup8B2EEU84iK"
+   ],
+   "queued": false,
+   "reg_deadline": null,
+   "source": "luma",
+   "start": "2026-12-05T12:30:00+00:00",
+   "title": "Keyframe 01: A Gen-AI Media Mixer in BLR",
+   "url": "https://luma.com/49iy3qry"
   },
   "luma:evt-OCsAVoe0aQO5ShE": {
    "alerted": false,
@@ -3008,12 +3029,12 @@
    "end": "2026-11-28T17:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-26",
    "listing_ids": [
     "unstop:1814263"
    ],
    "queued": true,
-   "reg_deadline": "2026-11-26T00:00:00+05:30",
+   "reg_deadline": "2026-11-27T15:00:00+05:30",
    "source": "unstop",
    "start": null,
    "title": "Silicon Sprint 2026",
@@ -3575,6 +3596,7 @@
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
   "javafest 2026|2026-12-05": "meetup:316892990",
   "k hacks 4 0|2026-12-18": "unstop:1772496",
+  "keyframe 01 gen ai media mixer|2026-12-05": "luma:evt-JFKup8B2EEU84iK",
   "ksug ai india 12 cloud native ai unlocked hpe|2026-11-21": "meetup:316324548",
   "ksug ai india 12 meetup hpe|2026-11-21": "meetup:316920742",
   "lakehouse build workshop sat 5 dec|2026-12-05": "luma:evt-xY3je64znkOZxzS",
@@ -3637,90 +3659,58 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-25T23:26:52+00:00",
-  "last_usable": "2026-11-25T23:26:52+00:00",
+  "last_attempt": "2026-11-26T05:22:52+00:00",
+  "last_usable": "2026-11-26T05:22:52+00:00",
   "polls": [
    "2026-11-25T12:52:05+00:00",
    "2026-11-25T13:02:14+00:00",
    "2026-11-25T13:03:55+00:00",
    "2026-11-25T14:53:01+00:00",
-   "2026-11-25T23:26:52+00:00"
+   "2026-11-25T23:26:52+00:00",
+   "2026-11-26T05:22:52+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "gdg": {
     "events": 3,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 12,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "luma": {
-    "events": 14,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "events": 17,
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "meetup": {
     "events": 23,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    },
    "unstop": {
-    "events": 182,
-    "last_usable": "2026-11-25T23:26:52+00:00",
+    "events": 183,
+    "last_usable": "2026-11-26T05:22:52+00:00",
     "outcome": "complete"
    }
   },
   "started_at": "2026-11-25T12:52:05+00:00"
  },
  "initialized": true,
- "last_digest_day": "2026-11-25",
- "queue": [
-  {
-   "category": "Outside Bangalore, online round first",
-   "id": "devfolio:makeathon-9",
-   "reasons": [
-    "₹11,00,000 prize pool",
-    "online round first",
-    "team 2–5"
-   ],
-   "reg_deadline": "2027-01-05T18:29:00+00:00",
-   "score": 40,
-   "source": "devfolio",
-   "title": "Makeathon 9.0",
-   "url": "https://makeathon-9.devfolio.co/",
-   "when": "2027-01-30T05:30:00+00:00",
-   "when_label": "Sat 30 Jan · 11:00 IST",
-   "where": "Thapar Institute of Engineering & Technology, Patiala"
-  },
-  {
-   "category": "Other events",
-   "id": "luma:evt-bOXDkZ9HkdFeGFB",
-   "reasons": [
-    "tech event in Bangalore"
-   ],
-   "reg_deadline": null,
-   "score": 5.0,
-   "source": "luma",
-   "title": "Seed to Scale: Physical AI Applications",
-   "url": "https://luma.com/jyuex7jw",
-   "when": "2026-12-16T09:00:00+00:00",
-   "when_label": "Wed 16 Dec · 14:30 IST",
-   "where": "Laxmi Sagar Layout, Bengaluru"
-  }
- ],
+ "last_digest_day": "2026-11-26",
+ "queue": [],
  "reminders": {},
  "sources": {
   "devfolio": {
