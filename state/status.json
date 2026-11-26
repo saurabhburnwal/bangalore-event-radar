@@ -1,6 +1,6 @@
 {
- "last_attempt": "2026-11-26T15:32:40+00:00",
- "last_usable": "2026-11-26T15:32:40+00:00",
+ "last_attempt": "2026-11-26T23:59:17+00:00",
+ "last_usable": "2026-11-26T23:59:17+00:00",
  "polls": [
   "2026-11-25T12:52:05+00:00",
   "2026-11-25T13:02:14+00:00",
@@ -9,42 +9,43 @@
   "2026-11-25T23:26:52+00:00",
   "2026-11-26T05:22:52+00:00",
   "2026-11-26T13:02:21+00:00",
-  "2026-11-26T15:32:40+00:00"
+  "2026-11-26T15:32:40+00:00",
+  "2026-11-26T23:59:17+00:00"
  ],
  "sources": {
   "devfolio": {
    "events": 24,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "gdg": {
    "events": 3,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "hackbriven": {
    "events": 1,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "hasgeek": {
    "events": 12,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "luma": {
    "events": 17,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "meetup": {
-   "events": 21,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "events": 23,
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   },
   "unstop": {
-   "events": 187,
-   "last_usable": "2026-11-26T15:32:40+00:00",
+   "events": 188,
+   "last_usable": "2026-11-26T23:59:17+00:00",
    "outcome": "complete"
   }
  },
