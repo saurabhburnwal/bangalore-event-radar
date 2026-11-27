@@ -56,6 +56,17 @@
     "team_min": 1,
     "v": 2
    },
+   "devnexus2": {
+    "city": "Kolkata",
+    "desc": "Code Through the Night. Build Beyond the Fear. **DEV NEXUS 2.0** is a **36-hour hackathon** where developers, innovators, and problem-solvers come together to build, create, collaborate, and turn ideas into impactful solutions. 📅 **28th–29th November 2026** 📍 **Government College of Engineering and Leather Technology (GCELT), Salt Lake, Kolkata** 🎃 **Organized by the Event Management Group of GCELT** With a Halloween-inspired theme, get ready for **36 hours of coding, creativity, collaboration, and innovation.** 🚀 **How to Participate?** - Register your team through **Devfolio**. - Complete the **PPT submission round** after registration. - Selected teams will be invited to participate in the **offline hackathon round** at GCELT. 💡 **No prototype or working model is required for the PPT submission round!** Just explain your idea thoroughly through a well-structured PPT, highlighting the problem, proposed solution, innovation, and potential impact. 📤 **Submit your PPT here:** https://forms.rynne.live/devnexus2-ppt-submission/c9qjah The night falls. The code awakens. 👻💻 **DEV NEXUS 2.0 — Where ideas become builds.** #DevNexus2 #Hackathon #GCELT #Kolkata #Devfolio #BuildBeyondTheFear",
+    "expires": 1795805951,
+    "location": "Government College of Engineering and Leather Technology, Eastern Metropolitan Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal, India",
+    "prize_inr": 0,
+    "rounds": "- Complete the PPT submission round after registration. - Selected teams will be invited to participate in the offline hackathon round at GCELT. 💡 No prototype or working model is required for the PPT submission round! 📤 Submit your PPT here: https://forms.rynne.live/devnexus2-ppt-submission/c9qjah The night falls.",
+    "team_max": 4,
+    "team_min": 2,
+    "v": 2
+   },
    "eclipse": {
     "city": "Patiala",
     "desc": "> # **All that you need to know about Eclipse 7.0** **ECLIPSE 7.0** is the flagship event of the ACM Student Chapter, TIET, and a premier **24-hour hackathon** that draws participation from across the nation. As the chapter’s most distinguished and celebrated initiative, it serves as a dynamic platform for developers, designers, and innovators to collaborate and compete. With expert-led workshops, dedicated mentorship, and an intense build environment, **ECLIPSE 7.0** is designed to cultivate innovation, enhance technical excellence, and transform ambitious ideas into impactful, real-world solutions. > **Eligibility:** • The hackathon is open to students from all Colleges and Universities. • Students from all academic years are eligible to participate. Teams may include members from different colleges. • Participants from diverse specializations are welcome to form teams together. > **Team Format:** **Teams must consist of 2–5 members.** Participants are advised to form teams with complementary expertise, including design, frontend development, backend development, and database management. > **Problem Statements:** Each team must choose only ONE problem statement. The detailed prob",
@@ -221,17 +232,6 @@
     "team_min": 2,
     "v": 2
    },
-   "texus27": {
-    "city": "Chennai",
-    "desc": "24 Hours. Infinite Possibilities. # TEXUS 2027 – 24 Hours. Infinite Possibilities. TEXUS 2027 is a national-level 24-hour hackathon organised by SRM Institute of Science and Technology, Ramapuram, Chennai, bringing together passionate student developers, engineers, designers and innovators from colleges and universities across India. The event aims to create a collaborative platform where young minds can transform ideas into practical technology-driven solutions by addressing real-world challenges through innovation, creativity and teamwork. Participants will compete by developing solutions to multiple domain-specific problem statements spanning emerging technologies and socially relevant challenges. From conceptualisation and design to development and prototyping, teams will have 24 continuous hours to turn their ideas into working solutions. ### Hackathon Highlights - 24 hours of continuous innovation and development. - Participation from colleges and universities across India. - Multiple domain-specific problem statements. - Team-based collaboration and prototype development. - Opportunities to interact with industry professionals, mentors and technical experts. - Project demons",
-    "expires": 1795788309,
-    "location": "Chennai, Tamil Nadu, India",
-    "prize_inr": 0,
-    "rounds": "Students currently enrolled in undergraduate or postgraduate programmes at recognised colleges and universities are welcome to participate, subject to the final eligibility rules.",
-    "team_max": 4,
-    "team_min": 2,
-    "v": 2
-   },
    "touch-some-grass": {
     "city": "Chennai",
     "desc": "Touch grass. Touch hardware. Ship it. # TOUCH SOME GRASS ### Touch Grass. Touch Hardware. Ship it. We're taking innovation out of the usual coding environment. **TOUCH SOME GRASS** is a Hardware and AI Embedded Systems Hackathon, challenging builders, engineers, designers and innovators to step beyond conventional software development and create solutions that interact with the real world. From intelligent machines and connected devices to AI-powered systems and unconventional hardware innovations, this is where ideas move beyond screens and become something tangible. Forget building just another application. Think about the problems around you. Experiment with technology. Combine hardware, software and intelligence to create something that actually makes a difference. ### WHAT'S THE CHALLENGE? Explore the intersection of hardware, artificial intelligence and real-world problem-solving. Push boundaries, experiment with emerging technologies, and turn ambitious ideas into functional prototypes. Whether you're passionate about robotics, AI/ML, embedded systems, IoT or unconventional engineering, there's room to experiment, innovate and build. ### WHAT TO EXPECT - **Build from Scratch",
@@ -273,20 +273,6 @@
     "expires": 1795788285,
     "v": 1,
     "venue": "Google Ananta, Rio Business Park, Mahadevapura Village, Krishnarajapuram Hobli"
-   },
-   "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-welcome-to-the-gemini-4-sprints/": {
-    "city": "Bengaluru",
-    "desc": "In this high-impact Sprint Series presented by Google DeepMind and Google Cloud, you will have dedicated time, mentorship, and cloud resources to build, iterate, and submit your prototypes live.",
-    "expires": 1795788285,
-    "v": 1,
-    "venue": "Google Bangalore - Kyoto Campus, Circle"
-   },
-   "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-gemini-4-sprints-by-google-deepmind-and-google-cloud/": {
-    "city": "",
-    "desc": "Great ideas belong in production, not just on a slide deck. 🚀 Join Gemini 4 Sprints on November 27, 2026—a full-day hybrid build sprint presented by Google DeepMind and Google Cloud. Build and deploy live AI agents or applications using Google AI Studio or Antigravity. How to apply (Curated spots): 1️⃣ Pick a theme: Finance, Health, Gaming, Education, or Open Innovation / AI for India. 2️⃣ Submit your build idea + a concise 3-slide pitch. Google experts will evaluate all verified submissions over the coming days. Shortlisted teams will receive cool goodies, Google Cloud Credits and Google AI Pro Subscription for 3 months to continue their building journey! 🗓️ Registration Deadline: Nov 24, 2026 (11:59 PM IST) — Shortlisted builders will receive venue details via email. Apply now: https://rsvp.withgoogle.com/events/gemini-sprints?pli=1",
-    "expires": 1795788286,
-    "v": 1,
-    "venue": ""
    }
   },
   "hackbriven": {},
@@ -447,7 +433,7 @@
    "1770707": {
     "rounds": "Round 1 - PPT Submission (online) → Offline Grand Finale (in person)",
     "screen": true,
-    "u": "2026-11-27T13:03:22+05:30",
+    "u": "2026-11-27T15:09:55+05:30",
     "version": 1
    },
    "1771511": {
@@ -519,7 +505,7 @@
    "1781449": {
     "rounds": "Round 1 (online) → Round 2 (in person) → Finals at IIT Madras (in person)",
     "screen": true,
-    "u": "2026-11-07T20:20:02+05:30",
+    "u": "2026-11-27T14:20:57+05:30",
     "version": 1
    },
    "1781454": {
@@ -732,12 +718,6 @@
     "u": "2026-11-27T07:34:53+05:30",
     "version": 1
    },
-   "1814983": {
-    "rounds": "TIME CYCLE (online)",
-    "screen": false,
-    "u": "2026-11-24T11:33:13+05:30",
-    "version": 1
-   },
    "1817240": {
     "rounds": "Idea Submission (via Unstop) (online) → Grand Finale (Offline Round at University of Engineering… (in person)",
     "screen": true,
@@ -885,7 +865,7 @@
    "1829321": {
     "rounds": "🚨 MANDATORY TASK 1 (online) → PPT + Project Submission Round (online) → Final Evaluation - 8 HR Offline Round (in person)",
     "screen": true,
-    "u": "2026-11-27T01:04:59+05:30",
+    "u": "2026-11-27T18:14:47+05:30",
     "version": 1
    }
   }
@@ -3483,10 +3463,73 @@
    "start": null,
    "title": "InteractUp Nexus National Hackathon",
    "url": "https://unstop.com/hackathons/interactup-nexus-national-hackathon-interactup-1828645"
+  },
+  "unstop:1829467": {
+   "alerted": false,
+   "end": "2026-12-11T21:28:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-27",
+   "last_seen": "2026-11-27",
+   "listing_ids": [
+    "unstop:1829467"
+   ],
+   "queued": true,
+   "reg_deadline": "2026-12-10T00:00:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "Infriqa Design. Build. Operate. Challenge",
+   "url": "https://unstop.com/hackathons/infriqa-design-build-operate-challenge-infriqa-1829467"
+  },
+  "unstop:1830705": {
+   "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1830705",
+     "value": "2026-12-27T07:30:00+00:00"
+    },
+    "listing": "unstop:1830705"
+   },
+   "end": "2027-01-07T10:00:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-27",
+   "last_seen": "2026-11-27",
+   "listing_ids": [
+    "unstop:1830705"
+   ],
+   "queued": false,
+   "reg_deadline": "2026-12-27T13:00:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "CodeAtScale - National Hackathon",
+   "url": "https://unstop.com/hackathons/codeatscale-national-hackathon-hackwithpune-1830705"
+  },
+  "unstop:1830923": {
+   "alerted": true,
+   "correction_baseline": {
+    "deadline": {
+     "listing": "unstop:1830923",
+     "value": "2026-12-05T18:29:00+00:00"
+    },
+    "listing": "unstop:1830923"
+   },
+   "end": "2026-12-20T23:59:00+05:30",
+   "filling_alerted": false,
+   "first_seen": "2026-11-27",
+   "last_seen": "2026-11-27",
+   "listing_ids": [
+    "unstop:1830923"
+   ],
+   "queued": false,
+   "reg_deadline": "2026-12-05T23:59:00+05:30",
+   "source": "unstop",
+   "start": null,
+   "title": "ActTrident AI Hackathon 2026",
+   "url": "https://unstop.com/hackathons/acttrident-ai-hackathon-2026-trident-shield-2026-acttrident-1830923"
   }
  },
  "fps": {
   "404 hackathon|2026-11-30": "unstop:1793392",
+  "acttrident ai hackathon 2026|2026-12-20": "unstop:1830923",
   "agent builders community day|2026-11-21": "meetup:316972361",
   "agentic ai hackathon|2026-11-21": "unstop:1792269",
   "agentic room|2026-11-22": "luma:evt-QXK2t1wlF8tDZEl",
@@ -3529,6 +3572,7 @@
   "code relay 5 0|2027-01-17": "unstop:1810370",
   "code to cart ai e commerce hackathon kartai codexcelerate|2026-11-29": "unstop:1803912",
   "codeastra india 2026 national hackathon|2026-12-14": "unstop:1791313",
+  "codeatscale national hackathon|2027-01-07": "unstop:1830705",
   "codebuild 2 0|2027-01-16": "unstop:1772164",
   "codecrafters india 2026 national hackathon|2026-12-14": "unstop:1792826",
   "codeelitepune hack pune|2026-12-17": "unstop:1794522",
@@ -3586,6 +3630,7 @@
   "india got spot 1 0|2027-02-15": "unstop:1771992",
   "india got spot 1 0|2027-02-20": "unstop:1771992",
   "india got spot 1 0|2027-02-26": "unstop:1771992",
+  "infriqa design build operate challenge|2026-12-11": "unstop:1829467",
   "innerve 11 0|2027-01-29": "devfolio:innerve-11",
   "innovate india hackathon 2026|2026-12-06": "unstop:1792025",
   "interactup nexus national hackathon|2026-12-31": "unstop:1828645",
@@ -3655,8 +3700,8 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-27T08:05:16+00:00",
-  "last_usable": "2026-11-27T08:05:16+00:00",
+  "last_attempt": "2026-11-27T12:59:19+00:00",
+  "last_usable": "2026-11-27T12:59:19+00:00",
   "polls": [
    "2026-11-25T12:52:05+00:00",
    "2026-11-25T13:02:14+00:00",
@@ -3667,42 +3712,43 @@
    "2026-11-26T13:02:21+00:00",
    "2026-11-26T15:32:40+00:00",
    "2026-11-26T23:59:17+00:00",
-   "2026-11-27T08:05:16+00:00"
+   "2026-11-27T08:05:16+00:00",
+   "2026-11-27T12:59:19+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "gdg": {
-    "events": 3,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "events": 1,
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 12,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "luma": {
     "events": 17,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "meetup": {
     "events": 23,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    },
    "unstop": {
-    "events": 188,
-    "last_usable": "2026-11-27T08:05:16+00:00",
+    "events": 191,
+    "last_usable": "2026-11-27T12:59:19+00:00",
     "outcome": "complete"
    }
   },
@@ -3710,7 +3756,25 @@
  },
  "initialized": true,
  "last_digest_day": "2026-11-27",
- "queue": [],
+ "queue": [
+  {
+   "category": "Online hackathons",
+   "id": "unstop:1829467",
+   "reasons": [
+    "internship mentioned",
+    "team 1–5",
+    "swag"
+   ],
+   "reg_deadline": "2026-12-10T00:00:00+05:30",
+   "score": 15.2,
+   "source": "unstop",
+   "title": "Infriqa Design. Build. Operate. Challenge",
+   "url": "https://unstop.com/hackathons/infriqa-design-build-operate-challenge-infriqa-1829467",
+   "when": "2026-12-11T21:28:00+05:30",
+   "when_label": "apply by Thu 10 Dec · 00:00 IST",
+   "where": "Online"
+  }
+ ],
  "reminders": {},
  "sources": {
   "devfolio": {
