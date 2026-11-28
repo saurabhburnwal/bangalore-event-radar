@@ -553,13 +553,13 @@
    "1791410": {
     "rounds": "Online Submission (online) → Offline Round (in person) → Grand Finale (Presentation Round) (in person)",
     "screen": true,
-    "u": "2026-11-27T10:04:08+05:30",
+    "u": "2026-11-28T17:09:14+05:30",
     "version": 1
    },
    "1791574": {
     "rounds": "Offline Round (in person)",
     "screen": false,
-    "u": "2026-11-20T20:07:05+05:30",
+    "u": "2026-11-28T15:55:32+05:30",
     "version": 1
    },
    "1792152": {
@@ -703,7 +703,7 @@
    "1817240": {
     "rounds": "Idea Submission (via Unstop) (online) → Grand Finale (Offline Round at University of Engineering… (in person)",
     "screen": true,
-    "u": "2026-11-28T10:11:00+05:30",
+    "u": "2026-11-28T15:14:17+05:30",
     "version": 1
    },
    "1817389": {
@@ -715,7 +715,7 @@
    "1817499": {
     "rounds": "Screening Call & Join Community for Free Ai Credits (online) → Validate your skill (online) → Offline Round At Kanpur (in person)",
     "screen": true,
-    "u": "2026-11-28T14:27:03+05:30",
+    "u": "2026-11-28T15:44:28+05:30",
     "version": 1
    },
    "1817736": {
@@ -1011,19 +1011,6 @@
    "start": "2026-11-21T03:30:00+00:00",
    "title": "Build Bengaluru 2.0",
    "url": "https://hackbriven.com/events/build-bengaluru-20"
-  },
-  "hackbriven:notion-workshop-blr": {
-   "alerted": false,
-   "end": "2026-11-21T09:30:00+00:00",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-17",
-   "queued": true,
-   "reg_deadline": "2026-11-17T18:30:00+00:00",
-   "source": "hackbriven",
-   "start": "2026-11-21T04:30:00+00:00",
-   "title": "Notion Workshop BLR",
-   "url": "https://hackbriven.com/events/notion-workshop-blr"
   },
   "hasgeek:bengalurusystemsmeetup/women-in-systems2": {
    "alerted": true,
@@ -1423,19 +1410,6 @@
    "start": "2026-12-01T07:00:00+00:00",
    "title": "Computer Conversations Buildathon",
    "url": "https://luma.com/devrev-uuot"
-  },
-  "luma:evt-otcsiN53fUACzUG": {
-   "alerted": true,
-   "end": "2026-11-21T12:00:00+00:00",
-   "filling_alerted": false,
-   "first_seen": "2026-11-11",
-   "last_seen": "2026-11-21",
-   "queued": false,
-   "reg_deadline": null,
-   "source": "luma",
-   "start": "2026-11-21T03:00:00+00:00",
-   "title": "Build with Agora - Bengaluru 2026 | Voice AI Hackathon",
-   "url": "https://luma.com/2g5vcgrr"
   },
   "luma:evt-uNz78DPtI4jBBe8": {
    "alerted": false,
@@ -2838,7 +2812,7 @@
      "value": "Yet to be decided"
     }
    },
-   "end": "2027-01-11T20:11:00+05:30",
+   "end": "2027-01-17T19:00:00+05:30",
    "filling_alerted": false,
    "first_seen": "2026-11-27",
    "last_seen": "2026-11-28",
@@ -3401,7 +3375,6 @@
   "black box protocol stage 03 system convergence|2026-12-27": "unstop:1745778",
   "break model then fix it hands on workshop on shrinking open models to fit hardware you have proving they still work|2026-11-22": "hasgeek:rootconf/quantization-workshop",
   "build 2 0|2026-11-21": "hackbriven:build-bengaluru-20",
-  "build agora 2026 voice ai hackathon|2026-11-21": "luma:evt-otcsiN53fUACzUG",
   "building ai agents on production ready data|2026-12-05": "meetup:317450486",
   "campus to cloud hackathon|2026-11-30": "unstop:1818968",
   "cashfree sarvam ai buildathon|2026-11-21": "luma:evt-WrdP7YutOwMDZH6",
@@ -3455,6 +3428,7 @@
   "gtm rewind 2026 what worked what flopped what s next|2026-11-28": "luma:evt-U7GTbfJZwAdOiQO",
   "hack hardware|2026-12-20": "unstop:1820851",
   "hack uttar pradesh 2026|2027-01-11": "unstop:1817499",
+  "hack uttar pradesh 2026|2027-01-17": "unstop:1817499",
   "hackday 2 0|2026-12-20": "unstop:1773120",
   "hackkumbh 2026 tech humanity|2026-12-19": "unstop:1800629",
   "hacknova 27 2 0|2027-02-07": "unstop:1772235",
@@ -3488,7 +3462,6 @@
   "merry shipmas christmas ai hackathon|2026-12-12": "unstop:1820028",
   "myonne national bug bounty challenge 2026|2026-11-28": "unstop:1817686",
   "nextgen ai hackathon|2026-11-21": "unstop:1800891",
-  "notion workshop|2026-11-21": "hackbriven:notion-workshop-blr",
   "ooty hacks|2026-12-17": "unstop:1768100",
   "open lakehouse ai|2026-11-28": "meetup:317087004",
   "operation blackout|2026-12-01": "unstop:1818820",
@@ -3537,8 +3510,8 @@
   "zero trust enclave securing clusters workloads citizen data|2026-12-05": "meetup:317101247"
  },
  "health": {
-  "last_attempt": "2026-11-28T09:23:08+00:00",
-  "last_usable": "2026-11-28T09:23:08+00:00",
+  "last_attempt": "2026-11-28T12:12:04+00:00",
+  "last_usable": "2026-11-28T12:12:04+00:00",
   "polls": [
    "2026-11-25T12:52:05+00:00",
    "2026-11-25T13:02:14+00:00",
@@ -3553,42 +3526,43 @@
    "2026-11-27T12:59:19+00:00",
    "2026-11-27T18:11:14+00:00",
    "2026-11-28T01:27:49+00:00",
-   "2026-11-28T09:23:08+00:00"
+   "2026-11-28T09:23:08+00:00",
+   "2026-11-28T12:12:04+00:00"
   ],
   "sources": {
    "devfolio": {
     "events": 24,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "gdg": {
     "events": 1,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "hackbriven": {
     "events": 1,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "hasgeek": {
     "events": 9,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "luma": {
-    "events": 15,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "events": 14,
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "meetup": {
     "events": 21,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    },
    "unstop": {
-    "events": 186,
-    "last_usable": "2026-11-28T09:23:08+00:00",
+    "events": 185,
+    "last_usable": "2026-11-28T12:12:04+00:00",
     "outcome": "complete"
    }
   },
